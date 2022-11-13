@@ -89,6 +89,12 @@ int getCompOfAlg (char *alg, int a[], int n);
 // 5. doOutputOrder function
 void doOutputOrder (char *output, double &time, int &comp, int a[], int n, char *alg);
 
+// 6. get type of input order
+int getTypeOfInputOrder (char *inputOrder);
+
+// 7. display name of input order
+void displayNameOfInputOrder (char *inputOrder);
+
 
 // IV. Generate data functions
 

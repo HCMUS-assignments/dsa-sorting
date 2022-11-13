@@ -19,7 +19,7 @@ void readInputFile (char *fileIn, int *&a, int &n) {
 }
 
 // 2. writing file
-void writeOutputFile (char *outputFile, int a[], int n) {
+void writingFile (char *outputFile, int a[], int n) {
     ofstream fout(outputFile);
     if (fout.fail()) {
         cout << "Cannot open file " << outputFile << endl;
@@ -110,5 +110,38 @@ void doOutputOrder (char *output, double &time, int &comp, int a[], int n, char 
         comp = getCompOfAlg (alg, a, n);
     } else {
         cout << "Invalid output order" << endl;
+    }
+}
+
+// 6. get type of input order
+int getTypeOfInputOrder (char *inputOrder) {
+    int type = -1;
+    if (strcmp(inputOrder, "-rand") == 0) {
+        type = 0;
+    } else if (strcmp(inputOrder, "-sorted") == 0) {
+        type = 1;
+    } else if (strcmp(inputOrder, "-rev") == 0) {
+        type = 2;
+    } else if (strcmp(inputOrder, "-nsorted") == 0) {
+        type = 3;
+    } else {
+        cout << "Invalid input order" << endl;
+        type = -1;
+    }
+    return type;
+}
+
+// 7. display name of input order
+void displayNameOfInputOrder (char *inputOrder) {
+    if (strcmp(inputOrder, "-rand") == 0) {
+        cout << "Randomize" << endl;
+    } else if (strcmp(inputOrder, "-sorted") == 0) {
+        cout << "Sorted" << endl;
+    } else if (strcmp(inputOrder, "-rev") == 0) {
+        cout << "Reversed" << endl;
+    } else if (strcmp(inputOrder, "-nsorted") == 0) {
+        cout << "Nearly sorted" << endl;
+    } else {
+        cout << "Invalid input order" << endl;
     }
 }
