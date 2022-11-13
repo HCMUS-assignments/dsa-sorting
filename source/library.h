@@ -4,60 +4,65 @@ using namespace std;
 // I. Algorithms
 
 // 1. selection sort
-void selectionSort1 (int a[], int n);
-void selectionSort2 (int a[], int n);
+double selectionSortTime (int a[], int n);
+int selectionSortComp (int a[], int n);
 
 // 2. insertion sort
-void insertionSort1 (int a[], int n);
-void insertionSort2 (int a[], int n);
+double insertionSortTime (int a[], int n);
+int insertionSortComp (int a[], int n);
 
 // 3. bubble sort
-void bubbleSort1 (int a[], int n);
-void bubbleSort2 (int a[], int n);
+double bubbleSortTime (int a[], int n);
+int bubbleSortComp (int a[], int n);
 
 // 4. shaker sort
-void shakerSort1 (int a[], int n);
-void shakerSort2 (int a[], int n);
+double shakerSortTime (int a[], int n);
+int shakerSortComp (int a[], int n);
 
 // 5. shell sort
-void shellSort1 (int a[], int n);
-void shellSort2 (int a[], int n);
+double shellSortTime (int a[], int n);
+int shellSortComp (int a[], int n);
 
 // 6. heap sort
-void heapSort1 (int a[], int n);
-void heapSort2 (int a[], int n);
+double heapSortTime (int a[], int n);
+int heapSortComp (int a[], int n);
 
 // 7. merge sort
-void mergeSort1 (int a[], int n);
-void mergeSort2 (int a[], int n);
+double mergeSortTime (int a[], int n);
+int mergeSortComp (int a[], int n);
 
 // 8. quick sort
-void quickSort1 (int a[], int n);
-void quickSort2 (int a[], int n);
+double quickSortTime (int a[], int n);
+int quickSortComp (int a[], int n);
 
 // 9. counting sort
-void countingSort1 (int a[], int n);
-void countingSort2 (int a[], int n);
+double countingSortTime (int a[], int n);
+int countingSortComp (int a[], int n);
 
 // 10. radix sort
-void radixSort1 (int a[], int n);
-void radixSort2 (int a[], int n);
+double radixSortTime (int a[], int n);
+int radixSortComp (int a[], int n);
 
 // 11. flash sort
-void flashSort1 (int a[], int n);
-void flashSort2 (int a[], int n);
+double flashSortTime (int a[], int n);
+int flashSortComp (int a[], int n);
 
 // II. Command functions
 
 // 1. command 1
+void command1 ();
 
 // 2. command 2
+void command2 ();
 
 // 3. command 3
+void command3 ();
 
 // 4. command 4
+void command4 ();
 
 // 5. command 5
+void command5 ();
 
 // III. Supporting functions
 

@@ -2,8 +2,8 @@
     🎗️ DSA Sorting 🎗️
 </h2>
 
-___
 # :page_facing_up: Table of Contents
+<<<<<<< Updated upstream
 ## 1. [Introduction](#introduction)
 ## 2. [Sorting Algorithms](#sorting-algorithms)
 ###     2.1. [Selection Sort](#one-selection-sort)
@@ -19,10 +19,26 @@ ___
 ###     2.11. [Flash Sort](#one-one-flash-sort)
 ## 3. [References](#references)
 ___
+=======
+## 1. [Introduction](##introduction)
+## 2. [Sorting Algorithms](##Sorting-Algorithms)
+###     1. [Selection Sort](###selection-sort)
+###     2. [Insertion Sort](###insertion-sort)
+###     3. [Bubble Sort](###bubble-sort)
+###     4. [Shaker Sort](###shaker-sort)
+###     5. [Shell Sort](###shell-sort)
+###     6. [Heap Sort](###heap-sort)
+###     7. [Merge Sort](###merge-sort)
+###     8. [Quick Sort](###quick-sort)
+###     9. [Counting Sort](###counting-sort)
+###     10. [Radix Sort](###radix-sort)
+###     11. [Flash Sort](###flash-sort)
+## 3. [References](##references)
+>>>>>>> Stashed changes
 
 
 
-## Introduction
+## Introduction (##introduction)
 ### I. Algorithm mode:
 
     command 1: running a sorting algorithm on the given input data
