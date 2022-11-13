@@ -18,10 +18,11 @@ ___
 ###     2.9. [Counting Sort](#nine-counting-sort)
 ###     2.10. [Radix Sort](#keycap_ten-radix-sort)
 ###     2.11. [Flash Sort](#one-one-flash-sort)
-## 3. [References](#references)
+## 3. [Experimental results](#jigsaw-experimental-results)
+## 4. [References](#references)
 ___
 
-## Introduction (##introduction)
+## Introduction
 ### I. Algorithm mode:
 
     command 1: running a sorting algorithm on the given input data
@@ -83,12 +84,14 @@ ___
     - Space complexity: O(1)
 
 #### III. Pseudocode:
+```C++
     for i = 0 to n - 2
         min = i
         for j = i + 1 to n - 1
             if a[j] < a[min]
                 min = j
         swap a[i] and a[min]
+```
 
 ### :two: Insertion Sort
 #### I. Algorithm:
@@ -102,6 +105,7 @@ ___
     - Space complexity: O(1)
 
 #### III. Pseudocode:
+```C++
     for i = 1 to n - 1
         x = a[i]
         j = i - 1
@@ -109,6 +113,7 @@ ___
             a[j + 1] = a[j]
             j = j - 1
         a[j + 1] = x
+```
 
 ### :three: Bubble Sort
 #### I. Algorithm:
@@ -122,10 +127,12 @@ ___
     - Space complexity: O(1)
 
 #### III. Pseudocode:
+```C++
     for i = 0 to n - 2
         for j = n - 1 to i + 1
             if a[j] < a[j - 1]
                 swap a[j] and a[j - 1]
+```
 
 ### :four: Shaker Sort
 #### I. Algorithm:
@@ -139,6 +146,7 @@ ___
     - Space complexity: O(1)
 
 #### III. Pseudocode:
+```C++
     for i = 0 to n - 2
         for j = n - 1 to i + 1
             if a[j] < a[j - 1]
@@ -146,6 +154,7 @@ ___
         for j = i + 1 to n - 1
             if a[j] < a[j - 1]
                 swap a[j] and a[j - 1]
+```
 
 ### :five: Shell Sort
 #### I. Algorithm:
@@ -159,6 +168,7 @@ ___
     - Space complexity: O(1)
 
 #### III. Pseudocode:
+```C++
     for gap = n/2 to 1
         for i = gap to n - 1
             x = a[i]
@@ -167,6 +177,7 @@ ___
                 a[j + gap] = a[j]
                 j = j - gap
             a[j + gap] = x
+```
 
 ### :six: Heap Sort
 #### I. Algorithm:
@@ -179,6 +190,7 @@ ___
     - Space complexity: O(1)
 
 #### III. Pseudocode:
+```C++
     buildMaxHeap(a, n)
     for i = n - 1 to 1
         swap a[0] and a[i]
@@ -195,6 +207,7 @@ ___
     if largest != i
         swap a[i] and a[largest]
         heapify(a, n, largest)
+```
 
 ### :seven: Merge Sort
 #### I. Algorithm:
@@ -207,6 +220,7 @@ ___
     - Space complexity: O(n)
 
 #### III. Pseudocode:
+```C++
     mergeSort(a, l, r)
     if l < r
         m = (l + r) / 2
@@ -231,6 +245,7 @@ ___
         else
             a[k] = R[j]
             j = j + 1
+```
 
 ### :eight: Quick Sort
 #### I. Algorithm:
@@ -243,6 +258,7 @@ ___
     - Space complexity: O(nlogn)
 
 #### III. Pseudocode:
+```C++
     quickSort(a, l, r)
     if l < r
         p = partition(a, l, r)
@@ -258,6 +274,7 @@ ___
             swap a[i] and a[j]
     swap a[i + 1] and a[r]
     return i + 1
+```
 
 ### :nine: Counting Sort
 #### I. Algorithm:
@@ -274,6 +291,7 @@ ___
     - Space complexity: O(n+k)
 
 #### III. Pseudocode:
+```C++
     countingSort(a, n)
     max = findMax(a, n)
     count[0..max]
@@ -289,6 +307,7 @@ ___
         count[a[i]] = count[a[i]] - 1
     for i = 1 to n
         a[i] = output[i]
+```
 
 ### :keycap_ten: Radix Sort
 #### I. Algorithm:
@@ -301,6 +320,7 @@ ___
     - Space complexity: O(n+k)
 
 #### III. Pseudocode:
+```C++
     radixSort(a, n)
     m = findMax(a, n)
     for exp = 1 to m
@@ -320,6 +340,7 @@ ___
         count[(a[i] / exp) % 10] = count[(a[i] / exp) % 10] - 1
     for i = 1 to n
         a[i] = output[i]
+```
 
 ### :one: :one: Flash Sort
 #### I. Algorithm:
@@ -338,6 +359,7 @@ ___
     - Space complexity: O(n)
 
 #### III. Pseudocode:
+```C++
     flashSort(a, n)
     max = findMax(a, n)
     min = findMin(a, n)
@@ -356,10 +378,20 @@ ___
         l[index] = l[index] - 1
     for i = 0 to n - 1
         a[i] = output[i + 1]
+```
+
+## :jigsaw: Experimental Results
+### Data Tables
+
+### Line Graphs
+
+### Bar Charts
 
 ## References
 
 - [1. tính thời gian chạy thuật toán](https://duongdinh24.com/tinh-thoi-gian-chay-chuong-trinh-trong-c-c/)
+
+- [2. Space complexity](https://www.geeksforgeeks.org/g-fact-86/)
 
 
 
