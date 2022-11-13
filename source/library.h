@@ -47,12 +47,19 @@ void radixSort2 (int a[], int n);
 void flashSort1 (int a[], int n);
 void flashSort2 (int a[], int n);
 
+// II. Command functions
 
-// II. Supporting functions
+// 1. command 1
 
-// 1. measuring the running time (in milli secs)
-float measuringRunningTime () ;
+// 2. command 2
 
-// 2. counting the number of comparisons
-int countingComparisons ();
+// 3. command 3
+
+// 4. command 4
+
+// 5. command 5
+
+// III. Supporting functions
+
+// 
 
