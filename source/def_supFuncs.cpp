@@ -4,13 +4,14 @@
 
 
 // 1. read input file
-void readInputFile (char *fileIn, int a[], int &n) {
+void readInputFile (char *fileIn, int *&a, int &n) {
     ifstream fin(fileIn);
     if (fin.fail()) {
         cout << "Cannot open file " << fileIn << endl;
         return;
     }
     fin >> n;
+    a = new int[n];
     for (int i = 0; i < n; i++) {
         fin >> a[i];
     }
@@ -96,4 +97,18 @@ int getCompOfAlg (char *alg, int a[], int n) {
     }
     return comp;
     
+}
+
+// 5. do outputOrder for command
+void doOutputOrder (char *output, double &time, int &comp, int a[], int n, char *alg) {
+    if (strcmp(output, "-time") == 0) {
+        time = getTimeOfAlg (alg, a, n);
+    } else if (strcmp(output, "-comp") == 0) {
+        comp = getCompOfAlg (alg, a, n);
+    } else if (strcmp(output, "-both") == 0) {
+        time = getTimeOfAlg (alg, a, n);
+        comp = getCompOfAlg (alg, a, n);
+    } else {
+        cout << "Invalid output order" << endl;
+    }
 }

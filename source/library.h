@@ -1,4 +1,8 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <fstream>
+#include <cmath>
+#include <time.h>
+#include <string.h>
 using namespace std;
 
 // I. Algorithms
@@ -47,24 +51,59 @@ int radixSortComp (int a[], int n);
 double flashSortTime (int a[], int n);
 int flashSortComp (int a[], int n);
 
+
+
 // II. Command functions
 
 // 1. command 1
-void command1 ();
+void doCommand1 (char *alg, char *fileIn, char *output);
 
 // 2. command 2
-void command2 ();
+void doCommand2 (char *alg, char *inputSize, char *inputOrder, char *output);
 
 // 3. command 3
-void command3 ();
+void doCommand3 (char *alg, char *inputSize, char *output);
 
 // 4. command 4
-void command4 ();
+void doCommand4 (char *alg1, char *alg2, char *fileIn);
 
 // 5. command 5
-void command5 ();
+void doCommand5 (char *alg1, char *alg2, char *inputSize, char *inputOrder);
+
+
 
 // III. Supporting functions
 
-// 
+// 1. read input file
+void readInputFile (char *fileIn, int a[], int &n);
+
+// 2. writing file function
+void writingFile (char *outputFile, int a[], int n);
+
+// 3. get time in seconds of the algorithm
+double getTimeOfAlg (char *alg, int a[], int n);
+
+// 4. get number of comparisons of the algorithm
+int getCompOfAlg (char *alg, int a[], int n);
+
+// 5. doOutputOrder function
+void doOutputOrder (char *output, double &time, int &comp, int a[], int n, char *alg);
+
+
+// IV. Generate data functions
+
+// 1. generate random data
+void GenerateRandomData (int a[], int n);
+
+// 2. generate sorted data
+void GenerateSortedData (int a[], int n);
+
+// 3. generate reversed data
+void GenerateReversedData (int a[], int n);
+
+// 4. generate nearly sorted data
+void GenerateNearlySortedData (int a[], int n);
+
+// 5. generate data function
+void GenerateData (int a[], int n, int dataType);
 
