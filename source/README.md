@@ -3,7 +3,8 @@
 </h2>
 
 # :page_facing_up: Table of Contents
-<<<<<<< Updated upstream
+
+___
 ## 1. [Introduction](#introduction)
 ## 2. [Sorting Algorithms](#sorting-algorithms)
 ###     2.1. [Selection Sort](#one-selection-sort)
@@ -19,24 +20,6 @@
 ###     2.11. [Flash Sort](#one-one-flash-sort)
 ## 3. [References](#references)
 ___
-=======
-## 1. [Introduction](##introduction)
-## 2. [Sorting Algorithms](##Sorting-Algorithms)
-###     1. [Selection Sort](###selection-sort)
-###     2. [Insertion Sort](###insertion-sort)
-###     3. [Bubble Sort](###bubble-sort)
-###     4. [Shaker Sort](###shaker-sort)
-###     5. [Shell Sort](###shell-sort)
-###     6. [Heap Sort](###heap-sort)
-###     7. [Merge Sort](###merge-sort)
-###     8. [Quick Sort](###quick-sort)
-###     9. [Counting Sort](###counting-sort)
-###     10. [Radix Sort](###radix-sort)
-###     11. [Flash Sort](###flash-sort)
-## 3. [References](##references)
->>>>>>> Stashed changes
-
-
 
 ## Introduction (##introduction)
 ### I. Algorithm mode:
@@ -79,7 +62,7 @@ ___
     1st line : an interger n, the number of elements in the array
     2nd line: n integers, the elements of the array, separated by a single space
 
-### VI. Output:
+### VI. Output order:
     -time : algorithm running time
     -comp : number of comparisons
     -both : both time and comparisons
@@ -99,6 +82,14 @@ ___
     - Time complexity: O(n^2)
     - Space complexity: O(1)
 
+#### III. Pseudocode:
+    for i = 0 to n - 2
+        min = i
+        for j = i + 1 to n - 1
+            if a[j] < a[min]
+                min = j
+        swap a[i] and a[min]
+
 ### :two: Insertion Sort
 #### I. Algorithm:
     1. Insert the second element into the sorted subarray.
@@ -109,6 +100,15 @@ ___
 #### II. Complexity:
     - Time complexity: O(n^2)
     - Space complexity: O(1)
+
+#### III. Pseudocode:
+    for i = 1 to n - 1
+        x = a[i]
+        j = i - 1
+        while j >= 0 and a[j] > x
+            a[j + 1] = a[j]
+            j = j - 1
+        a[j + 1] = x
 
 ### :three: Bubble Sort
 #### I. Algorithm:
@@ -121,6 +121,12 @@ ___
     - Time complexity: O(n^2)
     - Space complexity: O(1)
 
+#### III. Pseudocode:
+    for i = 0 to n - 2
+        for j = n - 1 to i + 1
+            if a[j] < a[j - 1]
+                swap a[j] and a[j - 1]
+
 ### :four: Shaker Sort
 #### I. Algorithm:
     1. Compare the first element with the second element. If the first element is greater than the second element, swap them.
@@ -131,6 +137,15 @@ ___
 #### II. Complexity:
     - Time complexity: O(n^2)
     - Space complexity: O(1)
+
+#### III. Pseudocode:
+    for i = 0 to n - 2
+        for j = n - 1 to i + 1
+            if a[j] < a[j - 1]
+                swap a[j] and a[j - 1]
+        for j = i + 1 to n - 1
+            if a[j] < a[j - 1]
+                swap a[j] and a[j - 1]
 
 ### :five: Shell Sort
 #### I. Algorithm:
@@ -143,6 +158,16 @@ ___
     - Time complexity: O(n^2)
     - Space complexity: O(1)
 
+#### III. Pseudocode:
+    for gap = n/2 to 1
+        for i = gap to n - 1
+            x = a[i]
+            j = i - gap
+            while j >= 0 and a[j] > x
+                a[j + gap] = a[j]
+                j = j - gap
+            a[j + gap] = x
+
 ### :six: Heap Sort
 #### I. Algorithm:
     1. Build a max heap from the input data.
@@ -152,6 +177,24 @@ ___
 #### II. Complexity:
     - Time complexity: O(nlogn)
     - Space complexity: O(1)
+
+#### III. Pseudocode:
+    buildMaxHeap(a, n)
+    for i = n - 1 to 1
+        swap a[0] and a[i]
+        heapify(a, i, 0)
+
+    heapify(a, n, i)
+    largest = i
+    l = 2 * i + 1
+    r = 2 * i + 2
+    if l < n and a[l] > a[largest]
+        largest = l
+    if r < n and a[r] > a[largest]
+        largest = r
+    if largest != i
+        swap a[i] and a[largest]
+        heapify(a, n, largest)
 
 ### :seven: Merge Sort
 #### I. Algorithm:
@@ -163,6 +206,32 @@ ___
     - Time complexity: O(nlogn)
     - Space complexity: O(n)
 
+#### III. Pseudocode:
+    mergeSort(a, l, r)
+    if l < r
+        m = (l + r) / 2
+        mergeSort(a, l, m)
+        mergeSort(a, m + 1, r)
+        merge(a, l, m, r)
+
+    merge(a, l, m, r)
+    n1 = m - l + 1
+    n2 = r - m
+    L[1..n1], R[1..n2]
+    for i = 1 to n1
+        L[i] = a[l + i - 1]
+    for j = 1 to n2
+        R[j] = a[m + j]
+    i = 1
+    j = 1
+    for k = l to r
+        if L[i] <= R[j]
+            a[k] = L[i]
+            i = i + 1
+        else
+            a[k] = R[j]
+            j = j + 1
+
 ### :eight: Quick Sort
 #### I. Algorithm:
     1. Pick an element, called a pivot, from the list.
@@ -172,6 +241,23 @@ ___
 #### II. Complexity:
     - Time complexity: O(nlogn)
     - Space complexity: O(nlogn)
+
+#### III. Pseudocode:
+    quickSort(a, l, r)
+    if l < r
+        p = partition(a, l, r)
+        quickSort(a, l, p - 1)
+        quickSort(a, p + 1, r)
+
+    partition(a, l, r)
+    pivot = a[r]
+    i = l - 1
+    for j = l to r - 1
+        if a[j] <= pivot
+            i = i + 1
+            swap a[i] and a[j]
+    swap a[i + 1] and a[r]
+    return i + 1
 
 ### :nine: Counting Sort
 #### I. Algorithm:
@@ -187,6 +273,23 @@ ___
     - Time complexity: O(n+k)
     - Space complexity: O(n+k)
 
+#### III. Pseudocode:
+    countingSort(a, n)
+    max = findMax(a, n)
+    count[0..max]
+    output[1..n]
+    for i = 0 to max
+        count[i] = 0
+    for i = 1 to n
+        count[a[i]] = count[a[i]] + 1
+    for i = 1 to max
+        count[i] = count[i] + count[i - 1]
+    for i = n downto 1
+        output[count[a[i]]] = a[i]
+        count[a[i]] = count[a[i]] - 1
+    for i = 1 to n
+        a[i] = output[i]
+
 ### :keycap_ten: Radix Sort
 #### I. Algorithm:
     1. Find the maximum number to know number of digits.
@@ -196,6 +299,27 @@ ___
 #### II. Complexity:
     - Time complexity: O(nk)
     - Space complexity: O(n+k)
+
+#### III. Pseudocode:
+    radixSort(a, n)
+    m = findMax(a, n)
+    for exp = 1 to m
+        countingSort(a, n, exp)
+
+    countingSort(a, n, exp)
+    output[1..n]
+    count[0..9]
+    for i = 0 to 9
+        count[i] = 0
+    for i = 1 to n
+        count[(a[i] / exp) % 10] = count[(a[i] / exp) % 10] + 1
+    for i = 1 to 9
+        count[i] = count[i] + count[i - 1]
+    for i = n downto 1
+        output[count[(a[i] / exp) % 10]] = a[i]
+        count[(a[i] / exp) % 10] = count[(a[i] / exp) % 10] - 1
+    for i = 1 to n
+        a[i] = output[i]
 
 ### :one: :one: Flash Sort
 #### I. Algorithm:
@@ -213,7 +337,29 @@ ___
     - Time complexity: O(n)
     - Space complexity: O(n)
 
+#### III. Pseudocode:
+    flashSort(a, n)
+    max = findMax(a, n)
+    min = findMin(a, n)
+    m = (n * alpha) / (max - min)
+    l[m]
+    for i = 0 to m
+        l[i] = 0
+    for i = 0 to n - 1
+        index = (a[i] - min) * m / (max - min)
+        l[index] = l[index] + 1
+    for i = 1 to m
+        l[i] = l[i] + l[i - 1]
+    for i = n - 1 downto 0
+        index = (a[i] - min) * m / (max - min)
+        output[l[index]] = a[i]
+        l[index] = l[index] - 1
+    for i = 0 to n - 1
+        a[i] = output[i + 1]
+
 ## References
+
+- [1. tính thời gian chạy thuật toán](https://duongdinh24.com/tinh-thoi-gian-chay-chuong-trinh-trong-c-c/)
 
 
 

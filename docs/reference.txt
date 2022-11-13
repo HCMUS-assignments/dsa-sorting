@@ -1,2 +1,0 @@
-1. tính thời gian chạy thuật toán: 
-   https://duongdinh24.com/tinh-thoi-gian-chay-chuong-trinh-trong-c-c/
