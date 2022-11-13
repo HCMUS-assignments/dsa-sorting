@@ -1,19 +1,23 @@
 # :reminder_ribbon: DSA Sorting
+___
 # :page_facing_up: Table of Contents
-# - [Introduction](#introduction)
-# - [Sorting Algorithms](#sorting-algorithms)
-#   - [Selection Sort](#selection-sort)
-#   - [Insertion Sort](#insertion-sort)
-#   - [Bubble Sort](#bubble-sort)
-#   - [Shaker Sort](#shaker-sort)
-#   - [Shell Sort](#shell-sort)
-#   - [Heap Sort](#heap-sort)
-#   - [Merge Sort](#merge-sort)
-#   - [Quick Sort](#quick-sort)
-#   - [Counting Sort](#counting-sort)
-#   - [Radix Sort](#radix-sort)
-#   - [Flash Sort](#flash-sort)
-# - [References](#references)
+## - [Introduction](##introduction)
+## - [Sorting Algorithms](##sorting-algorithms)
+###   - [Selection Sort](###selection-sort)
+###   - [Insertion Sort](###insertion-sort)
+###   - [Bubble Sort](###bubble-sort)
+###   - [Shaker Sort](###shaker-sort)
+###   - [Shell Sort](###shell-sort)
+###   - [Heap Sort](###heap-sort)
+###   - [Merge Sort](###merge-sort)
+###   - [Quick Sort](###quick-sort)
+###   - [Counting Sort](###counting-sort)
+###   - [Radix Sort](###radix-sort)
+###   - [Flash Sort](###flash-sort)
+## - [References](##references)
+
+___
+
 
 # :book: Introduction
 ##I. Algorithm mode:
@@ -189,4 +193,4 @@
     - Time complexity: O(n)
     - Space complexity: O(n)
 
-# references
+# :book: references
