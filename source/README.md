@@ -1,25 +1,28 @@
-# :reminder_ribbon: DSA Sorting
+<h2 align="center">
+    🎗️ DSA Sorting 🎗️
+</h2>
+
 ___
 # :page_facing_up: Table of Contents
 ## 1. [Introduction](##introduction)
-## 2. [Sorting Algorithms](##sorting-algorithms)
-###     2.1 [Selection Sort](###selection-sort)
-###     2.2 [Insertion Sort](###insertion-sort)
-###     2.3 [Bubble Sort](###bubble-sort)
-###     2.4 [Shaker Sort](###shaker-sort)
-###     2.5 [Shell Sort](###shell-sort)
-###     2.6 [Heap Sort](###heap-sort)
-###     2.7 [Merge Sort](###merge-sort)
-###     2.8 [Quick Sort](###quick-sort)
-###     2.9 [Counting Sort](###counting-sort)
-###     2.10 [Radix Sort](###radix-sort)
-###     2.11 [Flash Sort](###flash-sort)
-## 3. [References](##references)
-
+## 2. [Sorting Algorithms](##Sorting-Algorithms)
+###     1. [Selection Sort](###selection-sort)
+###     2. [Insertion Sort](###insertion-sort)
+###     3. [Bubble Sort](###bubble-sort)
+###     4. [Shaker Sort](###shaker-sort)
+###     5. [Shell Sort](###shell-sort)
+###     6. [Heap Sort](###heap-sort)
+###     7. [Merge Sort](###merge-sort)
+###     8. [Quick Sort](###quick-sort)
+###     9. [Counting Sort](###counting-sort)
+###     10. [Radix Sort](###radix-sort)
+###     11. [Flash Sort](###flash-sort)
+## 3. [References](## :book: References)
 ___
 
 
-## :book: Introduction
+
+## Introduction
 ### I. Algorithm mode:
 
     command 1: running a sorting algorithm on the given input data
@@ -65,9 +68,10 @@ ___
     -comp : number of comparisons
     -both : both time and comparisons
 
-### VII. Data size: 10 000, 30 000, 50 000, 100 000, 300 000, 500 000
+### VII. Data size: 
+    10 000, 30 000, 50 000, 100 000, 300 000, 500 000
 
-## :books: Sorting Algorithms
+## Sorting Algorithms
 ### :one: Selection Sort
 #### I. Algorithm:
     1. Find the smallest element in the array and swap it with the first element.
@@ -193,4 +197,7 @@ ___
     - Time complexity: O(n)
     - Space complexity: O(n)
 
-## :book: references
+## References
+
+
+
