@@ -3,11 +3,22 @@
 // algorithms functions are defined here
 
 // 1. selection sort
-void selectionSort1 (int a[], int n) {
-
+void selectionSort(int a[], int n) {
+    for(int i = 0; i < n - 1; i++){
+        int min_index = i;
+        for(int j = i + 1; j < n; j++)
+            if(a[j] < a[min_index]) min_index = j;
+        swap(a[i], a[min_index]);
+    }
 }
-void selectionSort2 (int a[], int n) {
-
+void selectionSort(int a[], int n, int& cnt) {
+    cnt = 0;
+    for(int i = 0; (++cnt and i < n - 1); i++){
+            int min_index = i;
+            for(int j = i + 1; (++cnt and j < n); j++)
+                if(++cnt and a[j] < a[min_index]) min_index = j;
+            swap(a[i], a[min_index]);
+        }
 }
 
 // 2. insertion sort
@@ -30,7 +41,7 @@ void bubbleSort2 (int a[], int n) {
 void shakerSort1 (int a[], int n) {
 
 }
-void shakerSort2 (int a[], int n) {
+void shakerSort2 (int a[], int n, int& cnt) {
 
 }
 
@@ -51,10 +62,10 @@ void heapSort2 (int a[], int n) {
 }
 
 // 7. merge sort
-void mergeSort1 (int a[], int n) {
+void mergeSort (int a[], int n) {
 
 }
-void mergeSort2 (int a[], int n) {
+void mergeSort (int a[], int n, int& cnt) {
 
 }
 

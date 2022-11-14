@@ -4,8 +4,8 @@ using namespace std;
 // I. Algorithms
 
 // 1. selection sort
-void selectionSort1 (int a[], int n);
-void selectionSort2 (int a[], int n);
+void selectionSort (int a[], int n);
+void selectionSort (int a[], int n, int& cnt);
 
 // 2. insertion sort
 void insertionSort1 (int a[], int n);
@@ -16,8 +16,8 @@ void bubbleSort1 (int a[], int n);
 void bubbleSort2 (int a[], int n);
 
 // 4. shaker sort
-void shakerSort1 (int a[], int n);
-void shakerSort2 (int a[], int n);
+void shakerSort (int a[], int n);
+void shakerSort (int a[], int n, int& cnt);
 
 // 5. shell sort
 void shellSort1 (int a[], int n);
