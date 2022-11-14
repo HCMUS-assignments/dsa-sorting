@@ -96,6 +96,7 @@ int getTypeOfInputOrder (char *inputOrder);
 void displayNameOfInputOrder (char *inputOrder);
 
 
+
 // IV. Generate data functions
 
 // 1. generate random data
@@ -112,4 +113,45 @@ void GenerateNearlySortedData (int a[], int n);
 
 // 5. generate data function
 void GenerateData (int a[], int n, int dataType);
+
+
+// V. Supporting algorithm functions
+
+// 1. swap function
+void swap (int &a, int &b);
+
+// 2. heapify function
+void heapify (int a[], int n, int i);
+
+// 3. merge function
+void merge (int a[], int l, int m, int r);
+
+// 4. merge sort function
+void mergeSort (int a[], int l, int r);
+
+// 5. partition function
+int partition (int a[], int low, int high);
+
+// 6. quick sort function
+void quickSort (int a[], int low, int high);
+
+// 7. counting sort function
+void countingSort (int a[], int n, int exp);
+
+// 8. get max value function
+int getMax (int a[], int n);
+
+// 9. get min value function
+int getMin (int a[], int n);
+
+// 10. get number of digits function
+int getNumberOfDigits (int n);
+
+// 11. get digit function
+int getDigit (int n, int k);
+
+// 12. get number of digits function
+int getNumberOfDigits (int n);
+
+
 
