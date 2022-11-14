@@ -118,7 +118,7 @@ void GenerateData (int a[], int n, int dataType);
 // V. Supporting algorithm functions
 
 // 1. swap function
-void swap (int &a, int &b);
+void swap (int *a, int *b);
 
 // 2. heapify function
 void heapify (int a[], int n, int i);
@@ -150,8 +150,39 @@ int getNumberOfDigits (int n);
 // 11. get digit function
 int getDigit (int n, int k);
 
-// 12. get number of digits function
-int getNumberOfDigits (int n);
+// struct Node
+struct Node
+{
+    int data;
+    Node *pNext;
+};
 
+// struct Queue
+struct Queue {
+	Node* pHead;
+	Node* pTail;
+};
 
+// 12. create queue function
+void createQueue (Queue *&Q);
 
+// 13. create node function
+Node* createNode (int value);
+
+// 14. check if queue is empty
+bool isEmpty(Queue* Q);
+
+// 15. enqueue function
+void enqueue(Queue* Q,int value);
+
+// 16. dequeue function
+int dequeue(Queue* Q);
+
+// 17. get the number of digits of max number
+int getNumberDigitsOfMax(int a[], int n);
+
+// 18. count digits of compare function
+int countDigitsOfCompare(int value,int &compare);
+
+// 19. get number of digits of max number in compare function
+int getNumberDigitsOfMaxCompare(int a[], int n,int &compare);

@@ -151,10 +151,10 @@ void displayNameOfInputOrder (char *inputOrder) {
 //  Supporting algorithm functions
 
 // 1. swap function
-void swap (int &a, int &b) {
-    int temp = a;
-    a = b;
-    b = temp;
+void swap (int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
 // 2. heapify function
@@ -311,13 +311,80 @@ int getDigit (int n, int k) {
 
 }
 
-// 12. get number of digits function
-int getNumberOfDigits (int n) {
-    int count = 0;
-    while (n != 0) {
-        n /= 10;
-        count++;
-    }
-    return count;
+// 12. create queue function
+void createQueue(Queue* &Q)
+{
+	Q = new Queue;
+	Q->pHead = NULL;
+	Q->pTail = NULL;
+}
 
+// 13. create node function
+Node* createtNode(int value)
+{
+	Node* p = new Node;
+	p->data = value;
+	p->pNext = NULL;
+
+	return p;
+}
+
+// 14. check if queue is empty
+bool isEmpty(Queue* Q)
+{
+	if (Q->pHead == NULL) return true;
+	else return false;
+}
+
+// 15. enqueue function
+void enqueue(Queue* Q,int value)
+{
+	if (isEmpty(Q))
+		Q->pHead = Q->pTail = createNode(value);
+	else {
+		Node* p = createtNode(value);
+		Q->pTail->pNext = p;
+		Q->pTail = p;
+	}
+}
+
+// 16. dequeue function
+int dequeue(Queue* Q)
+{
+	Node* del = Q->pHead;
+	int result = del->data;
+	Q->pHead = del->pNext;
+	delete del;
+	return result;
+}
+
+// 17. get the number of digits of max number
+int getNumberDigitsOfMax(int a[], int n)
+{
+	int max = a[0];
+	for (int i = 1; i < n; i++)
+	{
+		if (a[i] > max) max = a[i];
+	}
+
+	return getNumberOfDigits(max);
+}
+
+// 18. count digits of compare function
+int countDigitsOfCompare(int value,int &compare)
+{
+	if (++compare && value < 10) return 1;
+	else return getNumberOfDigits(value / 10) + 1;
+}
+
+// 19. get number of digits of max number in compare function
+int getNumberDigitsOfMaxCompare(int a[], int n,int &compare)
+{
+	int max = a[0];
+	for (int i = 1; ++compare && i < n; i++)
+	{
+		if (++compare && a[i] > max) max = a[i];
+	}
+
+	return countDigitsOfCompare(max,compare);
 }
