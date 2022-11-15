@@ -222,7 +222,7 @@ void heapify (int a[], int n, int i) {
 //         merge(a, l, m, r);
 //     }
 
-// }
+//   }
 
 // 5. partition function
 int partition (int a[], int low, int high) {
