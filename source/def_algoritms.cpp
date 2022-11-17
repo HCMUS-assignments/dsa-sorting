@@ -123,14 +123,27 @@ double shakerSortTime (int a[], int n) {
 
 }
 int shakerSortComp (int a[], int n) {
-    int comp = 0;
+    int compare = 0;
 
     // counting comparisons
+    int left = 0;
+    int right = n - 1;
+    while (++compare && left < right) {
+        for (int i = right;++compare && i > left; i--) {
+            if (++compare && a[i] < a[i - 1]) {
+                swap(a[i], a[i - 1]);
+            }
+        }
+        left++;
+        for (int i = left;++compare &&  i < right; i++) {
+            if (++compare && a[i] > a[i + 1]) {
+                swap(a[i], a[i + 1]);
+            }
+        }
+        right--;
+    }
 
-    
-    return comp;
-
-
+    return compare;
 }
 
 // 5. shell sort
@@ -180,6 +193,21 @@ int shellSortComp (int a[], int n) {
 }
 
 // 6. heap sort
+void heapify(int* a, int n, int i)
+{
+	int curr = i;
+	int left = 2*i+1;
+	int right = 2*i+2;
+
+	if (a[curr]>a[left]) curr = left;
+	if (a[curr]>a[left]) curr = right;
+
+	if (curr != i)
+	{
+		swap(a[i], a[curr]);
+		heapify(a,n,curr);
+	}
+}
 double heapSortTime (int a[], int n) {
     clock_t start = clock();
 
@@ -196,6 +224,7 @@ double heapSortTime (int a[], int n) {
     return (double)(end - start) / CLOCKS_PER_SEC;
 
 }
+
 int heapSortComp (int a[], int n) {
     int comp = 0;
 
