@@ -28,14 +28,19 @@ double shellSortTime (int a[], int n);
 int shellSortComp (int a[], int n);
 
 // 6. heap sort
+void heapify (int a[], int n, int i);
 double heapSortTime (int a[], int n);
 int heapSortComp (int a[], int n);
 
 // 7. merge sort
+void mergeSort (int a[], int l, int r);
+void merge (int a[], int l, int m, int r);
 double mergeSortTime (int a[], int n);
 int mergeSortComp (int a[], int n);
 
 // 8. quick sort
+int partition (int a[], int low, int high);
+void quickSort (int a[], int low, int high);
 double quickSortTime (int a[], int n);
 int quickSortComp (int a[], int n);
 
@@ -120,29 +125,16 @@ void GenerateData (int a[], int n, int dataType);
 // 1. swap function
 void swap (int *a, int *b);
 
-// 2. heapify function
-void heapify (int a[], int n, int i);
-
-
-// 5. partition function
-int partition (int a[], int low, int high);
-
-// 6. quick sort function
-void quickSort (int a[], int low, int high);
-
-// 7. counting sort function
-void countingSort (int a[], int n, int exp);
-
-// 8. get max value function
+// 2. get max value function
 int getMax (int a[], int n);
 
-// 9. get min value function
+// 3. get min value function
 int getMin (int a[], int n);
 
-// 10. get number of digits function
+// 4. get number of digits function
 int getNumberOfDigits (int n);
 
-// 11. get digit function
+// 5. get digit function
 int getDigit (int n, int k);
 
 // struct Node
@@ -158,26 +150,26 @@ struct Queue {
 	Node* pTail;
 };
 
-// 12. create queue function
+// 6. create queue function
 void createQueue (Queue *&Q);
 
-// 13. create node function
+// 7. create node function
 Node* createNode (int value);
 
-// 14. check if queue is empty
+// 8. check if queue is empty
 bool isEmpty(Queue* Q);
 
-// 15. enqueue function
+// 9. enqueue function
 void enqueue(Queue* Q,int value);
 
-// 16. dequeue function
+// 10. dequeue function
 int dequeue(Queue* Q);
 
-// 17. get the number of digits of max number
+// 11. get the number of digits of max number
 int getNumberDigitsOfMax(int a[], int n);
 
-// 18. count digits of compare function
+// 12. count digits of compare function
 int countDigitsOfCompare(int value,int &compare);
 
-// 19. get number of digits of max number in compare function
+// 13. get number of digits of max number in compare function
 int getNumberDigitsOfMaxCompare(int a[], int n,int &compare);

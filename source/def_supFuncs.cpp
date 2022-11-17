@@ -157,117 +157,7 @@ void swap (int *a, int *b) {
     *b = temp;
 }
 
-// 2. heapify function
-void heapify (int a[], int n, int i) {
-    int largest = i;
-    int l = 2 * i + 1;
-    int r = 2 * i + 2;
-    if (l < n && a[l] > a[largest]) {
-        largest = l;
-    }
-    if (r < n && a[r] > a[largest]) {
-        largest = r;
-    }
-    if (largest != i) {
-        swap(a[i], a[largest]);
-        heapify(a, n, largest);
-    }
-
-}
-
-// 3. merge function
-// void merge (int a[], int l, int m, int r) {
-//     int i, j, k;
-//     int n1 = m - l + 1;
-//     int n2 = r - m;
-//     int L[n1], R[n2];
-//     for (i = 0; i < n1; i++) {
-//         L[i] = a[l + i];
-//     }
-//     for (j = 0; j < n2; j++) {
-//         R[j] = a[m + 1 + j];
-//     }
-//     i = 0;
-//     j = 0;
-//     k = l;
-//     while (i < n1 && j < n2) {
-//         if (L[i] <= R[j]) {
-//             a[k] = L[i];
-//             i++;
-//         } else {
-//             a[k] = R[j];
-//             j++;
-//         }
-//         k++;
-//     }
-//     while (i < n1) {
-//         a[k] = L[i];
-//         i++;
-//         k++;
-//     }
-//     while (j < n2) {
-//         a[k] = R[j];
-//         j++;
-//         k++;
-//     }
-
-// }
-
-// 4. merge sort function
-// void mergeSort (int a[], int l, int r) {
-//     if (l < r) {
-//         int m = l + (r - l) / 2;
-//         mergeSort(a, l, m);
-//         mergeSort(a, m + 1, r);
-//         merge(a, l, m, r);
-//     }
-
-//   }
-
-// 5. partition function
-int partition (int a[], int low, int high) {
-    int pivot = a[high];
-    int i = (low - 1);
-    for (int j = low; j <= high - 1; j++) {
-        if (a[j] < pivot) {
-            i++;
-            swap(a[i], a[j]);
-        }
-    }
-    swap(a[i + 1], a[high]);
-    return (i + 1);
-
-}
-
-// 6. quick sort function
-void quickSort (int a[], int low, int high) {
-    if (low < high) {
-        int pi = partition(a, low, high);
-        quickSort(a, low, pi - 1);
-        quickSort(a, pi + 1, high);
-    }
-}
-
-// 7. counting sort function
-void countingSort (int a[], int n, int exp) {
-    int output[n];
-    int i, count[10] = {0};
-    for (i = 0; i < n; i++) {
-        count[(a[i] / exp) % 10]++;
-    }
-    for (i = 1; i < 10; i++) {
-        count[i] += count[i - 1];
-    }
-    for (i = n - 1; i >= 0; i--) {
-        output[count[(a[i] / exp) % 10] - 1] = a[i];
-        count[(a[i] / exp) % 10]--;
-    }
-    for (i = 0; i < n; i++) {
-        a[i] = output[i];
-    }
-}
-
-// 8. get max value function
+// 2. get max value function
 int getMax (int a[], int n) {
     int max = a[0];
     for (int i = 1; i < n; i++) {
@@ -278,7 +168,7 @@ int getMax (int a[], int n) {
     return max;
 }
 
-// 9. get min value function
+// 3. get min value function
 int getMin (int a[], int n) {
     int min = a[0];
     for (int i = 1; i < n; i++) {
@@ -290,7 +180,7 @@ int getMin (int a[], int n) {
 
 }
 
-// 10. get number of digits function
+// 4. get number of digits function
 int getNumberOfDigits (int n) {
     int count = 0;
     while (n != 0) {
@@ -300,7 +190,7 @@ int getNumberOfDigits (int n) {
     return count;
 }
 
-// 11. get digit function
+// 5. get digit function
 int getDigit (int n, int k) {
     int digit = 0;
     for (int i = 0; i < k; i++) {
@@ -311,7 +201,7 @@ int getDigit (int n, int k) {
 
 }
 
-// 12. create queue function
+// 6. create queue function
 void createQueue(Queue* &Q)
 {
 	Q = new Queue;
@@ -319,7 +209,7 @@ void createQueue(Queue* &Q)
 	Q->pTail = NULL;
 }
 
-// 13. create node function
+// 7. create node function
 Node* createtNode(int value)
 {
 	Node* p = new Node;
@@ -329,14 +219,14 @@ Node* createtNode(int value)
 	return p;
 }
 
-// 14. check if queue is empty
+// 8. check if queue is empty
 bool isEmpty(Queue* Q)
 {
 	if (Q->pHead == NULL) return true;
 	else return false;
 }
 
-// 15. enqueue function
+// 9. enqueue function
 void enqueue(Queue* Q,int value)
 {
 	if (isEmpty(Q))
@@ -348,7 +238,7 @@ void enqueue(Queue* Q,int value)
 	}
 }
 
-// 16. dequeue function
+// 10. dequeue function
 int dequeue(Queue* Q)
 {
 	Node* del = Q->pHead;
@@ -358,7 +248,7 @@ int dequeue(Queue* Q)
 	return result;
 }
 
-// 17. get the number of digits of max number
+// 11. get the number of digits of max number
 int getNumberDigitsOfMax(int a[], int n)
 {
 	int max = a[0];
@@ -370,14 +260,14 @@ int getNumberDigitsOfMax(int a[], int n)
 	return getNumberOfDigits(max);
 }
 
-// 18. count digits of compare function
+// 12. count digits of compare function
 int countDigitsOfCompare(int value,int &compare)
 {
 	if (++compare && value < 10) return 1;
 	else return getNumberOfDigits(value / 10) + 1;
 }
 
-// 19. get number of digits of max number in compare function
+// 13. get number of digits of max number in compare function
 int getNumberDigitsOfMaxCompare(int a[], int n,int &compare)
 {
 	int max = a[0];
