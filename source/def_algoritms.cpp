@@ -8,13 +8,13 @@ double selectionSortTime (int a[], int n) {
 
     // selection sort
     for (int i = 0; i < n - 1; i++) {
-        int min_index = i;
+        int min = i;
         for (int j = i + 1; j < n; j++) {
-            if (a[j] < a[min_index]) {
-                min_index = j;
+            if (a[j] < a[min]) {
+                min = j;
             }
         }
-        swap(a[i], a[min_index]);
+        swap(a[i], a[min]);
     }
     
     clock_t end = clock();
@@ -25,20 +25,21 @@ int selectionSortComp (int a[], int n) {
 
     // counting comparisons
     for (int i = 0; ++comp && i < n - 1; i++) {
-        int min_index = i;
+        int min = i;
         for (int j = i + 1; ++comp && j < n; j++) {
-            if (++ comp && a[j] < a[min_index]) {
-                min_index = j;
+            if (++comp && a[j] < a[min]) {
+                min = j;
             }
         }
-        swap(a[i], a[min_index]);
+        swap(a[i], a[min]);
     }
+
     
     return comp;
 
 }
 
-// 2. insertion sort  *
+// 2. insertion sort  
 double insertionSortTime (int a[], int n) {
     clock_t start = clock();
 
@@ -62,6 +63,15 @@ int insertionSortComp (int a[], int n) {
     int comp = 0;
 
     // counting comparisons
+    for (int i = 1; ++comp && i < n; i++) {
+        int j = i - 1;
+        int x = a[i];
+        while (++comp && j >= 0 && ++comp && a[j] > x) {
+            a[j + 1] = a[j];
+            j--;
+        }
+        a[j + 1] = x;
+    }
 
     
     return comp;
@@ -93,6 +103,7 @@ int bubbleSortComp (int a[], int n) {
             if(++compare && a[j] < a[j-1]) swap(a[j], a[j-1]);
         }
     }
+    return compare;
 }
 
 // 4. shaker sort
@@ -159,11 +170,11 @@ double shellSortTime (int a[], int n) {
 			while(j >= h && a[j - h] > temp){
 				a[j] = a[j - h];
 				j -= h;
-			}
+    }
 			a[j] = temp;
-		}
+            }
 		h /= 2;
-	}
+    }
 
     clock_t end = clock();
     return (double)(end - start) / CLOCKS_PER_SEC;
@@ -189,7 +200,7 @@ int shellSortComp (int a[], int n) {
 	}
 
     return cnt;
-
+    
 }
 
 // 6. heap sort
@@ -206,8 +217,8 @@ void heapify(int* a, int n, int i)
 	{
 		swap(a[i], a[curr]);
 		heapify(a,n,curr);
-	}
-}
+    }
+    }
 double heapSortTime (int a[], int n) {
     clock_t start = clock();
 
@@ -224,7 +235,6 @@ double heapSortTime (int a[], int n) {
     return (double)(end - start) / CLOCKS_PER_SEC;
 
 }
-
 int heapSortComp (int a[], int n) {
     int comp = 0;
 
@@ -247,16 +257,16 @@ void merge(int* arr, int *leftArr, int* rightArr, int n){
 		if(leftArr[iL] <= rightArr[iR])
 			arr[i++] = leftArr[iL++];
 		else arr[i++] = rightArr[iR++];
-	}
+    }
 	while (iL < nL){
 		arr[i++] = leftArr[iL++];
-	}
+    }
 
 	while(iR < nR){
 		arr[i++] = rightArr[iR++];
-	}
-	
 }
+
+    }
 void mergeSort(int a[], int n){
 	if (n == 1) return;
 
@@ -290,6 +300,14 @@ double mergeSortTime (int a[], int n) {
 
 
 }
+int mergeSortComp (int a[], int n) {
+    int comp = 0;
+
+    // counting comparisons
+
+    
+    return comp;
+}
 
 void merge(int* arr, int *leftArr, int* rightArr, int n, int& cnt){
 	int nL = n/2;
@@ -300,15 +318,15 @@ void merge(int* arr, int *leftArr, int* rightArr, int n, int& cnt){
 		if(++cnt && leftArr[iL] <= rightArr[iR])
 			arr[i++] = leftArr[iL++];
 		else arr[i++] = rightArr[iR++];
-	}
+        }
 	while (++cnt && iL < nL){
 		arr[i++] = leftArr[iL++];
-	}
+    }
 
 	while(++cnt && iR < nR){
 		arr[i++] = rightArr[iR++];
-	}
-	
+}
+
 }
 void mergeSort(int a[], int n, int& cnt){
 	if (++cnt && n == 1) return;
@@ -330,13 +348,6 @@ void mergeSort(int a[], int n, int& cnt){
 
     delete[] arrLeft;
     delete[] arrRight;
-}
-
-int mergeSortComp (int a[], int n) {
-    int cnt = 0;
-    mergeSort(a, n, cnt);
-    return cnt;
-
 }
 
 // 8. quick sort  **
