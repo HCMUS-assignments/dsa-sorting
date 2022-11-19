@@ -2,7 +2,7 @@
 
 // algorithms functions are defined here
 
-// 1. selection sort
+// 1. selection sort (done)
 double selectionSortTime (int a[], int n) {
     clock_t start = clock();
 
@@ -36,27 +36,27 @@ int selectionSortComp (int a[], int n) {
 
     
     return comp;
-
 }
 
-// 2. insertion sort  
+// 2. insertion sort  * (done)
 double insertionSortTime (int a[], int n) {
     clock_t start = clock();
 
     // insertion sort
     for (int i = 1; i < n; i++) {
         int j = i - 1;
-        int x = a[i];
-        while (j >= 0 && a[j] > x) {
+        int key = a[i];
+
+        while (j >= 0 && a[j] > key) {
             a[j + 1] = a[j];
             j--;
         }
-        a[j + 1] = x;
+
+        a[j + 1] = key;
     }
 
     clock_t end = clock();
     return (double)(end - start) / CLOCKS_PER_SEC;
-
 
 }
 int insertionSortComp (int a[], int n) {
@@ -65,28 +65,32 @@ int insertionSortComp (int a[], int n) {
     // counting comparisons
     for (int i = 1; ++comp && i < n; i++) {
         int j = i - 1;
-        int x = a[i];
-        while (++comp && j >= 0 && ++comp && a[j] > x) {
+        int key = a[i];
+
+        while (++comp && j >= 0 && ++comp && a[j] > key) {
             a[j + 1] = a[j];
             j--;
         }
-        a[j + 1] = x;
-    }
 
+        a[j + 1] = key;
+    }
     
     return comp;
 
 }
 
-// 3. bubble sort
+// 3. bubble sort (done)
 double bubbleSortTime (int a[], int n) {
     clock_t start = clock();
 
-    for(int i = 0; i < n-1; i++)
+    for (int i = 0; i < n-1 ; i++)
     {
-        for(int j = n-1; j > i; j--)
+        for (int j = 0; j < n-i-1; j++)
         {
-            if(a[j] < a[j-1]) swap(a[j], a[j-1]);
+            if (a[j] > a[j+1])
+            {
+                swap(a[j], a[j+1]);
+            }
         }
     }
 
@@ -95,18 +99,23 @@ double bubbleSortTime (int a[], int n) {
 }
 
 int bubbleSortComp (int a[], int n) {
-    int compare = 0;
-    for(int i = 0; ++compare &&  i < n-1; i++)
+    int comp = 0;
+
+    // counting comparisons
+    for (int i = 0; ++comp &&  i < n-1; i++)
     {
-        for(int j = n-1; ++compare &&  j > i; j--)
+        for (int j = 0; ++comp && j < n-i-1; j++)
         {
-            if(++compare && a[j] < a[j-1]) swap(a[j], a[j-1]);
+            if (++comp && a[j] > a[j+1])
+            {
+                swap(a[j], a[j+1]);
+            }
         }
     }
-    return compare;
+    return comp;
 }
 
-// 4. shaker sort
+// 4. shaker sort (done)
 double shakerSortTime (int a[], int n) {
     clock_t start = clock();
 
@@ -134,27 +143,27 @@ double shakerSortTime (int a[], int n) {
 
 }
 int shakerSortComp (int a[], int n) {
-    int compare = 0;
+    int comp = 0;
 
     // counting comparisons
     int left = 0;
     int right = n - 1;
-    while (++compare && left < right) {
-        for (int i = right;++compare && i > left; i--) {
-            if (++compare && a[i] < a[i - 1]) {
+    while (++comp && left < right) {
+        for (int i = right;++comp &&  i > left; i--) {
+            if (++comp && a[i] < a[i - 1]) {
                 swap(a[i], a[i - 1]);
             }
         }
         left++;
-        for (int i = left;++compare &&  i < right; i++) {
-            if (++compare && a[i] > a[i + 1]) {
+        for (int i = left;++comp && i < right; i++) {
+            if (++comp && a[i] > a[i + 1]) {
                 swap(a[i], a[i + 1]);
             }
         }
         right--;
     }
 
-    return compare;
+    return comp;
 }
 
 // 5. shell sort
@@ -162,44 +171,37 @@ double shellSortTime (int a[], int n) {
     clock_t start = clock();
 
     // shell sort
-    int h = n / 2;
-	while(h > 0){
-		for(int i = h; i < n; i++){
-			int temp = a[i];
-			int j = i;
-			while(j >= h && a[j - h] > temp){
-				a[j] = a[j - h];
-				j -= h;
-    }
-			a[j] = temp;
+    for (int gap = n / 2; gap > 0; gap /= 2) {
+        for (int i = gap; i < n; i++) {
+            int temp = a[i];
+            int j;
+            for (j = i; j >= gap && a[j - gap] > temp; j -= gap) {
+                a[j] = a[j - gap];
             }
-		h /= 2;
+            a[j] = temp;
+        }
     }
 
     clock_t end = clock();
     return (double)(end - start) / CLOCKS_PER_SEC;
 
-
 }
 int shellSortComp (int a[], int n) {
-    int cnt = 0;
+    int comp = 0;
 
     // counting comparisons
-    int h = n / 2;
-	while(++cnt && h > 0){
-		for(int i = h; ++cnt && i < n; i++){
-			int temp = a[i];
-			int j = i;
-			while((++cnt && j >= h) && (++cnt && a[j - h] > temp)){
-				a[j] = a[j - h];
-				j -= h;
-			}
-			a[j] = temp;
-		}
-		h /= 2;
-	}
+     for (int gap = n / 2; ++comp && gap > 0; gap /= 2) {
+        for (int i = gap; ++comp && i < n; i++) {
+            int temp = a[i];
+            int j;
+            for (j = i; ++comp && j >= gap && ++comp && a[j - gap] > temp; j -= gap) {
+                a[j] = a[j - gap];
+            }
+            a[j] = temp;
+        }
+    }
 
-    return cnt;
+    return comp;
     
 }
 

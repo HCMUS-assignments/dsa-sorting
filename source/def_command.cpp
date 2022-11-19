@@ -221,6 +221,10 @@ void doCommand4 (char *alg1, char *alg2, char *fileIn) {
     // read file
     readInputFile(fileIn, a, n);
 
+    // create an copy of array
+    int *b = new int[n];
+    memmove(b, a, n * sizeof(int)); 
+
     // declare the variables
     double time1 = -1;
     int comp1 = -1;
@@ -229,7 +233,7 @@ void doCommand4 (char *alg1, char *alg2, char *fileIn) {
 
     // solve the problem
     doOutputOrder("-both", time1, comp1, a, n, alg1);
-    doOutputOrder("-both", time2, comp2, a, n, alg2);
+    doOutputOrder("-both", time2, comp2, b, n, alg2);
 
     // display the result in the console
     cout << "\nCOMPARE MODE\n";
@@ -270,12 +274,16 @@ void doCommand5 (char *alg1, char *alg2, char *inputSize, char *inputOrder) {
     // generate data
     GenerateData(a, n, getTypeOfInputOrder(inputOrder));
 
+    // create an copy of array
+    int *b = new int[n];
+    memmove(b, a, n * sizeof(int));
+
     // writing file : 
     writingFile("input.txt", a, n);
 
     // solve the problem
     doOutputOrder("-both", time1, comp1, a, n, alg1);
-    doOutputOrder("-both", time2, comp2, a, n, alg2);
+    doOutputOrder("-both", time2, comp2, b, n, alg2);
 
     // display the result in the console
     cout << "Running time: " << time1 << "s | " << time2 << "s" << endl;
