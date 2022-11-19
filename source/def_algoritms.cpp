@@ -206,21 +206,21 @@ int shellSortComp (int a[], int n) {
 }
 
 // 6. heap sort
-void heapify(int* a, int n, int i)
-{
-	int curr = i;
-	int left = 2*i+1;
-	int right = 2*i+2;
-
-	if (a[curr]>a[left]) curr = left;
-	if (a[curr]>a[left]) curr = right;
-
-	if (curr != i)
-	{
-		swap(a[i], a[curr]);
-		heapify(a,n,curr);
+void heapify (int a[], int n, int i) {
+    int largest = i;
+    int l = 2 * i + 1;
+    int r = 2 * i + 2;
+    if (l < n && a[l] > a[largest]) {
+        largest = l;
     }
+    if (r < n && a[r] > a[largest]) {
+        largest = r;
     }
+    if (largest != i) {
+        swap(a[i], a[largest]);
+        heapify(a, n, largest);
+    }
+}
 double heapSortTime (int a[], int n) {
     clock_t start = clock();
 
@@ -235,17 +235,36 @@ double heapSortTime (int a[], int n) {
 
     clock_t end = clock();
     return (double)(end - start) / CLOCKS_PER_SEC;
+}
 
+void heapifyComp(int a[], int n, int i, int &comp) {
+    int largest = i;
+    int l = 2 * i + 1;
+    int r = 2 * i + 2;
+    if ((++comp && l < n) && (++comp && a[l] > a[largest])) {
+        largest = l;
+    }
+    if ((++comp && r < n) && (++comp && a[r] > a[largest])) {
+        largest = r;
+    }
+    if (++comp && largest != i) {
+        swap(a[i], a[largest]);
+        heapifyComp(a, n, largest,comp);
+    }
 }
 int heapSortComp (int a[], int n) {
     int comp = 0;
 
     // counting comparisons
+    for (int i = n / 2 - 1;++comp && i >= 0; i--) {
+        heapifyComp(a, n, i,comp);
+    }
+    for (int i = n - 1;++comp && i >= 0; i--) {
+        swap(a[0], a[i]);
+        heapifyComp(a, i, 0,comp);
+    }
 
-    
     return comp;
-
-
 }
 
 // 7. merge sort

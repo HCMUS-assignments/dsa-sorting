@@ -30,6 +30,7 @@ int shellSortComp (int a[], int n);
 // 6. heap sort
 void heapify (int a[], int n, int i);
 double heapSortTime (int a[], int n);
+void heapifyComp(int a[], int n, int i, int &comp);
 int heapSortComp (int a[], int n);
 
 // 7. merge sort
