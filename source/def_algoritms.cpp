@@ -18,7 +18,7 @@ double selectionSortTime (int a[], int n) {
     }
     
     clock_t end = clock();
-    return (double)(end - start) / CLOCKS_PER_SEC;
+    return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 }
 int selectionSortComp (int a[], int n) {
     int comp = 0;
@@ -56,7 +56,7 @@ double insertionSortTime (int a[], int n) {
     }
 
     clock_t end = clock();
-    return (double)(end - start) / CLOCKS_PER_SEC;
+    return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 
 }
 int insertionSortComp (int a[], int n) {
@@ -95,7 +95,7 @@ double bubbleSortTime (int a[], int n) {
     }
 
     clock_t end = clock();
-    return (double)(end - start) / CLOCKS_PER_SEC;
+    return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 }
 
 int bubbleSortComp (int a[], int n) {
@@ -138,7 +138,7 @@ double shakerSortTime (int a[], int n) {
     }
 
     clock_t end = clock();
-    return (double)(end - start) / CLOCKS_PER_SEC;
+    return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 
 
 }
@@ -183,7 +183,7 @@ double shellSortTime (int a[], int n) {
     }
 
     clock_t end = clock();
-    return (double)(end - start) / CLOCKS_PER_SEC;
+    return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 
 }
 int shellSortComp (int a[], int n) {
@@ -234,7 +234,7 @@ double heapSortTime (int a[], int n) {
     }
 
     clock_t end = clock();
-    return (double)(end - start) / CLOCKS_PER_SEC;
+    return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 }
 
 void heapifyComp(int a[], int n, int i, int &comp) {
@@ -320,7 +320,7 @@ double mergeSortTime (int a[], int n) {
     mergeSort(a, n);
 
     clock_t end = clock();
-    return (double)(end - start) / CLOCKS_PER_SEC;
+    return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 }
 
 
@@ -410,7 +410,7 @@ double quickSortTime (int a[], int n) {
     quickSort(a, 0, n - 1);
 
     clock_t end = clock();
-    return (double)(end - start) / CLOCKS_PER_SEC;
+    return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 
 
 }
@@ -482,7 +482,7 @@ double countingSortTime (int a[], int n) {
     }
 
     clock_t end = clock();
-    return (double)(end - start) / CLOCKS_PER_SEC;
+    return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 
 }
 int countingSortComp (int a[], int n) {
@@ -519,11 +519,12 @@ int countingSortComp (int a[], int n) {
 
 }
 
-// 10. radix sort 
+// 10. radix sort (done)
 
 double radixSortTime (int a[], int n) {
     clock_t start = clock();
 
+    // radix sort
     int max = getNumberDigitsOfMax(a, n);
 	Queue** table = new Queue*[10];
 
@@ -554,11 +555,13 @@ double radixSortTime (int a[], int n) {
 	delete[] table;    
 
     clock_t end = clock();
-    return (double)(end - start) / CLOCKS_PER_SEC;
+    return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 }
 
 int radixSortComp (int a[], int n) {
     int comp = 0;
+
+    // counting comparisons
     int max = getNumberDigitsOfMaxCompare(a, n, comp);
 	Queue** table = new Queue*[10];
 
@@ -572,13 +575,14 @@ int radixSortComp (int a[], int n) {
 		for (int i = 0; ++comp && i < n; i++)
 		{
 			int unit =int(a[i] / pow(10, k)) % 10;
-			enqueue(table[unit], a[i]);
+			enqueue(table[unit], a[i]);    // enqueue has 1 comparison
+            ++comp;
 		}
 		int j = 0;
 		int i = 0;
 		while (++comp && j < 10)
 		{
-			while (++comp && !isEmpty(table[j]))
+			while (++comp && !isEmpty(table[j]) && ++comp) // isEmpty has 1 comparison
 			{
 				a[i++] = dequeue(table[j]);
 			}
@@ -599,8 +603,10 @@ double flashSortTime (int a[], int n) {
 	int m = int(0.45 * n);
 
 	int* Class = new int[m];
+
 	for (int i = 0; i < m; i++)
 		Class[i] = 0;
+
 	for (int i = 1; i < n; i++)
 	{
 		if (a[i] < minVal)
@@ -610,7 +616,8 @@ double flashSortTime (int a[], int n) {
 	}
 
 	if (a[max] == minVal)
-		return;
+		return 0;
+        
 	double c1 = (double)(m - 1) / (a[max] - minVal);
 	for (int i = 0; i < n; i++)
 	{
@@ -660,7 +667,7 @@ double flashSortTime (int a[], int n) {
 	}
 
     clock_t end = clock();
-    return (double)(end - start) / CLOCKS_PER_SEC;
+    return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 }
 
 int flashSortComp (int a[], int n) {

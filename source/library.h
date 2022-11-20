@@ -172,7 +172,7 @@ int dequeue(Queue* Q);
 int getNumberDigitsOfMax(int a[], int n);
 
 // 12. count digits of compare function
-int countDigitsOfCompare(int value,int &compare);
+int countDigitsOfCompare(int value,int &comp);
 
 // 13. get number of digits of max number in compare function
-int getNumberDigitsOfMaxCompare(int a[], int n,int &compare);
+int getNumberDigitsOfMaxCompare(int a[], int n,int &comp);

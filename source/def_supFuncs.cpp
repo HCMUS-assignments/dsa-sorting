@@ -223,7 +223,7 @@ Node* createtNode(int value)
 bool isEmpty(Queue* Q)
 {
 	if (Q->pHead == NULL) return true;
-	else return false;
+	return false;
 }
 
 // 9. enqueue function
@@ -261,20 +261,20 @@ int getNumberDigitsOfMax(int a[], int n)
 }
 
 // 12. count digits of compare function
-int countDigitsOfCompare(int value,int &compare)
+int countDigitsOfCompare(int value,int &comp)
 {
-	if (++compare && value < 10) return 1;
-	else return getNumberOfDigits(value / 10) + 1;
+	if (++comp && value < 10) return 1;
+	return countDigitsOfCompare(value / 10, comp) + 1;
 }
 
 // 13. get number of digits of max number in compare function
-int getNumberDigitsOfMaxCompare(int a[], int n,int &compare)
+int getNumberDigitsOfMaxCompare(int a[], int n,int &comp)
 {
 	int max = a[0];
-	for (int i = 1; ++compare && i < n; i++)
+	for (int i = 1; ++comp && i < n; i++)
 	{
-		if (++compare && a[i] > max) max = a[i];
+		if (++comp && a[i] > max) max = a[i];
 	}
 
-	return countDigitsOfCompare(max,compare);
+	return countDigitsOfCompare(max,comp);
 }

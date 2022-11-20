@@ -24,7 +24,7 @@ void doCommand1 (char *alg, char *fileIn, char *output) {
     cout << "----------------------------------------" << endl;
     cout << "Running time (if required): " ;
     if (time != -1) {
-        cout <<  time << "s" << endl;
+        cout <<  time << "ms" << endl;
     } else {
         cout << endl;
     }
@@ -72,7 +72,7 @@ void doCommand2 (char *alg, char *inputSize, char *inputOrder, char *output) {
     cout << "----------------------------------------" << endl;
     cout << "Running time (if required): " ;
     if (time != -1) {
-        cout <<  time << "s" << endl;
+        cout <<  time << "ms" << endl;
     } else {
         cout << endl;
     }
@@ -116,7 +116,7 @@ void doCommand3 (char *alg, char *inputSize, char *output) {
     cout << "----------------------------------------" << endl;
     cout << "Running time (if required): " ;
     if (time != -1) {
-        cout <<  time << "s" << endl;
+        cout <<  time << "ms" << endl;
     } else {
         cout << endl;
     }
@@ -143,7 +143,7 @@ void doCommand3 (char *alg, char *inputSize, char *output) {
     cout << "----------------------------------------" << endl;
     cout << "Running time (if required): " ;
     if (time != -1) {
-        cout <<  time << "s" << endl;
+        cout <<  time << "ms" << endl;
     } else {
         cout << endl;
     }
@@ -170,7 +170,7 @@ void doCommand3 (char *alg, char *inputSize, char *output) {
     cout << "----------------------------------------" << endl;
     cout << "Running time (if required): " ;
     if (time != -1) {
-        cout <<  time << "s" << endl;
+        cout <<  time << "ms" << endl;
     } else {
         cout << endl;
     }
@@ -197,7 +197,7 @@ void doCommand3 (char *alg, char *inputSize, char *output) {
     cout << "----------------------------------------" << endl;
     cout << "Running time (if required): " ;
     if (time != -1) {
-        cout <<  time << "s" << endl;
+        cout <<  time << "ms" << endl;
     } else {
         cout << endl;
     }
@@ -241,7 +241,7 @@ void doCommand4 (char *alg1, char *alg2, char *fileIn) {
     cout << "Input file: " << fileIn << endl;
     cout << "Input size: " << n << endl;
     cout << "----------------------------------------" << endl;
-    cout << "Running time: " << time1 << "s | " << time2 << "s" << endl;
+    cout << "Running time: " << time1 << "ms | " << time2 << "ms" << endl;
     cout << "Comparisons: " << comp1 << " | " << comp2 << endl << endl;
 
     // writing file
@@ -286,7 +286,7 @@ void doCommand5 (char *alg1, char *alg2, char *inputSize, char *inputOrder) {
     doOutputOrder("-both", time2, comp2, b, n, alg2);
 
     // display the result in the console
-    cout << "Running time: " << time1 << "s | " << time2 << "s" << endl;
+    cout << "Running time: " << time1 << "ms | " << time2 << "ms" << endl;
     cout << "Comparisons: " << comp1 << " | " << comp2 << endl << endl;
 
     // free the memory
