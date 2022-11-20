@@ -166,7 +166,7 @@ int shakerSortComp (int a[], int n) {
     return comp;
 }
 
-// 5. shell sort
+// 5. shell sort (done)
 double shellSortTime (int a[], int n) {
     clock_t start = clock();
 
@@ -252,6 +252,7 @@ void heapifyComp(int a[], int n, int i, int &comp) {
         heapifyComp(a, n, largest,comp);
     }
 }
+
 int heapSortComp (int a[], int n) {
     int comp = 0;
 
@@ -267,28 +268,29 @@ int heapSortComp (int a[], int n) {
     return comp;
 }
 
-// 7. merge sort
+// 7. merge sort (done)
 
 void merge(int* arr, int *leftArr, int* rightArr, int n){
 	int nL = n/2;
 	int nR = n - nL;
 	int iL = 0, iR = 0, i = 0;
 
-	while(iL < nL && iR < nR){
+	while (iL < nL && iR < nR) {
 		if(leftArr[iL] <= rightArr[iR])
 			arr[i++] = leftArr[iL++];
 		else arr[i++] = rightArr[iR++];
     }
-	while (iL < nL){
+
+	while (iL < nL) {
 		arr[i++] = leftArr[iL++];
     }
 
-	while(iR < nR){
+	while(iR < nR) {
 		arr[i++] = rightArr[iR++];
 }
 
-    }
-void mergeSort(int a[], int n){
+}
+void mergeSort(int a[], int n) {
 	if (n == 1) return;
 
 	int nL = n/2;
@@ -298,6 +300,7 @@ void mergeSort(int a[], int n){
 
 	for(int i = 0; i < nL; i++)
 		arrLeft[i] = a[i];
+
 	for(int i = nL; i < n; i++)
 		arrRight[i - nL] = a[i];
 
@@ -318,60 +321,88 @@ double mergeSortTime (int a[], int n) {
 
     clock_t end = clock();
     return (double)(end - start) / CLOCKS_PER_SEC;
-
-
-}
-int mergeSortComp (int a[], int n) {
-    int comp = 0;
-
-    // counting comparisons
-
-    
-    return comp;
 }
 
-void merge(int* arr, int *leftArr, int* rightArr, int n, int& cnt){
+
+void merge(int* arr, int *leftArr, int* rightArr, int n, int &comp){
 	int nL = n/2;
 	int nR = n - nL;
 	int iL = 0, iR = 0, i = 0;
 
-	while((++cnt && iL < nL) && (++cnt && iR < nR)){
-		if(++cnt && leftArr[iL] <= rightArr[iR])
+	while((++comp && iL < nL) && (++comp && iR < nR)) {
+		if(++comp && leftArr[iL] <= rightArr[iR])
 			arr[i++] = leftArr[iL++];
 		else arr[i++] = rightArr[iR++];
-        }
-	while (++cnt && iL < nL){
+    }
+
+	while (++comp && iL < nL) {
 		arr[i++] = leftArr[iL++];
     }
 
-	while(++cnt && iR < nR){
+	while(++comp && iR < nR) {
 		arr[i++] = rightArr[iR++];
-}
+    }
 
 }
-void mergeSort(int a[], int n, int& cnt){
-	if (++cnt && n == 1) return;
+void mergeSort(int a[], int n, int &comp){
+	if (++comp && n == 1) return;
 
 	int nL = n/2;
 	int nR = n - nL;
 	int* arrLeft = new int[nL];
 	int* arrRight = new int[nR];
 
-	for(int i = 0; ++cnt && i < nL; i++)
+	for(int i = 0; ++comp && i < nL; i++)
 		arrLeft[i] = a[i];
-	for(int i = nL; ++cnt && i < n; i++)
+        
+	for(int i = nL; ++comp && i < n; i++)
 		arrRight[i - nL] = a[i];
 
 	mergeSort(arrLeft, nL);
 	mergeSort(arrRight, nR);
 
-	merge(a, arrLeft, arrRight, n, cnt);
+	merge(a, arrLeft, arrRight, n,comp);
 
     delete[] arrLeft;
     delete[] arrRight;
 }
 
-// 8. quick sort  **
+int mergeSortComp (int a[], int n) {
+    int comp = 0;
+
+    // counting comparisons
+    mergeSort(a, n, comp);
+
+    
+    return comp;
+}
+
+// 8. quick sort  ** (done)
+void quickSort(int a[], int left, int right) {
+    int i = left, j = right;
+    int pivot = a[(left + right) / 2];
+
+    while (i <= j) {
+        while (a[i] < pivot) {
+            i++;
+        }
+        while (a[j] > pivot) {
+            j--;
+        }
+        if (i <= j) {
+            swap(a[i], a[j]);
+            i++;
+            j--;
+        }
+    }
+
+    if (left < j) {
+        quickSort(a, left, j);
+    }
+    if (i < right) {
+        quickSort(a, i, right);
+    }
+}
 double quickSortTime (int a[], int n) {
     clock_t start = clock();
 
@@ -383,18 +414,44 @@ double quickSortTime (int a[], int n) {
 
 
 }
+
+void quickSortComp (int a[], int left, int right, int &comp) {
+    int i = left, j = right;
+    int pivot = a[(left + right) / 2];
+
+    while (++comp && i <= j) {
+        while (++comp && a[i] < pivot) {
+            i++;
+        }
+        while (++comp && a[j] > pivot) {
+            j--;
+        }
+        if (++comp && i <= j) {
+            swap(a[i], a[j]);
+            i++;
+            j--;
+        }
+    }
+
+    if (++comp && left < j) {
+        quickSortComp(a, left, j, comp);
+    }
+    if (++comp && i < right) {
+        quickSortComp(a, i, right, comp);
+    }
+}
 int quickSortComp (int a[], int n) {
     int comp = 0;
 
     // counting comparisons
-
+    quickSortComp(a, 0, n - 1, comp);
     
     return comp;
 
 
 }
 
-// 9. counting sort  ***
+// 9. counting sort  *** (done)
 double countingSortTime (int a[], int n) {
     clock_t start = clock();
 
@@ -432,13 +489,37 @@ int countingSortComp (int a[], int n) {
     int comp = 0;
 
     // counting comparisons
+    int max = a[0];
+    for (int i = 1; ++comp && i < n; i++) {
+        if (++comp && a[i] > max) {
+            max = a[i];
+        }
+    }
+    int* count = new int[max + 1];
+    for (int i = 0;++comp && i < max + 1; i++) {
+        count[i] = 0;
+    }
+    for (int i = 0;++comp && i < n; i++) {
+        count[a[i]]++;
+    }
+    int i = 0;
+    int j = 0;
+    while (++comp && i < max + 1) {
+        if (++comp && count[i] > 0) {
+            a[j++] = i;
+            count[i]--;
+        }
+        else {
+            i++;
+        }
+    }
 
     
     return comp;
 
 }
 
-// 10. radix sort
+// 10. radix sort 
 
 double radixSortTime (int a[], int n) {
     clock_t start = clock();
@@ -477,27 +558,27 @@ double radixSortTime (int a[], int n) {
 }
 
 int radixSortComp (int a[], int n) {
-    int compare = 0;
-    int max = getNumberDigitsOfMaxCompare(a, n, compare);
+    int comp = 0;
+    int max = getNumberDigitsOfMaxCompare(a, n, comp);
 	Queue** table = new Queue*[10];
 
-	for (int i = 0; ++compare && i < 10; i++)
+	for (int i = 0; ++comp && i < 10; i++)
 	{
 		createQueue(table[i]);
 	}
 
-	for (int k = 0; ++compare && k < max; k++)
+	for (int k = 0; ++comp && k < max; k++)
 	{
-		for (int i = 0; ++compare && i < n; i++)
+		for (int i = 0; ++comp && i < n; i++)
 		{
 			int unit =int(a[i] / pow(10, k)) % 10;
 			enqueue(table[unit], a[i]);
 		}
 		int j = 0;
 		int i = 0;
-		while (++compare && j < 10)
+		while (++comp && j < 10)
 		{
-			while (++compare && !isEmpty(table[j]))
+			while (++comp && !isEmpty(table[j]))
 			{
 				a[i++] = dequeue(table[j]);
 			}
@@ -506,10 +587,10 @@ int radixSortComp (int a[], int n) {
 	}
 
 	delete[] table;
-    return compare;
+    return comp;
 }
 
-// 11. flash sort
+// 11. flash sort 
 double flashSortTime (int a[], int n) {
     clock_t start = clock();
 
@@ -570,7 +651,7 @@ double flashSortTime (int a[], int n) {
 	{
 		int j = i - 1;
 		int x = a[i];
-		while (j >= 0&&a[j]>x)
+		while (j >= 0 && a[j] > x)
 		{
 			a[j+1] = a[j];
 			j--;
@@ -583,32 +664,32 @@ double flashSortTime (int a[], int n) {
 }
 
 int flashSortComp (int a[], int n) {
-    int compare = 0;
+    int comp = 0;
     int minVal = a[0];
 	int max = 0;
 	int m = int(0.45 * n);
 
 	int* Class = new int[m];
-	for (int i = 0; ++compare && i < m; i++)
+	for (int i = 0; ++comp && i < m; i++)
 		Class[i] = 0;
-	for (int i = 1; ++compare && i < n; i++)
+	for (int i = 1; ++comp && i < n; i++)
 	{
-		if ( ++compare && a[i] < minVal)
+		if ( ++comp && a[i] < minVal)
 			minVal = a[i];
-		if ( ++compare && a[i] > a[max])
+		if ( ++comp && a[i] > a[max])
 			max = i;
 	}
 
-	if ( ++compare && a[max] == minVal)
-		return compare;
+	if ( ++comp && a[max] == minVal)
+		return comp;
 	double c1 = (double)(m - 1) / (a[max] - minVal);
-	for (int i = 0; ++compare &&  i < n; i++)
+	for (int i = 0; ++comp &&  i < n; i++)
 	{
 		int k = int(c1 * (a[i] - minVal));
 		++Class[k];
 	}
 
-	for (int i = 1; ++compare &&  i < m; i++)
+	for (int i = 1; ++comp &&  i < m; i++)
 		Class[i] += Class[i - 1];
 
 	swap(a[max], a[0]);
@@ -616,16 +697,16 @@ int flashSortComp (int a[], int n) {
 	int nmove = 0;
 	int j = 0;
 	int k = m - 1;
-	while ( ++compare && nmove < n - 1)
+	while ( ++comp && nmove < n - 1)
 	{
-		while ( ++compare && j > Class[k] - 1)
+		while ( ++comp && j > Class[k] - 1)
 		{
 			j++;
 			k = int(c1 * (a[j] - minVal));
 		}
 		
-		if ( ++compare && k < 0) break;
-		while ( ++compare && j != Class[k])
+		if ( ++comp && k < 0) break;
+		while ( ++comp && j != Class[k])
 		{
 			k = int(c1 * (a[j] - minVal));
 			int pos = --Class[k];
@@ -637,11 +718,11 @@ int flashSortComp (int a[], int n) {
 	delete[] Class;
 
 	//insertionSort(a, n);
-	for (int i = 1; ++compare &&  i < n; i++)
+	for (int i = 1; ++comp &&  i < n; i++)
 	{
 		int j = i - 1;
 		int x = a[i];
-		while ( ++compare && j >= 0 && ++compare && a[j]>x)
+		while ( ++comp && j >= 0 && ++comp && a[j]>x)
 		{
 			a[j+1] = a[j];
 			j--;
@@ -649,5 +730,5 @@ int flashSortComp (int a[], int n) {
 		a[j+1] = x;
 	}
     
-    return compare; 
+    return comp; 
 }

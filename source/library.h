@@ -34,15 +34,17 @@ void heapifyComp(int a[], int n, int i, int &comp);
 int heapSortComp (int a[], int n);
 
 // 7. merge sort
-void mergeSort (int a[], int l, int r);
-void merge (int a[], int l, int m, int r);
+void merge(int* arr, int *leftArr, int* rightArr, int n);
+void mergeSort (int a[], int n);
 double mergeSortTime (int a[], int n);
+void merge(int* arr, int *leftArr, int* rightArr, int n, int& comp);
+void mergeSort(int a[], int n, int& comp);
 int mergeSortComp (int a[], int n);
 
 // 8. quick sort
-int partition (int a[], int low, int high);
 void quickSort (int a[], int low, int high);
 double quickSortTime (int a[], int n);
+void quickSortComp (int a[], int left, int right, int &comp) ;
 int quickSortComp (int a[], int n);
 
 // 9. counting sort
