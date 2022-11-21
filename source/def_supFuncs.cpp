@@ -67,8 +67,8 @@ double getTimeOfAlg (char *alg, int a[], int n) {
 }
 
 // 4. get number of comparisons of the algorithm
-int getCompOfAlg (char *alg, int a[], int n) {
-    int comp = 0;
+unsigned long int getCompOfAlg (char *alg, int a[], int n) {
+    unsigned long int comp = 0;
     if (strcmp(alg, "selection-sort") == 0) {
         comp = selectionSortComp(a, n);
     } else if (strcmp(alg, "insertion-sort") == 0) {
@@ -106,8 +106,12 @@ void doOutputOrder (char *output, double &time, unsigned long int &comp, int a[]
     } else if (strcmp(output, "-comp") == 0) {
         comp = getCompOfAlg (alg, a, n);
     } else if (strcmp(output, "-both") == 0) {
+        int *b = new int[n];
+        for (int i = 0; i < n; i++) {
+            b[i] = a[i];
+        }
         time = getTimeOfAlg (alg, a, n);
-        comp = getCompOfAlg (alg, a, n);
+        comp = getCompOfAlg (alg, b, n);
     } else {
         cout << "Invalid output order" << endl;
     }
