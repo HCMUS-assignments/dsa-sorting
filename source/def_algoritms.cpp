@@ -594,19 +594,21 @@ int radixSortComp (int a[], int n) {
     return comp;
 }
 
-// 11. flash sort 
+// 11. flash sort  (done)
 double flashSortTime (int a[], int n) {
     clock_t start = clock();
 
+    // flash sort
     int minVal = a[0];
 	int max = 0;
-	int m = int(0.45 * n);
+	int m = int(0.45 * n);   
 
-	int* Class = new int[m];
+	int* Class = new int[m];   // create class array to store the number of elements in each class
 
 	for (int i = 0; i < m; i++)
 		Class[i] = 0;
 
+    // find min and max
 	for (int i = 1; i < n; i++)
 	{
 		if (a[i] < minVal)
@@ -618,23 +620,29 @@ double flashSortTime (int a[], int n) {
 	if (a[max] == minVal)
 		return 0;
         
+    // c1 used to calculate the class index
 	double c1 = (double)(m - 1) / (a[max] - minVal);
+
+    // calculate the number of elements in each class
 	for (int i = 0; i < n; i++)
 	{
 		int k = int(c1 * (a[i] - minVal));
 		++Class[k];
 	}
 
+    // calculate the starting position of each class
 	for (int i = 1; i < m; i++)
 		Class[i] += Class[i - 1];
 
+    // swap the elements in the array to the correct position
 	swap(a[max], a[0]);
 
-	int nmove = 0;
+	int nmove = 0;   // number of elements moved
 	int j = 0;
 	int k = m - 1;
 	while (nmove < n - 1)
 	{
+        // j used to calculate the class index
 		while (j > Class[k] - 1)
 		{
 			j++;
@@ -642,7 +650,7 @@ double flashSortTime (int a[], int n) {
 		}
 		
 		if (k < 0) break;
-		while (j != Class[k])
+		while (j != Class[k])  
 		{
 			k = int(c1 * (a[j] - minVal));
 			int pos = --Class[k];
@@ -653,7 +661,7 @@ double flashSortTime (int a[], int n) {
 	}
 	delete[] Class;
 
-	//insertionSort(a, n);
+	// insertionSort(a, n);
 	for (int i = 1; i < n; i++)
 	{
 		int j = i - 1;
@@ -672,13 +680,17 @@ double flashSortTime (int a[], int n) {
 
 int flashSortComp (int a[], int n) {
     int comp = 0;
+
+    // counting comparisons
     int minVal = a[0];
 	int max = 0;
 	int m = int(0.45 * n);
 
 	int* Class = new int[m];
+
 	for (int i = 0; ++comp && i < m; i++)
 		Class[i] = 0;
+
 	for (int i = 1; ++comp && i < n; i++)
 	{
 		if ( ++comp && a[i] < minVal)
@@ -689,7 +701,9 @@ int flashSortComp (int a[], int n) {
 
 	if ( ++comp && a[max] == minVal)
 		return comp;
+
 	double c1 = (double)(m - 1) / (a[max] - minVal);
+
 	for (int i = 0; ++comp &&  i < n; i++)
 	{
 		int k = int(c1 * (a[i] - minVal));
@@ -739,3 +753,4 @@ int flashSortComp (int a[], int n) {
     
     return comp; 
 }
+
