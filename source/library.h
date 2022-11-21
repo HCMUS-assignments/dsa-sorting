@@ -93,7 +93,7 @@ void writingFile (string outputFile, int a[], int n);
 double getTimeOfAlg (char *alg, int a[], int n);
 
 // 4. get number of comparisons of the algorithm
-int getCompOfAlg (char *alg, int a[], int n);
+unsigned long int getCompOfAlg (char *alg, int a[], int n);
 
 // 5. doOutputOrder function
 void doOutputOrder (char *output, double &time, unsigned long long &comp, int a[], int n, char *alg);
