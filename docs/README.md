@@ -757,5 +757,58 @@
 <!-- Tổ chức đồ án và ghi chú -->
 ## V. Tổ chức đồ án và các lưu ý
 
+#### :one: Tổ chức đồ án
+```
+    ├───source
+    │   │___releases
+    │   │   │___a.exe
+    │   │___main.cpp
+    │   │___library.h
+    │   │___def_command.cpp
+    │   │___def_algorithms.cpp
+    │   │___def_supFuncs.cpp
+    │   │___dataGenerator.cpp
+    |___report.pdf
+```
+
+`source` là thư mục chứa mã nguồn của đồ án.
++ `releases` là thư mục chứa các file thực thi của đồ án.
++ `main.cpp` là file chứa hàm `main()`, validate các tham số đầu vào và gọi các hàm thực thi tương ứng
++ `library.h` là file header chứa các khai báo hàm và các thư viện cần thiết, được chia làm 4 phần: 
+              + I. khai báo các hàm thuật toán
+              + II. khai báo các hàm command 
+              + III. khai báo các hàm tạo dữ liệu
+              + IV. khai báo các hàm hỗ trợ khác
++ `def_command.cpp` là file định nghĩa các hàm command, thực hiện các yêu cầu và xuất kết quả ra file
++ `def_algorithms.cpp` là file định nghĩa các hàm đo thời gian chạy và số lần so sánh của các thuật toán
++ `def_supFuncs.cpp` là file định nghĩa các hàm hỗ trợ khác 
++ `dataGenerator.cpp` là file định nghĩa các hàm tạo dữ liệu
+
+`report.pdf` là file báo cáo đồ án.
+
+
+#### :two: Các ghi chú
+- Thư viện sử dụng : `iostream`, `fstream`, `ctime`, `cstdlib`, `string.h`, `cmath`
++ `iostream` : thư viện chuẩn c++ dùng để nhập xuất dữ liệu
++ `fstream` : thư viện chuẩn c++ dùng để đọc ghi file
++ `ctime` : thư viện chuẩn c++ dùng để đo thời gian chạy
++ `cstdlib` : thư viện chuẩn c++ dùng để sử dụng hàm `rand()`
++ `string.h` : thư viện chuẩn c dùng để xử lý chuỗi
++ `cmath` : thư viện chuẩn c++ dùng để sử dụng hàm `log()`, `pow()`
+
+
 <!-- Tài liệu tham khảo -->
 ## VI. Tài liệu tham khảo
+
+[1. selection sort](https://blog.luyencode.net/thuat-toan-sap-xep-selection-sort/)
+[2. insertion sort](https://cafedev.vn/-thuat-toan-insertion-sort-gioi-thieu-chi-tiet-va-code-vi-du-tren-nhieu-ngon-ngu-lap-trinh/)
+[3. bubble sort](https://cafedev.vn/thuat-toan-bubble-sort-gioi-thieu-chi-tiet-va-code-vi-du-tren-nhieu-ngon-ngu-lap-trinh/)
+[4. shell sort](https://www.geeksforgeeks.org/shellsort/)
+[5. heap sort](https://www.geeksforgeeks.org/heap-sort/)
+[6. merge sort](https://blog.luyencode.net/thuat-toan-sap-xep-merge-sort/)
+[7. quick sort](https://www.geeksforgeeks.org/quick-sort/)
+[8. counting sort](https://blog.luyencode.net/counting-sort/)
+[9. radix sort](https://www.geeksforgeeks.org/radix-sort/)
+[10.1 flash sort](https://www.ddth.com/showthread.php/64851-Flash-sort-c%C3%B4ng-c%E1%BB%A5-m%E1%BB%9Bi-%C4%91%E1%BB%83-t%E1%BB%91i-%C6%B0u-t%E1%BB%91c-%C4%91%E1%BB%99-gi%E1%BA%A3i-thu%E1%BA%ADt)
+[10.2 flash sort](https://codelearn.io/sharing/flash-sort-thuat-toan-sap-xep-than-thanh)
+[11. shaker sort](https://www.geeksforgeeks.org/cocktail-sort/)
