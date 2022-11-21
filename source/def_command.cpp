@@ -11,7 +11,7 @@ void doCommand1 (char *alg, char *fileIn, char *output) {
 
     // declare the variables
     double time = -1;
-    unsigned long int comp = 0;
+    unsigned long long comp = 0;
 
     // solve the problem
     doOutputOrder(output, time, comp, a, n, alg);
@@ -58,7 +58,7 @@ void doCommand2 (char *alg, char *inputSize, char *inputOrder, char *output) {
 
     // declare the variables
     double time = -1;
-    unsigned long int comp = 0;
+    unsigned long long comp = 0;
 
     // solve the problem
     doOutputOrder(output, time, comp, a, n, alg);
@@ -102,7 +102,7 @@ void doCommand3 (char *alg, char *inputSize, char *output) {
 
     // declare the variables
     double time = -1;
-    unsigned long int comp = 0;
+    unsigned long long comp = 0;
     GenerateData(a, n, 0);
     
     // writing file
@@ -227,9 +227,9 @@ void doCommand4 (char *alg1, char *alg2, char *fileIn) {
 
     // declare the variables
     double time1 = -1;
-    unsigned long int comp1 = 0;
+    unsigned long long comp1 = 0;
     double time2 = -1;
-    unsigned long int comp2 = 0;
+    unsigned long long comp2 = 0;
 
     // solve the problem
     char *output = new char[6];
@@ -270,9 +270,9 @@ void doCommand5 (char *alg1, char *alg2, char *inputSize, char *inputOrder) {
 
     // declare the variables
     double time1 = -1;
-    unsigned long int comp1 = 0;
+    unsigned long long comp1 = 0;
     double time2 = -1;
-    unsigned long int comp2 = 0;
+    unsigned long long comp2 = 0;
 
     // generate data
     GenerateData(a, n, getTypeOfInputOrder(inputOrder));

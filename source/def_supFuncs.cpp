@@ -100,7 +100,7 @@ int getCompOfAlg (char *alg, int a[], int n) {
 }
 
 // 5. do outputOrder for command
-void doOutputOrder (char *output, double &time, unsigned long int &comp, int a[], int n, char *alg) {
+void doOutputOrder (char *output, double &time, unsigned long long &comp, int a[], int n, char *alg) {
     if (strcmp(output, "-time") == 0) {
         time = getTimeOfAlg (alg, a, n);
     } else if (strcmp(output, "-comp") == 0) {
@@ -261,14 +261,14 @@ int getNumberDigitsOfMax(int a[], int n)
 }
 
 // 12. count digits of compare function
-int countDigitsOfCompare(int value,unsigned long int &comp)
+int countDigitsOfCompare(int value,unsigned long long &comp)
 {
 	if (++comp && value < 10) return 1;
 	return countDigitsOfCompare(value / 10, comp) + 1;
 }
 
 // 13. get number of digits of max number in compare function
-int getNumberDigitsOfMaxCompare(int a[], int n,unsigned long int &comp)
+int getNumberDigitsOfMaxCompare(int a[], int n,unsigned long long &comp)
 {
 	int max = a[0];
 	for (int i = 1; ++comp && i < n; i++)

@@ -20,8 +20,8 @@ double selectionSortTime (int a[], int n) {
     clock_t end = clock();
     return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 }
-unsigned long int selectionSortComp (int a[], int n) {
-    unsigned long int comp = 0;
+unsigned long long selectionSortComp (int a[], int n) {
+    unsigned long long comp = 0;
 
     // counting comparisons
     for (int i = 0; ++comp && i < n - 1; i++) {
@@ -59,8 +59,8 @@ double insertionSortTime (int a[], int n) {
     return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 
 }
-unsigned long int insertionSortComp (int a[], int n) {
-    unsigned long int comp = 0;
+unsigned long long insertionSortComp (int a[], int n) {
+    unsigned long long comp = 0;
 
     // counting comparisons
     for (int i = 1; ++comp && i < n; i++) {
@@ -98,8 +98,8 @@ double bubbleSortTime (int a[], int n) {
     return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 }
 
-unsigned long int bubbleSortComp (int a[], int n) {
-    unsigned long int comp = 0;
+unsigned long long bubbleSortComp (int a[], int n) {
+    unsigned long long comp = 0;
 
     // counting comparisons
     for (int i = 0; ++comp &&  i < n-1; i++)
@@ -120,48 +120,59 @@ double shakerSortTime (int a[], int n) {
     clock_t start = clock();
 
     // shaker sort
-    int left = 0;
-    int right = n - 1;
-    while (left < right) {
-        for (int i = right; i > left; i--) {
-            if (a[i] < a[i - 1]) {
-                swap(a[i], a[i - 1]);
-            }
-        }
-        left++;
-        for (int i = left; i < right; i++) {
-            if (a[i] > a[i + 1]) {
-                swap(a[i], a[i + 1]);
-            }
-        }
-        right--;
-    }
+    int l = 0;
+	int r= n - 1;
+	int k = 0;
+	while (l < r){
+		for (int i = l; i < r; i++){
+			if (a[i] > a[i + 1])
+			{
+				swap(a[i], a[i + 1]);
+				k = i;
+			}
+		}
+		r = k;
+		for (int i = r; i > l; i--){
+			if (a[i] < a[i - 1])
+			{
+				swap(a[i], a[i - 1]);
+				k = i;
+			}
+		}
+		l = k;
+	}
 
     clock_t end = clock();
     return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 
 
 }
-unsigned long int shakerSortComp (int a[], int n) {
-    unsigned long int comp = 0;
+unsigned long long shakerSortComp (int a[], int n) {
+    unsigned long long comp = 0;
 
     // counting comparisons
-    int left = 0;
-    int right = n - 1;
-    while (++comp && left < right) {
-        for (int i = right;++comp &&  i > left; i--) {
-            if (++comp && a[i] < a[i - 1]) {
-                swap(a[i], a[i - 1]);
-            }
-        }
-        left++;
-        for (int i = left;++comp && i < right; i++) {
-            if (++comp && a[i] > a[i + 1]) {
-                swap(a[i], a[i + 1]);
-            }
-        }
-        right--;
-    }
+    int l = 0;
+	int r= n - 1;
+	int k = 0;
+	while (++comp && l < r){
+		for (int i = l; ++comp && i < r; i++){
+			if (++comp && a[i] > a[i + 1])
+			{
+				swap(a[i], a[i + 1]);
+				k = i;
+			}
+		}
+		r = k;
+		for (int i = r; ++comp && i > l; i--){
+			if (++comp && a[i] < a[i - 1])
+			{
+				swap(a[i], a[i - 1]);
+				k = i;
+			}
+		}
+		l = k;
+	}
+
 
     return comp;
 }
@@ -186,8 +197,8 @@ double shellSortTime (int a[], int n) {
     return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 
 }
-unsigned long int shellSortComp (int a[], int n) {
-    unsigned long int comp = 0;
+unsigned long long shellSortComp (int a[], int n) {
+    unsigned long long comp = 0;
 
     // counting comparisons
      for (int gap = n / 2; ++comp && gap > 0; gap /= 2) {
@@ -237,7 +248,7 @@ double heapSortTime (int a[], int n) {
     return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 }
 
-void heapifyComp(int a[], int n, int i, unsigned long int &comp) {
+void heapifyComp(int a[], int n, int i, unsigned long long &comp) {
     int largest = i;
     int l = 2 * i + 1;
     int r = 2 * i + 2;
@@ -253,8 +264,8 @@ void heapifyComp(int a[], int n, int i, unsigned long int &comp) {
     }
 }
 
-unsigned long int heapSortComp (int a[], int n) {
-    unsigned long int comp = 0;
+unsigned long long heapSortComp (int a[], int n) {
+    unsigned long long comp = 0;
 
     // counting comparisons
     for (int i = n / 2 - 1;++comp && i >= 0; i--) {
@@ -324,7 +335,7 @@ double mergeSortTime (int a[], int n) {
 }
 
 
-void merge(int* arr, int *leftArr, int* rightArr, int n, unsigned long int &comp){
+void merge(int* arr, int *leftArr, int* rightArr, int n, unsigned long long &comp){
 	int nL = n/2;
 	int nR = n - nL;
 	int iL = 0, iR = 0, i = 0;
@@ -344,7 +355,7 @@ void merge(int* arr, int *leftArr, int* rightArr, int n, unsigned long int &comp
     }
 
 }
-void mergeSort(int a[], int n, unsigned long int &comp){
+void mergeSort(int a[], int n, unsigned long long &comp){
 	if (++comp && n == 1) return;
 
 	int nL = n/2;
@@ -367,8 +378,8 @@ void mergeSort(int a[], int n, unsigned long int &comp){
     delete[] arrRight;
 }
 
-unsigned long int mergeSortComp (int a[], int n) {
-    unsigned long int comp = 0;
+unsigned long long mergeSortComp (int a[], int n) {
+    unsigned long long comp = 0;
 
     // counting comparisons
     mergeSort(a, n, comp);
@@ -415,7 +426,7 @@ double quickSortTime (int a[], int n) {
 
 }
 
-void quickSortComp (int a[], int left, int right, unsigned long int &comp) {
+void quickSortComp (int a[], int left, int right, unsigned long long &comp) {
     int i = left, j = right;
     int pivot = a[(left + right) / 2];
 
@@ -440,8 +451,8 @@ void quickSortComp (int a[], int left, int right, unsigned long int &comp) {
         quickSortComp(a, i, right, comp);
     }
 }
-unsigned long int quickSortComp (int a[], int n) {
-    unsigned long int comp = 0;
+unsigned long long quickSortComp (int a[], int n) {
+    unsigned long long comp = 0;
 
     // counting comparisons
     quickSortComp(a, 0, n - 1, comp);
@@ -485,8 +496,8 @@ double countingSortTime (int a[], int n) {
     return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 
 }
-unsigned long int countingSortComp (int a[], int n) {
-    unsigned long int comp = 0;
+unsigned long long countingSortComp (int a[], int n) {
+    unsigned long long comp = 0;
 
     // counting comparisons
     int max = a[0];
@@ -558,8 +569,8 @@ double radixSortTime (int a[], int n) {
     return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 }
 
-unsigned long int radixSortComp (int a[], int n) {
-    unsigned long int comp = 0;
+unsigned long long radixSortComp (int a[], int n) {
+    unsigned long long comp = 0;
 
     // counting comparisons
     int max = getNumberDigitsOfMaxCompare(a, n, comp);
@@ -678,8 +689,8 @@ double flashSortTime (int a[], int n) {
     return (double) 1000 * (end - start) / CLOCKS_PER_SEC;
 }
 
-unsigned long int flashSortComp (int a[], int n) {
-    unsigned long int comp = 0;
+unsigned long long flashSortComp (int a[], int n) {
+    unsigned long long comp = 0;
 
     // counting comparisons
     int minVal = a[0];
