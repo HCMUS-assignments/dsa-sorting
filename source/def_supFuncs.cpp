@@ -100,7 +100,7 @@ int getCompOfAlg (char *alg, int a[], int n) {
 }
 
 // 5. do outputOrder for command
-void doOutputOrder (char *output, double &time, int &comp, int a[], int n, char *alg) {
+void doOutputOrder (char *output, double &time, unsigned long int &comp, int a[], int n, char *alg) {
     if (strcmp(output, "-time") == 0) {
         time = getTimeOfAlg (alg, a, n);
     } else if (strcmp(output, "-comp") == 0) {
