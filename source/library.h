@@ -84,10 +84,10 @@ void doCommand5 (char *alg1, char *alg2, char *inputSize, char *inputOrder);
 // III. Supporting functions
 
 // 1. read input file
-void readInputFile (char *fileIn, int a[], int &n);
+void readInputFile (char *fileIn, int *&a, int &n);
 
 // 2. writing file function
-void writingFile (char *outputFile, int a[], int n);
+void writingFile (string outputFile, int a[], int n);
 
 // 3. get time in seconds of the algorithm
 double getTimeOfAlg (char *alg, int a[], int n);

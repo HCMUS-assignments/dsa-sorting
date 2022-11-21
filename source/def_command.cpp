@@ -232,8 +232,10 @@ void doCommand4 (char *alg1, char *alg2, char *fileIn) {
     int comp2 = -1;
 
     // solve the problem
-    doOutputOrder("-both", time1, comp1, a, n, alg1);
-    doOutputOrder("-both", time2, comp2, b, n, alg2);
+    char *output = new char[6];
+    strcpy(output, "-both");
+    doOutputOrder(output, time1, comp1, a, n, alg1);
+    doOutputOrder(output, time2, comp2, b, n, alg2);
 
     // display the result in the console
     cout << "\nCOMPARE MODE\n";
@@ -249,6 +251,7 @@ void doCommand4 (char *alg1, char *alg2, char *fileIn) {
 
     // free the memory
     delete[] a;
+    delete[] output;
     
 }
 
@@ -282,8 +285,10 @@ void doCommand5 (char *alg1, char *alg2, char *inputSize, char *inputOrder) {
     writingFile("input.txt", a, n);
 
     // solve the problem
-    doOutputOrder("-both", time1, comp1, a, n, alg1);
-    doOutputOrder("-both", time2, comp2, b, n, alg2);
+    char *output = new char[6];
+    strcpy(output, "-both");
+    doOutputOrder(output, time1, comp1, a, n, alg1);
+    doOutputOrder(output, time2, comp2, b, n, alg2);
 
     // display the result in the console
     cout << "Running time: " << time1 << "ms | " << time2 << "ms" << endl;
@@ -291,6 +296,6 @@ void doCommand5 (char *alg1, char *alg2, char *inputSize, char *inputOrder) {
 
     // free the memory
     delete[] a;
-    
+    delete[] output;
     
 }

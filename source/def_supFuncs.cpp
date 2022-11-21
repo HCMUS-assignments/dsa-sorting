@@ -19,7 +19,7 @@ void readInputFile (char *fileIn, int *&a, int &n) {
 }
 
 // 2. writing file
-void writingFile (char *outputFile, int a[], int n) {
+void writingFile (string outputFile, int a[], int n) {
     ofstream fout(outputFile);
     if (fout.fail()) {
         cout << "Cannot open file " << outputFile << endl;
@@ -210,7 +210,7 @@ void createQueue(Queue* &Q)
 }
 
 // 7. create node function
-Node* createtNode(int value)
+Node* createNode(int value)
 {
 	Node* p = new Node;
 	p->data = value;
@@ -232,7 +232,7 @@ void enqueue(Queue* Q,int value)
 	if (isEmpty(Q))
 		Q->pHead = Q->pTail = createNode(value);
 	else {
-		Node* p = createtNode(value);
+		Node* p = createNode(value);
 		Q->pTail->pNext = p;
 		Q->pTail = p;
 	}
