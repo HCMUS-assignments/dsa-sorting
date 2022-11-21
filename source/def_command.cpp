@@ -11,7 +11,7 @@ void doCommand1 (char *alg, char *fileIn, char *output) {
 
     // declare the variables
     double time = -1;
-    int comp = -1;
+    unsigned long int comp = 0;
 
     // solve the problem
     doOutputOrder(output, time, comp, a, n, alg);
@@ -29,7 +29,7 @@ void doCommand1 (char *alg, char *fileIn, char *output) {
         cout << endl;
     }
     cout << "Comparisons (if required): " ;
-    if (comp != -1) {
+    if (comp != 0) {
         cout << comp << endl << endl;
     } else {
         cout << endl << endl;
@@ -58,7 +58,7 @@ void doCommand2 (char *alg, char *inputSize, char *inputOrder, char *output) {
 
     // declare the variables
     double time = -1;
-    int comp = -1;
+    unsigned long int comp = 0;
 
     // solve the problem
     doOutputOrder(output, time, comp, a, n, alg);
@@ -77,7 +77,7 @@ void doCommand2 (char *alg, char *inputSize, char *inputOrder, char *output) {
         cout << endl;
     }
     cout << "Comparisons (if required): " ;
-    if (comp != -1) {
+    if (comp != 0) {
         cout << comp << endl << endl;
     } else {
         cout << endl << endl;
@@ -102,7 +102,7 @@ void doCommand3 (char *alg, char *inputSize, char *output) {
 
     // declare the variables
     double time = -1;
-    int comp = -1;
+    unsigned long int comp = 0;
     GenerateData(a, n, 0);
     
     // writing file
@@ -121,7 +121,7 @@ void doCommand3 (char *alg, char *inputSize, char *output) {
         cout << endl;
     }
     cout << "Comparisons (if required): " ;
-    if (comp != -1) {
+    if (comp != 0) {
         cout << comp << endl << endl;
     } else {
         cout << endl << endl;
@@ -129,7 +129,7 @@ void doCommand3 (char *alg, char *inputSize, char *output) {
 
     // case 2: input order is Nearly sorted
     time = -1;
-    comp = -1;
+    comp = 0;
     GenerateData(a, n, 3);
 
     // writing file
@@ -148,7 +148,7 @@ void doCommand3 (char *alg, char *inputSize, char *output) {
         cout << endl;
     }
     cout << "Comparisons (if required): " ;
-    if (comp != -1) {
+    if (comp != 0) {
         cout << comp << endl << endl;
     } else {
         cout << endl << endl;
@@ -156,7 +156,7 @@ void doCommand3 (char *alg, char *inputSize, char *output) {
 
     // case 3: input order is Sorted
     time = -1;
-    comp = -1;
+    comp = 0;
     GenerateData(a, n, 1);
     
     // writing file
@@ -175,7 +175,7 @@ void doCommand3 (char *alg, char *inputSize, char *output) {
         cout << endl;
     }
     cout << "Comparisons (if required): " ;
-    if (comp != -1) {
+    if (comp != 0) {
         cout << comp << endl << endl;
     } else {
         cout << endl << endl;
@@ -183,7 +183,7 @@ void doCommand3 (char *alg, char *inputSize, char *output) {
 
     // case 4: input order is Reversed
     time = -1;
-    comp = -1;
+    comp = 0;
     GenerateData(a, n, 2);
 
     // writing file
@@ -202,7 +202,7 @@ void doCommand3 (char *alg, char *inputSize, char *output) {
         cout << endl;
     }
     cout << "Comparisons (if required): " ;
-    if (comp != -1) {
+    if (comp != 0) {
         cout << comp << endl << endl;
     } else {
         cout << endl << endl;
@@ -227,9 +227,9 @@ void doCommand4 (char *alg1, char *alg2, char *fileIn) {
 
     // declare the variables
     double time1 = -1;
-    int comp1 = -1;
+    unsigned long int comp1 = 0;
     double time2 = -1;
-    int comp2 = -1;
+    unsigned long int comp2 = 0;
 
     // solve the problem
     char *output = new char[6];
@@ -270,9 +270,9 @@ void doCommand5 (char *alg1, char *alg2, char *inputSize, char *inputOrder) {
 
     // declare the variables
     double time1 = -1;
-    int comp1 = -1;
+    unsigned long int comp1 = 0;
     double time2 = -1;
-    int comp2 = -1;
+    unsigned long int comp2 = 0;
 
     // generate data
     GenerateData(a, n, getTypeOfInputOrder(inputOrder));

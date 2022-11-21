@@ -261,14 +261,14 @@ int getNumberDigitsOfMax(int a[], int n)
 }
 
 // 12. count digits of compare function
-int countDigitsOfCompare(int value,int &comp)
+int countDigitsOfCompare(int value,unsigned long int &comp)
 {
 	if (++comp && value < 10) return 1;
 	return countDigitsOfCompare(value / 10, comp) + 1;
 }
 
 // 13. get number of digits of max number in compare function
-int getNumberDigitsOfMaxCompare(int a[], int n,int &comp)
+int getNumberDigitsOfMaxCompare(int a[], int n,unsigned long int &comp)
 {
 	int max = a[0];
 	for (int i = 1; ++comp && i < n; i++)

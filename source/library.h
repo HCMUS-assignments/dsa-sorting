@@ -10,55 +10,55 @@ using namespace std;
 
 // 1. selection sort
 double selectionSortTime (int a[], int n);
-int selectionSortComp (int a[], int n);
+unsigned long int selectionSortComp (int a[], int n);
 
 // 2. insertion sort
 double insertionSortTime (int a[], int n);
-int insertionSortComp (int a[], int n);
+unsigned long int insertionSortComp (int a[], int n);
 
 // 3. bubble sort
 double bubbleSortTime (int a[], int n);
-int bubbleSortComp (int a[], int n);
+unsigned long int bubbleSortComp (int a[], int n);
 
 // 4. shaker sort
 double shakerSortTime (int a[], int n);
-int shakerSortComp (int a[], int n);
+unsigned long int shakerSortComp (int a[], int n);
 
 // 5. shell sort
 double shellSortTime (int a[], int n);
-int shellSortComp (int a[], int n);
+unsigned long int shellSortComp (int a[], int n);
 
 // 6. heap sort
 void heapify (int a[], int n, int i);
 double heapSortTime (int a[], int n);
-void heapifyComp(int a[], int n, int i, int &comp);
-int heapSortComp (int a[], int n);
+void heapifyComp(int a[], int n, int i, unsigned long int &comp);
+unsigned long int heapSortComp (int a[], int n);
 
 // 7. merge sort
 void merge(int* arr, int *leftArr, int* rightArr, int n);
 void mergeSort (int a[], int n);
 double mergeSortTime (int a[], int n);
-void merge(int* arr, int *leftArr, int* rightArr, int n, int& comp);
-void mergeSort(int a[], int n, int& comp);
-int mergeSortComp (int a[], int n);
+void merge(int* arr, int *leftArr, int* rightArr, int n, unsigned long int &comp);
+void mergeSort(int a[], int n, unsigned long int &comp);
+unsigned long int mergeSortComp (int a[], int n);
 
 // 8. quick sort
 void quickSort (int a[], int low, int high);
 double quickSortTime (int a[], int n);
-void quickSortComp (int a[], int left, int right, int &comp) ;
-int quickSortComp (int a[], int n);
+void quickSortComp (int a[], int left, int right, unsigned long int &comp) ;
+unsigned long int quickSortComp (int a[], int n);
 
 // 9. counting sort
 double countingSortTime (int a[], int n);
-int countingSortComp (int a[], int n);
+unsigned long int countingSortComp (int a[], int n);
 
 // 10. radix sort
 double radixSortTime (int a[], int n);
-int radixSortComp (int a[], int n);
+unsigned long int radixSortComp (int a[], int n);
 
 // 11. flash sort
 double flashSortTime (int a[], int n);
-int flashSortComp (int a[], int n);
+unsigned long int flashSortComp (int a[], int n);
 
 
 
@@ -96,7 +96,7 @@ double getTimeOfAlg (char *alg, int a[], int n);
 int getCompOfAlg (char *alg, int a[], int n);
 
 // 5. doOutputOrder function
-void doOutputOrder (char *output, double &time, int &comp, int a[], int n, char *alg);
+void doOutputOrder (char *output, double &time, unsigned long int &comp, int a[], int n, char *alg);
 
 // 6. get type of input order
 int getTypeOfInputOrder (char *inputOrder);
@@ -173,7 +173,7 @@ int dequeue(Queue* Q);
 int getNumberDigitsOfMax(int a[], int n);
 
 // 12. count digits of compare function
-int countDigitsOfCompare(int value,int &comp);
+int countDigitsOfCompare(int value,unsigned long int &comp);
 
 // 13. get number of digits of max number in compare function
-int getNumberDigitsOfMaxCompare(int a[], int n,int &comp);
+int getNumberDigitsOfMaxCompare(int a[], int n,unsigned long int &comp);
