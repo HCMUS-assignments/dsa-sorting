@@ -30,3 +30,11 @@
 
 *.out
 *.app
+
+# readme files
+/docs/README.md
+/docs/README.html
+
+# ignore readme files in docs folder
+/docs/*.md
+/docs/*.html
