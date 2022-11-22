@@ -67,8 +67,8 @@ double getTimeOfAlg (char *alg, int a[], int n) {
 }
 
 // 4. get number of comparisons of the algorithm
-unsigned long int getCompOfAlg (char *alg, int a[], int n) {
-    unsigned long int comp = 0;
+unsigned long long getCompOfAlg (char *alg, int a[], int n) {
+    unsigned long long comp = 0;
     if (strcmp(alg, "selection-sort") == 0) {
         comp = selectionSortComp(a, n);
     } else if (strcmp(alg, "insertion-sort") == 0) {

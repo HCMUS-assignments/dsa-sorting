@@ -1,13 +1,11 @@
 #include "library.h"
-#include<vector>
-using namespace std;
 
 void takeCountingAndTime(int* arr, int n, int type, unsigned long long& comp, double& time){
     int* arrComp = new int[n];
     int* arrTime = new int[n];
 
-    memcpy(arrComp, arr, sizeof(int)*n);
-    memcpy(arrTime, arr, sizeof(int)*n);
+    memmove(arrComp, arr, sizeof(int)*n);
+    memmove(arrTime, arr, sizeof(int)*n);
 
     switch (type)
     {
