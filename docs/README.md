@@ -1,5 +1,5 @@
 <!-- Bìa báo cáo -->
-<h3 align = "center" style = "color: #6366F1"> 
+<h2 align = "center" style = "color: #6366F1"> 
     <p> ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH </p>
     <p> TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN </p>
     <p> KHOA CÔNG NGHỆ THÔNG TIN </p>
@@ -13,21 +13,21 @@
     <p> CHỦ ĐỀ: TÌM HIỂU VÀ THỰC HÀNH CÁC THUẬT TOÁN SẮP XẾP </p>
     
 
-</h3>
+</h2>
 </br>
 </br>
 </br>
 
 <!-- Thông tin nhóm -->
-<h3  style = "color: #6366F1; font-size: 30px; padding-left: 45%" >NHÓM 02</h3>
+<h3 align="center" style = "color: #6366F1; font-size: 30px;" >NHÓM 02</h3>
 </br>
 <h4 style = "color:#6366F1" > 
-    <p style = "padding-left: 35%" >21120499 - Nguyễn Duy Long </p>
-    <p style = "padding-left: 35%" >21120504 - Nguyễn Phương Nam </p>
-    <p style = "padding-left: 35%">21120505 - Bùi Thị Thanh Ngân </p>
-    <p style = "padding-left: 35%" >21120521 - Nguyễn Phúc Phát  </p>
+    <p style = "padding-left: 35%; font-size: 22px" >21120499 - Nguyễn Duy Long </p>
+    <p style = "padding-left: 35%; font-size: 22px" >21120504 - Nguyễn Phương Nam </p>
+    <p style = "padding-left: 35%; font-size: 22px">21120505 - Bùi Thị Thanh Ngân </p>
+    <p style = "padding-left: 35%; font-size: 22px" >21120521 - Nguyễn Phúc Phát  </p>
     </br>
-    <p style = "padding-left: 30%; font-size: 22px" >Giảng viên hướng dẫn: Thầy Lê Đình Ngọc </p>
+    <p style = "padding-left: 25%; font-size: 24px" >Giảng viên hướng dẫn: Thầy Lê Đình Ngọc </p>
 </h4>
 
 <!-- ngắt trang -->
@@ -35,14 +35,20 @@
 
 <!-- Mục lục -->
 <!-- căn lề cho các heading ## --> 
-<style>
+<!-- <style>
     h2 {
         padding-left: 50px;
     }
     h3 {
         padding-left: 100px;
     }
-</style> 
+</style>  -->
+
+<!-- ngắt trang -->
+</br>
+\newpage
+</br>
+\pagebreak
 
 ***
 
@@ -50,24 +56,24 @@
 </br>
 
 ## [I. Trang thông tin.......................................................................](#none)
-## [II. Giới thiệu................................................................................](#ii-giới-thiệu)
-## [III. Trình bày thuật toán.............................................................](#iii-trình-bày-thuật-toán)
-## [IV. Kết quả thực nghiệm...........................................................](#iv-kết-quả-thực-nghiệm)
+## [II. Giới thiệu..............................................................](#giới-thiệu)
+## [III. Trình bày thuật toán.......................................](#trình-bày-thuật-toán)
+## [IV. Kết quả thực nghiệm........................................](#kết-quả-thực-nghiệm)
 ### [1. Bảng thống kê .....................................................](#bảng-thống-kê)
 ### [2. Đồ thị minh họa .................................................](#đồ-thị-minh-họa)
 ### [3. Nhận xét chung........................................................................................](#nhận-xét-chung)
-## [V. Tổ chức đồ án và các lưu ý ..........................](#v-tổ-chức-đồ-án-và-các-lưu-ý)
-## [VI. Tài liệu tham khảo......................................................................](#vi-tài-liệu-tham-khảo)
+## [V. Tổ chức đồ án và các lưu ý ..........................](#tổ-chức-đồ-án-và-các-lưu-ý)
+## [VI. Tài liệu tham khảo......................................................................](#tài-liệu-tham-khảo)
 
 ***
 
 <!-- Giới thiệu -->
-## II. Giới thiệu
+## Giới thiệu
 
 
 <!-- Trình bày thuật toán -->
 
-## III. Trình bày thuật toán
+## Trình bày thuật toán
 
 <!-- Các thuật toán sắp xếp -->
 ---
@@ -625,7 +631,7 @@
 ```
 
 <!-- Kết quả thực nghiệm -->
-## IV. Kết quả thực nghiệm
+## Kết quả thực nghiệm
 
 ### Bảng thống kê
 
@@ -633,7 +639,7 @@
 ### Data order: Randomized Data - Running time (ms)
 | Data size | 10.000 | 30.000 | 50.000 | 100.000 | 300.000| 500.000|
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| 1. Selection Sort | :---: | :---: | :---: | :---: | :---: | :---:|
+| 1. Selection Sort | 106 | 930 | :---: | :---: | :---: | :---:|
 | 2. Insertion Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 3. Bubble Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 4. Shaker Sort | :---: | :---: | :---: | :---: | :---: | :---:|
@@ -649,7 +655,7 @@
 ### Data order: Randomized Data - Comparisons
 | Data size | 10.000 | 30.000 | 50.000 | 100.000 | 300.000| 500.000|
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| 1. Selection Sort | :---: | :---: | :---: | :---: | :---: | :---:|
+| 1. Selection Sort | 100009999 | 900029999 | :---: | :---: | :---: | :---:|
 | 2. Insertion Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 3. Bubble Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 4. Shaker Sort | :---: | :---: | :---: | :---: | :---: | :---:|
@@ -664,7 +670,7 @@
 ### Data order: Sorted Data - Running time (ms)
 | Data size | 10.000 | 30.000 | 50.000 | 100.000 | 300.000| 500.000|
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| 1. Selection Sort | :---: | :---: | :---: | :---: | :---: | :---:|
+| 1. Selection Sort | 139 | 930 | :---: | :---: | :---: | :---:|
 | 2. Insertion Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 3. Bubble Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 4. Shaker Sort | :---: | :---: | :---: | :---: | :---: | :---:|
@@ -679,7 +685,7 @@
 ### Data order: Sorted Data - Comparisons
 | Data size | 10.000 | 30.000 | 50.000 | 100.000 | 300.000| 500.000|
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| 1. Selection Sort | :---: | :---: | :---: | :---: | :---: | :---:|
+| 1. Selection Sort | 100009999 | 900029999 | :---: | :---: | :---: | :---:|
 | 2. Insertion Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 3. Bubble Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 4. Shaker Sort | :---: | :---: | :---: | :---: | :---: | :---:|
@@ -694,7 +700,7 @@
 ### Data order: Reverse Data - Running time (ms)
 | Data size | 10.000 | 30.000 | 50.000 | 100.000 | 300.000| 500.000|
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| 1. Selection Sort | :---: | :---: | :---: | :---: | :---: | :---:|
+| 1. Selection Sort | 95 | 822 | :---: | :---: | :---: | :---:|
 | 2. Insertion Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 3. Bubble Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 4. Shaker Sort | :---: | :---: | :---: | :---: | :---: | :---:|
@@ -709,7 +715,7 @@
 ### Data order: Reverse Data - Comparisons
 | Data size | 10.000 | 30.000 | 50.000 | 100.000 | 300.000| 500.000|
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| 1. Selection Sort | :---: | :---: | :---: | :---: | :---: | :---:|
+| 1. Selection Sort | 100009999 | 900029999 | :---: | :---: | :---: | :---:|
 | 2. Insertion Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 3. Bubble Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 4. Shaker Sort | :---: | :---: | :---: | :---: | :---: | :---:|
@@ -724,7 +730,7 @@
 ### Data order: Nearly Sorted Data - Running time (ms)
 | Data size | 10.000 | 30.000 | 50.000 | 100.000 | 300.000| 500.000|
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| 1. Selection Sort | :---: | :---: | :---: | :---: | :---: | :---:|
+| 1. Selection Sort | 110 | 927 | :---: | :---: | :---: | :---:|
 | 2. Insertion Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 3. Bubble Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 4. Shaker Sort | :---: | :---: | :---: | :---: | :---: | :---:|
@@ -739,7 +745,7 @@
 ### Data order: Nearly Sorted Data - Comparisons
 | Data size | 10.000 | 30.000 | 50.000 | 100.000 | 300.000| 500.000|
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| 1. Selection Sort | :---: | :---: | :---: | :---: | :---: | :---:|
+| 1. Selection Sort | 100009999 | 900029999 | :---: | :---: | :---: | :---:|
 | 2. Insertion Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 3. Bubble Sort | :---: | :---: | :---: | :---: | :---: | :---:|
 | 4. Shaker Sort | :---: | :---: | :---: | :---: | :---: | :---:|
@@ -755,7 +761,7 @@
 ### Nhận xét chung
 
 <!-- Tổ chức đồ án và ghi chú -->
-## V. Tổ chức đồ án và các lưu ý
+## Tổ chức đồ án và các lưu ý
 
 #### :one: Tổ chức đồ án
 ```
@@ -798,9 +804,9 @@
 
 
 <!-- Tài liệu tham khảo -->
-## VI. Tài liệu tham khảo
+## Tài liệu tham khảo
 
-[1. selection sort](https://blog.luyencode.net/thuat-toan-sap-xep-selection-sort/)
+[1. selection sort](https://blog.luyencode.net/thuat-toan-sap-xep-selection-sort/) 
 [2. insertion sort](https://cafedev.vn/-thuat-toan-insertion-sort-gioi-thieu-chi-tiet-va-code-vi-du-tren-nhieu-ngon-ngu-lap-trinh/)
 [3. bubble sort](https://cafedev.vn/thuat-toan-bubble-sort-gioi-thieu-chi-tiet-va-code-vi-du-tren-nhieu-ngon-ngu-lap-trinh/)
 [4. shell sort](https://www.geeksforgeeks.org/shellsort/)
