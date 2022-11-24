@@ -9,6 +9,10 @@
 
 ---
 
+<div >
+<a class = "go-muc-luc" href = "#muc-luc-page"> ☝️ </a>
+</div>
+
 <h2 align = "center" style = "color: #333"> 
     <p> ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH </p>
     <p> TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN </p>
@@ -44,7 +48,7 @@
 
 ---
 
-<h3 align = "center" style = "color: #3B82F6; font-size: 30px" >MỤC LỤC</h3>
+<h3 id = "muc-luc-page" align = "center" style = "color: #3B82F6; font-size: 30px" >MỤC LỤC</h3>
 </br>
 
 <h2 id="i-trang-th%C3%B4ng-tin"><a href="#none">I. Trang thông tin</a>.....................................................................................</h2>
@@ -57,62 +61,97 @@
 <h2 id="v-t%E1%BB%95-ch%E1%BB%A9c-%C4%91%E1%BB%93-%C3%A1n-v%C3%A0-c%C3%A1c-l%C6%B0u-%C3%BD"><a href="#to-chuc-do-an-va-ghi-chu">V. Tổ chức đồ án và các ghi chú</a>................................................................</h2>
 <h2 id="vi-t%C3%A0i-li%E1%BB%87u-tham-kh%E1%BA%A3o"><a href="#tai-lieu-tham-khao">VI. Tài liệu tham khảo</a>..............................................................................</h2>
 
-<div style = "height: 500px"></div>
+<div style = "height: 440px"></div>
+
+<p style="text-align:center">
+
+     Mẹo: click vào nút ☝️ góc phải trang để đến trang mục lục nhanh nhất
+ </p>
 
 
 <!-- --- -->
 <div class = "page" ></div>
 
-
-___
+---
 
 <!-- Giới thiệu -->
-<h2 id = "gioi-thieu"  class = "muc-luc-heading">II. Giới thiệu</h2>
+<h2  id = "gioi-thieu"  class = "muc-luc-heading">II. Giới thiệu</h2>
 
-<h3>1. Các chủ đề bài báo cáo</h3>
+<h3 class ="intro-heading">1. Các chủ đề bài báo cáo</h3>
 <p>Trong bài báo cáo này, chúng em sẽ trình bày về 11 thuật toán sắp xếp được nêu ra trong lab03. Cụ thể, chúng em sẽ trình bày về các thuật toán sắp xếp sau:</p>
-<div style="display: flex; justify-content: space-around">
-<ul class="intro-list">
+<div class = "intro-table">
+
+<!-- <ul class="intro-list"> -->
+
 <li>Insertion Sort (Sắp xếp chèn) </li>
 <li>Selection Sort (Sắp xếp chọn) </li>
 <li>Bubble Sort (Sắp xếp nổi bọt) </li>
 <li>Quick Sort (Sắp xếp nhanh) </li>
 <li>Heap Sort (Sắp xếp vun đống) </li>
 <li>Merge Sort (Sắp xếp trộn) </li>
-</ul>
 
-<ul class = "intro-list">
+<!-- </ul> -->
+
+<!-- <ul class = "intro-list"> -->
+
 <li>Shell Sort </li>
 <li>Shaker Sort </li>
 <li>Counting Sort </li>
 <li>Radix Sort </li>
 <li>Flash Sort </li>
-</ul>
+<!-- </ul> -->
+
 </div>
 
 <style>
-.intro-list li {
-    /* list-style: none; */
+.intro-table {
+        display: flex;
+        justify-content: space-around ;
+        flex-wrap: wrap;
+        flex-direction: row;
+}
+
+    .intro-table li {
+    flex-basis: 40%;
+    flex: 2;
+    list-style: none;
     padding: 4px;
     margin: 4px;
     background-color: #f5f5f5;
     border: 1px solid #e5e5e5;
+    display: inline-block;
+}
+
+    .intro-heading {
+        /* width: 200px; */
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        font-weight: normal;
+        /* color: #3B82F6; */
+        border: 1px solid  #3B82F6;
+        background-color: #f5f5f5;
+
+        padding: 10px;
+    }
+
+</style>
 
 
-    </style>
 
+<h3 class ="intro-heading">2. Mục tiêu bài báo cáo</h3>
+<p> 
 
+    Bài báo cáo này có mục tiêu nhằm giúp người đọc hiểu rõ hơn về các thuật toán sắp xếp, cách thức hoạt động của chúng, các ưu, nhược điểm của chúng. Đồng thời, bài báo cáo cũng giúp người đọc hiểu rõ hơn về cách thức thực hiện các thuật toán sắp xếp, cách thức thực hiện các thí nghiệm để đánh giá hiệu suất của chúng và cái nhìn tổng quan hơn về độ phức tạp và hiệu suất của các thuật toán qua việc so sánh chúng với nhau thông qua các biểu đồ cụ thể.</p>
 
-<h3>2. Mục tiêu bài báo cáo</h3>
-<p> Bài báo cáo này có mục tiêu nhằm giúp người đọc hiểu rõ hơn về các thuật toán sắp xếp, cách thức hoạt động của chúng, các ưu, nhược điểm của chúng. Đồng thời, bài báo cáo cũng giúp người đọc hiểu rõ hơn về cách thức thực hiện các thuật toán sắp xếp, cách thức thực hiện các thí nghiệm để đánh giá hiệu suất của chúng và cái nhìn tổng quan hơn về độ phức tạp và hiệu suất của các thuật toán qua việc so sánh chúng với nhau thông qua các biểu đồ cụ thể.</p>
+    Phần 1 – Trình bày các thuật toán sắp xếp: ý tưởng, mã giả, độ phức tạp và những biến thể - cải tiến (nếu có)
+    Phần 2 – Kết quả thực nghiệm: thống kê các số liệu thu được thông qua việc thực thi chương trình với các dữ liệu đầu vào khác nhau, so sánh với nhau và đưa ra nhận xét.
+    Phần 3 – Tổ chức mã nguồn: trình bày tổng quan cách thức tổ chức các file chương trình và những thư viện, cấu trúc dữ liệu được sử dụng. 
+    Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử dụng trong quá trình tìm hiểu.
+</p>
 
-Phần 1 – Trình bày các thuật toán sắp xếp: ý tưởng, mã giả, độ phức tạp và những biến thể - cải tiến (nếu có)
-Phần 2 – Kết quả thực nghiệm: thống kê các số liệu thu được thông qua việc thực thi chương trình với các dữ liệu đầu vào khác nhau, so sánh với nhau và đưa ra nhận xét.
-Phần 3 – Tổ chức mã nguồn: trình bày tổng quan cách thức tổ chức các file chương trình và những thư viện, cấu trúc dữ liệu được sử dụng. 
-Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử dụng trong quá trình tìm hiểu.
-
-
-<h3 >2. Sơ lược về chương trình:</h3>
+<h3 class="intro-heading" >3. Sơ lược về chương trình:</h3>
 
 <div align="center">
     <img src = "./img/intro.png" />
@@ -126,11 +165,9 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 </style>
 
-<div class = "page" ></div>
+<hr>
 
-
-<!-- Trình bày thuật toán -->
-***
+---
 
 <!-- Trình bày thuật toán -->
 <h2 id="trinh-bay-thuat-toan" class ="muc-luc-heading" >III. Trình bày thuật toán</h2>
@@ -198,96 +235,33 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 </div>
 
-<style>
-    body {
-        
-        border: 1px  double #059669;
-        /* border-style: double; */
-        
-    }
-
-    .page {
-        border-top: 1px  dashed #059669;
-        border-bottom: 1px  dashed #059669;
-        /* border-top: 1px  dashed red;
-        border-bottom: 1px  dashed red; */
-    }
-
-     hr {
-        border-top: 1px solid #059669;
-        border-bottom: 1px solid #059669;
-    }
-
-    .type-alg{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-
-    }
-
-    .type-alg h3{
-        flex-basis: 33%;
-        text-align: center;
-        border: 1px solid #2563EB;
-        border-radius: 5px;
-        border-style:  double;
-        padding: 20px ;
-        background-color: #E0E7FF;
-        
-    }
-
-    .type-alg h3 a{
-        color: #8B5CF6;
-        text-decoration: none;
-    }
-
-    .type-alg h3 a:hover{
-        color: #EF4444;
-    }
-
-    .type-alg h3:hover{
-        background-color: #FECACA;
-        color: #333;
-    }
-
-</style>
-
-<style > 
-    .table-algorithms {
-        display: none;
-        border-collapse: collapse;
-        width: 100%;
-        flex-direction: row;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    
-    .table-algorithms td, .table-algorithms th {
-        border: 1px solid #ddd;
-        padding: 8px;
-    }
-    
-    .table-algorithms tr:nth-child(even){background-color: #f2f2f2;}
-    
-    .table-algorithms tr:hover {background-color: #ddd;}
-    
-    .table-algorithms th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #4CAF50;
-        color: white;
-    }
-
-</style>
 
 <div style = "height: 270px"></div>
 <hr>
 
-<!-- *** -->
-<div class = "page"></div>
+
+<style>
+        .idea-algs, .pseudocode-algs, .complexity-algs, .upgrade-algs {
+        display:inline-block;
+
+        /* color: #059669; */
+        color: #000;
+        font-weight: lighter;
+        font-size: 20px;
+
+        /* border : 1px solid ##A78BFA; */
+        border-radius: 5px;
+
+        border: 1px solid ;
+
+        /* width: 300px; */
+        background-color: pink;
+
+        padding: 8px 20px 4px;
+
+    }
+
+</style>
 
 <!-- Trình bày -->
 ---
@@ -338,8 +312,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
     Double selection sort, tìm cùng lúc giá trị lớn nhất và nhỏ nhất sau đó di chuyển các giá trị này đến đầu và cuối mảng.
 ``` 
 
-<!-- --- -->
-<div class = "page" ></div>
+<hr>
 
 ---
 <!-- #### :two: Insertion Sort -->
@@ -389,12 +362,12 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
     Có thể dùng binary search để giảm số lần so sánh.
 ```
 
-<!-- --- -->
-<div class = "page" ></div>
+<hr>
 
 ---
 
 <h4 id = "three-bubble-sort" class ="alg-heading-title" > 3️⃣ Bubble Sort</h4>
+</br>
 
 <h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
 
@@ -431,11 +404,10 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
     - Biến thể là Shaker Sort.
 ```
 
-<!-- --- -->
-<div class = "page" ></div>
+<hr>
 
 ---
-<!-- #### :four: Shaker Sort -->
+
 <h4 id = "four-shaker-sort" class ="alg-heading-title" > 4️⃣ Shaker Sort</h4>
 <!-- 1. Ý tưởng thuật toán: -->
 <h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
@@ -481,8 +453,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 ```
 
-<!-- --- -->
-<div class = "page" ></div>
+<hr>
 
 ---
 
@@ -542,8 +513,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
     Insertion sort 
 ```
 
-<!-- --- -->
-<div class = "page" ></div>
+<hr>
 
 ---
 
@@ -610,8 +580,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
     Quick sort median: chọn pivot là phần tử ở giữa mảng.
 ```
 
-<!-- --- -->
-<div class = "page" ></div>
+<hr>
 
 ---
 
@@ -658,8 +627,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
     Thời gian: O(nlogn) cho mọi trường hợp.
 ```
 
-<!-- --- -->
-<div class = "page" ></div>
+<hr>
 
 ---
 
@@ -717,8 +685,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
     Katajainen et al: cũng là một in-place sorting với độ phức tạp O(nlogn) chưa được ổn định
 ```
 
-<!-- --- -->
-<div class = "page" ></div>
+<hr>
 
 ---
 
@@ -776,13 +743,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
     Thời gian: O(nk) vì ta cần duyệt qua tất cả các phần tử trong mảng và các chữ số của các phần tử.
 ```
 
-<!-- 4. Ưu, nhược điểm: -->
-<h4 class= "complexity-algs" >4. Ưu, nhược điểm:</h4>
-
-```
-    
-
-```
+<hr>
 
 ---
 
@@ -790,6 +751,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 <!-- 1. Ý tưởng thuật toán: -->
 <h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
+
 ```
     1. Tìm phần tử lớn nhất trong mảng
     2. Tạo mảng mới có kích thước bằng phần tử lớn nhất + 1, khởi tạo các phần tử bằng 0
@@ -845,6 +807,8 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
         + Xét trường hợp k = n*n => worst case
         + Không phải là thuật toán tại chỗ (in-place alogrithm) vì cần mảng mới để lưu số lần xuất hiện của các phần tử.
 ```
+
+<hr>
 
 ---
 
@@ -926,7 +890,9 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 ```
 
-<div class = "page" />
+<hr>
+
+---
 
 <!-- Kết quả thực nghiệm -->
 <h2 id = "ket-qua-thuc-nghiem" class ="muc-luc-heading" >IV. Kết quả thực nghiệm</h2>
@@ -942,37 +908,29 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 <div align="center">
 
 <img src = "./img/data_randomized.png" />
-
-</br>
 </br>
 
 <img src = "./img/data_nearlySorted.png" />
-
-</br>
 </br>
 
 <img src = "./img/data_sorted.png" />
-
-</br>
 </br>
 
 <img src = "./img/data_reversed.png" />
 
-</br>
-
 </div>
 
-<div class = "page" />
+<hr>
+
+---
 
 <!-- Bảng running time và comparisons của radomized data -->
-#### 
 
 <h3 id = "do-thi-minh-hoa" class="miniHeading" >2. 〽️ Đồ thị minh họa 📊 </h3>
-- Các biểu đồ sau đây sẽ giúp ta dễ dàng thống kê và hình dung để có cái nhìn chung về sự thay đổi của thời gian chạy và số lần so sánh của thuật toán với các trường hợp khác nhau về kiểu dữ liệu (rand, sorted nsorted, rev) và kích thước dữ liệu (10 000, 30 000, 50 000, 100 000, 300 000, 500 000).
+
+     Các biểu đồ sau đây sẽ giúp ta dễ dàng thống kê và hình dung để có cái nhìn chung về sự thay đổi của thời gian chạy và số lần so sánh của thuật toán với các trường hợp khác nhau về kiểu dữ liệu (rand, sorted nsorted, rev) và kích thước dữ liệu (10 000, 30 000, 50 000, 100 000, 300 000, 500 000).
 
 <!-- <h3 id="line-graph" class = "heading-graph">  〽️ Đồ thị đường 〽️ </h3> -->
-
-
 
 <div align = "center">
 <h3 class="heading_chart">Trường hợp dữ liệu ngẫu nhiên</h3>
@@ -980,9 +938,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 <img src = "./img/lineChart_randomized.png"  />
 <img src = "./img/barChart_rand.png"  />
 
-<p>
-
-    ```cpp
+```cpp
         // Hàm phát sinh mảng dữ liệu ngẫu nhiên
         void GenerateRandomData(int a[], int n)
         {
@@ -993,8 +949,9 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 		        a[i] = rand()%n; 
 	        }
         }
+```
 
-    ```
+<p>
 
     - Về thời gian chạy: (sắp xếp theo hướng thời gian chạy tăng dần)
     + Counting < Flash < Quick < Heap ~ Shell ~ Merge ~ Radix < Insertion < Selection < Shaker < Bubble
@@ -1018,7 +975,9 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 </p>
 
-<div class = "page" />
+<hr>
+
+---
 
 <h3 class="heading_chart">Trường hợp dữ liệu gần như đã sắp xếp</h3>
 
@@ -1026,6 +985,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 <img src = "./img/barChart_nearlySorted.png"  />
 
 <p>
+
     - Về thời gian chạy: (sắp xếp theo hướng thời gian chạy tăng dần)
     + Counting ~ Shaker ~ Insertion < Quick ~ Flash < Shell < Merge ~ Heap < Radix < Bubble ~ Selection
 
@@ -1045,7 +1005,9 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 </p>
 
-<div class = "page" />
+<hr>
+
+---
 
 <h3 class="heading_chart">Trường hợp dữ liệu đã sắp xếp</h3>
 
@@ -1053,6 +1015,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 <img src = "./img/barChart_sorted.png" >
 
 <p>
+
     - Về thời gian chạy: (sắp xếp theo hướng thời gian chạy tăng dần)
     + Shaker ~ Insertion < Counting ~ Quick < Flash < Shell < Merge ~ Heap < Radix < Bubble ~ Selection
 
@@ -1072,7 +1035,9 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 </p>
 
-<div class = "page" />
+<hr>
+
+---
 
 <h3 class="heading_chart">Trường hợp dữ liệu đã đảo ngược</h3>
 
@@ -1080,6 +1045,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 <img src = "./img/barChart_rev.png" />
 
 <p>
+
     - Về thời gian chạy: (sắp xếp theo hướng thời gian chạy tăng dần)
     + Counting < Quick ~ Flash < Shell < Heap < Merge < Radix < Selection < Insertion < Shaker ~ Bubble
 
@@ -1098,7 +1064,9 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 </div>
 
-<div class = "page" />
+<hr>
+
+---
 
 
 <!-- <h3 id="do-thi-cot" class ="heading-graph"> 📊 Đồ thị cột 📊 </h3> -->
@@ -1119,6 +1087,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 <h3 id="nhan-xet-chung" class="miniHeading">3. Nhận xét chung </h3> 
 
 <p>
+
 *** Về thời gian chạy :
     - Với kích thước dữ liệu nhỏ (10 000 -> 50 000) nhìn chung tốc dộ chênh lệch của các thuật toán không đáng kể, không rõ để phân biệt qua đồ thị.
     - Trong 4 trường hợp, nhìn chung các thuật toán Counting, Flash và Quick Sort có thời gian chạy tốt nhất.
@@ -1139,7 +1108,9 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 </p>
 
-<div class = "page" />
+<hr>
+
+---
 
 <!-- Tổ chức đồ án và ghi chú -->
 
@@ -1199,7 +1170,9 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 - Cấu trúc dữ liệu sử dụng : hàng đợi `Queue` hỗ trợ xây dựng thuật toán Radix sort, và mảng kiểu `int` để lưu trữ dữ liệu đầu vào thông qua cấp phát động.
 
 
-<div class = "page" />
+<hr>
+
+---
 
 
 <!-- Tài liệu tham khảo -->
@@ -1215,8 +1188,8 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 <p>https://cafedev.vn/-thuat-toan-insertion-sort-gioi-thieu-chi-tiet-va-code-vi-du-tren-nhieu-ngon-ngu-lap-trinh/</p>
 </li>
 <li>
-<a  href="https://cafedev.vn/thuat-toan-bubble-sort-gioi-thieu-chi-tiet-va-code-vi-du-tren-nhieu-ngon-ngu-lap-trinh/">3. bubble sort</a>
-<p>https://cafedev.vn/thuat-toan-bubble-sort-gioi-thieu-chi-tiet-va-code-vi-du-tren-nhieu-ngon-ngu-lap-trinh/</p>
+<a   href="https://www.geeksforgeeks.org/cocktail-sort/">3. shaker sort</a>
+<p>https://www.geeksforgeeks.org/cocktail-sort/</p>
 </li>
 <li>
 <a   href="https://www.geeksforgeeks.org/shellsort/">4. shell sort</a>
@@ -1251,8 +1224,8 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 <p>https://codelearn.io/sharing/flash-sort-thuat-toan-sap-xep-than-thanh</p>
 </li>
 <li>
-<a   href="https://www.geeksforgeeks.org/cocktail-sort/">11. shaker sort</a>
-<p>https://www.geeksforgeeks.org/cocktail-sort/</p>
+<a  href="https://cafedev.vn/thuat-toan-bubble-sort-gioi-thieu-chi-tiet-va-code-vi-du-tren-nhieu-ngon-ngu-lap-trinh/">11. bubble sort</a>
+<p>https://cafedev.vn/thuat-toan-bubble-sort-gioi-thieu-chi-tiet-va-code-vi-du-tren-nhieu-ngon-ngu-lap-trinh/</p>
 </li>
 <li>
 <a   href="https://www.iostream.vn/giai-thuat-lap-trinh/distribution-sort-radix-sort-vqu1H1">12. radix sort</a>
@@ -1261,29 +1234,113 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 <li>
 <a   href="https://codelearn.io/sharing/dau-moi-la-thuat-toan-sap-xep-tot-nhat">13. Complexity </a>
 <p>https://codelearn.io/sharing/dau-moi-la-thuat-toan-sap-xep-tot-nhat</p>
+</li>
 
 </div>
 
+
 </br>
 </br>
+
+___
 
 <!-- style for classes -->
 <style> 
 
-    .idea-algs, .pseudocode-algs, .complexity-algs, .upgrade-algs {
+    body {
+        
+        border: 1px  double #059669;
+        /* border-style: double; */
+        
+    }
+
+    .page {
+        border-top: 1px  solid #059669;
+        border-bottom: 1px  solid #059669;
+        /* border-top: 1px  dashed red;
+        border-bottom: 1px  dashed red; */
+    }
+
+     hr {
+        border-top: 1px solid #059669;
+        border-bottom: 1px solid #059669;
+    }
+
+    .type-alg{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
 
     }
+
+    .type-alg h3{
+        flex-basis: 33%;
+        text-align: center;
+        border: 1px solid #2563EB;
+        border-radius: 5px;
+        border-style:  double;
+        padding: 20px ;
+        background-color: #E0E7FF;
+        
+    }
+
+    .type-alg h3 a{
+        color: #8B5CF6;
+        text-decoration: none;
+    }
+
+    .type-alg h3 a:hover{
+        color: #EF4444;
+    }
+
+    .type-alg h3:hover{
+        background-color: #FECACA;
+        color: #333;
+    }
+
+
+    .table-algorithms {
+        display: none;
+        border-collapse: collapse;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .table-algorithms td, .table-algorithms th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    
+    .table-algorithms tr:nth-child(even){background-color: #f2f2f2;}
+    
+    .table-algorithms tr:hover {background-color: #ddd;}
+    
+    .table-algorithms th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+
    
     .muc-luc-heading {
         text-align: center;
         font-size: 26px;
         font-weight: normal;
-        margin: 20px 0;
+        margin: 10px 0;
         color: #3B82F6;
-        padding:50px 100px;
+        padding:30px 100px;
 
         /* polygon */
-        clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+        /* clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%); */
+         clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 100%, 0% 75%) ;
+         /* clip-path: polygon(1px 1px, calc(100% - 1px) 1px, calc(100% - 1px) calc(75% - 1px), 50% calc(100% - 1px), 1px calc(75% - 1px)) ; */
+
         background-color: #ccc;
         border: 1px dashed red;
     }
@@ -1302,12 +1359,18 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
         color: #265868;
     }
 
-    .alg-heading-title {
+    .alg-heading-title { // title of algorithm
         text-align: center;
         font-size: 24px;
         font-weight: 600;
         margin: 20px 0;
         color: #569887;
+
+        border: 1px solid #059;
+        padding: 10px;
+
+        display: inline-block;
+        margin-left: 40%;
     }
    
 
@@ -1321,16 +1384,18 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
     .reference-cols li {
         list-style: none;
         flex-basis: 45%;
-        margin: 10px 0;
+        margin: 8px 0;
         background-color: #f5f5f5;
         border-radius: 5px;
-        padding: 20px 10px 5px;
+        padding: 10px 8px 8px;
         box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
 
 
         text-align: center;
         box-sizing: border-box;
-        clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+        /* clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%); */
+         clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 100%, 0% 75%) ;
+
         /* style border for polygon */
         border: 1px solid #e5e5;
         /* stroke: 1px double red; */
@@ -1340,7 +1405,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
     .reference-cols li p {
         text-decoration: none;
         color: #000;
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .reference-cols a {
@@ -1372,6 +1437,36 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
         padding: 10px;
     }
 
+    .heading_chart {
+        text-align: center;
+        font-size: 24px;
+        font-weight: lighter;
+        margin: 20px 0;
+        /* color: #2563EB; */
+        color: #000;
+        border: 1px solid #2563EB;
+        border-radius: 5px;
+        background-color: #E0E7FF;
+    }
+
+    /* bấm vào để lên trang mục lục */
+    .go-muc-luc {
+        position: fixed;
+        bottom: -10px;
+        right: -2px;
+        padding: 2px 4px;
+        /* background-color: #059669; */
+        font-size: 12px;
+        font-weight: lighter;
+        border-radius: 5px;
+        text-decoration: none;
+        margin: 10px;
+
+        color: #000;
+
+        border: 1px solid #000;
+
+    }
 
 
 </style>
