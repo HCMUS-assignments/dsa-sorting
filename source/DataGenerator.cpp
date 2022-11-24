@@ -17,7 +17,7 @@ void GenerateRandomData(int a[], int n)
 
 	for (int i = 0; i < n; i++)
 	{
-		a[i] = rand()%n;
+		a[i] = rand()%n; 
 	}
 }
 

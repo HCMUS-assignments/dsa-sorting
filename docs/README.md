@@ -299,6 +299,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 <!-- 1. Ý tưởng thuật toán: -->
 <h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
+
 ```
     Mỗi bước sẽ di chuyển một phần tử nhỏ nhất sang bên trái, từ đó mảng sẽ dần được chia làm 2 phần: 
 
@@ -322,10 +323,9 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 <h4 class = "complexity-algs">3. Độ phức tạp</h4>
 
 ```
-
     Không gian: O(1) 
 
-    Thời gian: O(n^2)
+    Thời gian: O(n^2) cho mọi trường hợp.
 ```
 
 <!-- 4. Biến thể và cải tiến: -->
@@ -348,6 +348,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 <!-- 1. Ý tưởng thuật toán: -->
 <h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
+
 ```
     1. Chèn phần tử thứ hai vào vị trí thích hợp trong mảng con đã được sắp xếp.
     2. Chèn phần tử thứ ba vào vị trí thích hợp trong mảng con đã được sắp xếp.
@@ -371,14 +372,12 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 <h4 class = "complexity-algs">3. Độ phức tạp</h4>
 
 ```
+    Không gian: O(1)
     
-        Không gian: O(1)
-    
-        Thời gian: O(n^2)
-
-        Trung bình, thuật toán sắp xếp chèn – Insertion sort có độ  phức tạp là O(n^2)
-        Trường hợp tốt nhất là với đầu vào đã được sắp xếp đúng thứ tự. Trường hợp xấu là dãy bị đảo ngược thứ tự hoàn toàn.
-
+    Thời gian:
+        - Trung bình, thuật toán có độ  phức tạp là O(n^2)
+        - Trường hợp tốt nhất là với đầu vào đã được sắp xếp đúng thứ tự : O(n)
+        - Trường hợp xấu là dãy bị đảo ngược thứ tự hoàn toàn : O(n^2)
 ```
 
 <!-- 4. Biến thể và cải tiến: -->
@@ -396,16 +395,15 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 ---
 
 <h4 id = "three-bubble-sort" class ="alg-heading-title" > 3️⃣ Bubble Sort</h4>
-#### :three: Bubble Sort
-<!-- 1. Ý tưởng thuật toán: -->
+
 <h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
+
 ```
     1. So sánh 2 phần tử liền kề, nếu phần tử đứng trước lớn hơn phần tử đứng sau thì hoán đổi chỗ 2 phần tử này.
     2. Lặp lại cho đến khi không còn phần tử nào cần hoán đổi chỗ.
-
 ```
 
-<!-- 2. Psuedocode: -->
+
 <h4 class ="pseudocode-algs">2. Pseudocode: </h4>
 
 ```cpp
@@ -421,9 +419,10 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 ```
     Không gian: O(1) 
-
-    Thời gian: O(n^2) đối với trường hợp tệ nhất, O(n) đối với trường hợp tốt nhất.
-
+    Thời gian: 
+            + Trung bình, thuật toán có độ phức tạp là O(n^2)
+            + Trường hợp tốt nhất là với đầu vào đã được sắp xếp đúng thứ tự : O(n)
+            + Trường hợp xấu là dãy bị đảo ngược thứ tự hoàn toàn : O(n^2)
 ```
 
 <!-- 4. Biến thể và cải tiến: -->
@@ -432,7 +431,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 ``` 
     Trong mỗi vòng lặp của biến j ở trên, kiểm tra xem nếu không có phép hoán vị nào được thực hiện tức mảng đã đúng vị trí ta sẽ dừng thuật toán ngay lập tức. Trong trường hợp tốt nhất mảng đã được sắp xếp độ phức tạp về thời gian là O(n)
 
-    Biến thể là Recursive Bubble Sort và Shaker Sort.
+    Biến thể là Shaker Sort.
 ```
 
 <!-- --- -->
@@ -443,12 +442,12 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 <h4 id = "four-shaker-sort" class ="alg-heading-title" > 4️⃣ Shaker Sort</h4>
 <!-- 1. Ý tưởng thuật toán: -->
 <h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
+
 ```
     1. Chọn khoảng xét từ đầu đến cuối mảng
     2. Thực hiện duyệt khoảng xét bằng 2 lượt, so sánh 2 phần tử liền kề và hoán vị:(Lượt đi: đẩy phần tử lớn nhất về cuối; Lượt về: đẩy phần tử nhỏ nhất về đầu)
     3. Đồng thời, mỗi lượt đi ghi nhận lại vị trí hoán vị cuối cùng, để thu hẹp 2 phía khoảng xét ở mỗi lượt.
     4. Lặp lại bước 2 và 3 đến khi 2 đầu khoảng xét giao nhau.
-
 ```
 
 <!-- 2. Psuedocode: -->
@@ -477,7 +476,10 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 ```
     Không gian: O(1)
 
-    Thời gian: O(n^2)
+    Thời gian: 
+            + Trung bình, thuật toán có độ phức tạp là O(n^2)
+            + Trường hợp tốt nhất là với đầu vào đã được sắp xếp đúng thứ tự : O(n)
+            + Trường hợp xấu là dãy bị đảo ngược thứ tự hoàn toàn : O(n^2)
     Có độ phức tạp tương tự như Bubble Sort nhưng có thể tối ưu hơn về thời gian trong trường hợp tốt nhất.
 
 ```
@@ -491,20 +493,19 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 <!-- 1. Ý tưởng thuật toán: -->
 <h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
+
 ```
     Shell sort là một biến thể cải tiến hơn của insertion sort.  
     Thuật toán sử dụng insertion sort lên các phần tử cách xa nhau sau đó thu hẹp dần khoảng cách này. 
     Như vậy mảng sẽ được chia thành các mảng con với các phần tử có khoảng cách là h
     sắp xếp các mảng con này bằng insertion sort và lặp lại các bước trên với khoảng cách thu hẹp dần thì ta được mảng có thứ tự. 
-
 ```
 
 <!-- 2. Psuedocode: -->
 <h4 class ="pseudocode-algs">2. Pseudocode: </h4>
 
 ```cpp
-    h = n / 2 
-
+    h = n / 2  // khoảng cách giữa các phần tử
     While h >  0: 
 
         For i = h đến n – 1: 
@@ -518,7 +519,6 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
             Chèn temp vào trị ví thích hợp 
 
         h / 2  
-
 ```
 
 <!-- 3. Độ phức tạp:  -->
@@ -527,15 +527,11 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 ```
     Không gian: sắp xếp tại chỗ nên là O(1) 
 
-    Thời gian: độ phức tạp của shell sort tùy thuộc vào h ta chọn, với những h thích hợp
-    ta có thể tối ưu shell sort hơn nữa. Với h = h/2 ta chọn ở trên: 
-
-    Trường hợp tệ nhất là khi shell sort trở thành insertion sort, lúc này độ phức tạp thời gian là O(n2) 
-
-    Trường hợp tốt nhất là khi mảng đã được sắp xếp sẵn thì độ phức tạp sẽ là O(nlogn) 
-
-    Trung bình thời gian chạy của shell sort sẽ là O(nlogn) 
-
+    Thời gian: 
+        +Trung bình thời gian chạy của shell sort sẽ tùy thuộc vào h ta chọn, với những h thích hợp
+        ta có thể tối ưu shell sort hơn nữa. Với h = h/2 ta chọn ở trên: 
+        +Trường hợp tệ nhất là khi shell sort trở thành insertion sort, lúc này độ phức tạp thời gian là O(n^2)
+        +Trường hợp tốt nhất là khi mảng đã được sắp xếp sẵn thì độ phức tạp sẽ là O(nlogn) 
 ```
 
 <!-- 4. Biến thể và cải tiến: -->
@@ -547,7 +543,6 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
     Shaker sort 
 
     Insertion sort 
-
 ```
 
 <!-- --- -->
@@ -560,32 +555,41 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 <!-- 1. Ý tưởng thuật toán: -->
 <h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
+
 ```
     1. Chọn một phần tử làm pivot.
     2. Đưa các phần tử nhỏ hơn pivot về bên trái pivot, các phần tử lớn hơn pivot về bên phải pivot.
-    3. Lặp lại bước 1 và 2 cho đến khi không còn phần tử nào cần sắp xếp.
-
+    3. Đệ quy sắp xếp các mảng con bên trái và bên phải pivot.
 ```
 
 <!-- 2. Psuedocode: -->
 <h4 class ="pseudocode-algs">2. Pseudocode: </h4>
 
 ```cpp
-  quickSort(a, l, r)
-    if l < r
-        p = partition(a, l, r)
-        quickSort(a, l, p - 1)
-        quickSort(a, p + 1, r)
+    quickSort(a[], left, right) {
+        i = left, j = right;    // left, right là chỉ số đầu và cuối của mảng
+        pivot = a[(left + right) / 2];  // Chọn pivot là phần tử ở giữa mảng
 
-    partition(a, l, r)
-    pivot = a[r]
-    i = l - 1
-    for j = l to r - 1
-        if a[j] <= pivot
-            i = i + 1
-            swap a[i] and a[j]
-    swap a[i + 1] and a[r]
-    return i + 1
+    while (i <= j) {
+        khi a[i] < pivot thì i++
+        khi a[j] > pivot thì j--
+        khi a[i] >= pivot và a[j] <= pivot thì đổi chỗ a[i] và a[j]
+        if (i <= j) {
+            swap(a[i], a[j]);
+            i++;
+            j--;
+        }
+        // thực hiện đến khi i > j
+    }
+    // Đây là lúc mảng đã được chia thành 2 mảng con: a[left] -> a[j] và a[i] -> a[right]
+    // Tiếp tục sắp xếp 2 mảng con này bằng quick sort
+    if (left < j) { 
+        quickSort(a, left, j);
+    }
+    if (i < right) {
+        quickSort(a, i, right);
+    }
+}
 
 ```
 
@@ -593,10 +597,11 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 <h4 class = "complexity-algs">3. Độ phức tạp</h4>
 
 ```
-    Không gian: O(logn)
-
-    Thời gian: O(nlogn)
-
+    Không gian: O(logn) vì đệ quy
+    Thời gian: 
+            + Trung bình: O(nlogn)
+            + Trường hợp tốt nhất: O(nlogn)
+            + Trường hợp tệ nhất: O(n^2)    
 ```
 
 <!-- 4. Biến thể và cải tiến: -->
@@ -604,11 +609,8 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 ``` 
     Quick sort 3-way: sử dụng 3 pivot để chia mảng thành 3 phần.
-
     Quick sort random: chọn pivot ngẫu nhiên.
-
     Quick sort median: chọn pivot là phần tử ở giữa mảng.
-
 ```
 
 <!-- --- -->
@@ -621,12 +623,12 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 <!-- 1. Ý tưởng thuật toán: -->
 <h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
+
 ```
     1. Tạo max - heap từ mảng.
     2. Lấy phần tử lớn nhất tại vị trí 0 và đưa về cuối mảng, giảm kích thước của mảng đi 1.
     3. heapify lại mảng.
     4. Lặp lại bước 2 và 3 cho đến khi kích thước của mảng bằng 1.
-
 ```
 
 <!-- 2. Psuedocode: -->
@@ -641,16 +643,14 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
         heapify(a, i, 0)
     // viết hàm để heapify
     heapify(a, n, i)
-    largest = i
-    l = 2 * i + 1
-    r = 2 * i + 2
-    if l < n and a[l] > a[largest]
-        largest = l
-    if r < n and a[r] > a[largest]
-        largest = r
-    if largest != i
-        swap a[i] and a[largest]
-        heapify(a, n, largest)
+        largest = i
+        l = 2 * i + 1
+        r = 2 * i + 2
+        if l < n and a[l] > a[largest] : largest = l
+        if r < n and a[r] > a[largest] : largest = r
+        if largest != i // nếu i không phải là largest
+            swap a[i] and a[largest]
+            heapify(a, n, largest)
 ```
 
 <!-- 3. Độ phức tạp:  -->
@@ -658,9 +658,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 ```
     Không gian: O(1)
-
-    Thời gian: O(nlogn)
-
+    Thời gian: O(nlogn) cho mọi trường hợp.
 ```
 
 <!-- --- -->
@@ -672,47 +670,36 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 <!-- 1. Ý tưởng thuật toán: -->
 <h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
+
 ```
     Sử dụng thuật toán chia để trị xử lý 2 nữa mảng rồi trộn chúng lại với nhau. Cụ thể: 
-
     Mảng được chia đôi thành 2 phần bằng đệ qui cho đến khi mảng chỉ còn 1 phần tử.
-     
     Trộn 2 mảng đã có thứ tự này lại bằng cách lấy lần lượt số nhỏ nhất ở đầu 2 mảng bỏ vào mảng chính. 
-
 ```
 
 <!-- 2. Psuedocode: -->
 <h4 class ="pseudocode-algs">2. Pseudocode: </h4>
 
 ```cpp
-    Hàm trộn 2 mảng có thứ tự left và right vào mảng chính: 
-
+    // Hàm trộn 2 mảng có thứ tự left và right vào mảng chính: 
     While 2 cả mảng left và right còn phần tử: 
-
         Lấy lần lượt phần ở đầu 2 mảng 
-
-        So sánh 2 phần tử này 
-
+        So sánh 2 phần tử này
         Phần tử nào nhỏ hơn thì lấy bỏ vào mảng chính 
 
     Nếu mảng left còn phần tử: 
-
         Bỏ phần còn lại đó vào phía sau mảng chính 
 
     Nếu mảng right còn phần tử: 
-
         Bỏ phần còn lại đó vào phía sau mảng chính 
 
-    Hàm mergeSort: 
-
-    Nếu mảng có n <= 1 thì dừng 
-
+    // Hàm mergeSort: 
+        Nếu mảng có n <= 1 thì dừng 
         Chia mảng a thành 2 phần bằng nhau là 
             Mảng left 
             Mảng right 
             Thực hiện gọi đệ qui sắp xếp 2 mảng này 
             Gọi hàm trộn 2 mảng này về mảng chính 
-
 ```
 
 <!-- 3. Độ phức tạp:  -->
@@ -720,7 +707,6 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 ```
     Không gian:O(n) sử dụng để lưu trữ 2 mảng con. 
-
     Thời gian:. Thời gian chạy của merge sort khá ổn định, trong tất cả các trường hợp đều là O(nlogn). 
 
 ```
@@ -730,9 +716,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 ``` 
     Các biến thể của merge sort chủ yếu tập trung vào việc giảm độ phức tạp về không gian và giảm số lần copy phần tử 
-
     Block sort: là một in-place sorting với độ phức tạp ổ định là O(nlogn) 
-
     Katajainen et al: cũng là một in-place sorting với độ phức tạp O(nlogn) chưa được ổn định
 ```
 
@@ -745,6 +729,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 <!-- 1. Ý tưởng thuật toán: -->
 <h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
+
 ```
     Khác với các thuật toán trước, Radix sort là một thuật toán tiếp cận theo một hướng hoàn toàn khác. 
     Nếu như trong các thuật toán khác, cơ sở để sắp xếp luôn là việc so sánh giá trị của 2 phần tử 
@@ -752,7 +737,7 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
     Nó không hề quan tâm đến việc so sánh giá trị của phần tử và bản thân việc phân loại và trình tự phân loại sẽ tạo ra thứ tự cho các phần tử. 
 
     Coi các phần tử trong mảng sắp xếp được cấu thành từng các lớp có độ ưu tiên khác nhau. 
-    Ví dụ, các số tự nhiên chia thành các lớp như: hàng đơn vị, hàng chục, hàng trăm, hàng nghìn, 
+    Ví dụ, các số tự nhiên chia thành các lớp như: hàng đơn vị, hàng chục, hàng trăm, hàng nghìn, ...
 
     Bước đầu tiên ta sắp xếp dãy các phần tử bằng cách so sánh các phần tử ở lớp có độ ưu tiên thấp nhất (ví dụ các chữ số hàng đơn vị). 
     Số nào có hàng đơn vị thấp hơn thì ta đưa lên trên. Như vậy các số có hàng đơn vị là 0 ở trên cùng, sau đó đến các số có hàng đơn vị là 1,… 
@@ -766,52 +751,45 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 ```cpp
     max = số chữ số của phần tử lớn nhất 
-
     table = mảng các queue gồm 10 phần tử( các lớp từ 0->9) 
 
     for k = 0 to max-1 do: 
-
         for i = 0 to i-1 do: 
-
             unit = chữ số của hàng thứ k 
-
             thêm a[i] vào queue table[unit] 
-
         end for 
-
         i = 0 
-
         j = 0 
 
-        Gán các phần tử trong queue vào mảng theo thứ tự các lớp từ 0 ->9 
-
+        // Gán các phần tử trong queue vào mảng theo thứ tự các lớp từ 0 ->9 
         while j < 10 do: 
-
             while table[j] có phần tử do: 
-
                 a[i] = lấy ra phần tử đầu trong queue 
-
                 i = i +1 
-
             j = j + 1 
-
-        end for 
-
+    end for 
 ```
 
 <!-- 3. Độ phức tạp:  -->
 <h4 class = "complexity-algs">3. Độ phức tạp</h4>
 
 ```
-    Không gian: O(n) vì sử dụng hàng đợi để lưu các phần tử. 
+    Với k là số chữ số của phần tử lớn nhất trong mảng, n là số phần tử trong mảng: 
+    Không gian: O(n + k) vì ta cần mảng các queue gồm k phần tử.
+    Thời gian: O(nk) vì ta cần duyệt qua tất cả các phần tử trong mảng và các chữ số của các phần tử.
+```
 
-    Thời gian: O(max*n) = O(n) như nhau trên mọi trường hợp, không có trường hợp xấu nhất lẫn tốt nhất 
+<!-- 4. Ưu, nhược điểm: -->
+<h4 class= "complexity-algs" >4. Ưu, nhược điểm:</h4>
+
+```
+    
 
 ```
 
 ---
 
-<h4 id = "ten-counting-sort" class ="alg-heading-title"> 🔟  Couting Sort</h4>
+<h4 id = "ten-counting-sort" class ="alg-heading-title"> 🔟  Counting Sort</h4>
 
 <!-- 1. Ý tưởng thuật toán: -->
 <h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
@@ -819,10 +797,9 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
     1. Tìm phần tử lớn nhất trong mảng
     2. Tạo mảng mới có kích thước bằng phần tử lớn nhất + 1, khởi tạo các phần tử bằng 0
     3. Lưu số lần xuất hiện của các phần tử trong mảng tại vị trí tương ứng trong mảng mới
-    4. Cộng dồn các phần tử trong mảng mới
-    5. Tìm chỉ số của mỗi phần tử trong mảng gốc trong mảng mới.
-    6. Đưa các phần tử vào mảng mới theo thứ tự tìm được ở bước 5
-    7. Giảm số lần xuất hiện của các phần tử trong mảng mới
+    4. Duyệt mảng mới, nếu phần tử tại vị trí i > 0 thì gán chỉ số i vào mảng ban đầu tại vị trí j
+    5. Tăng j lên 1 để xét phần tử tiếp theo, giảm giá trị đếm của phần tử tại chỉ số i đi 1
+    6. Lặp lại bước 4, 5 cho đến khi j = n hay i = max
 ```
 
 <!-- 2. Psuedocode: -->
@@ -833,26 +810,21 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
     count = mảng mới có kích thước bằng max + 1, khởi tạo các phần tử bằng 0
 
-    for i = 0 to n-1 do:
+    for (int i = 0; i < n; i++) {
+        count[a[i]]++;   // Lưu số lần xuất hiện của các phần tử trong mảng tại vị trí tương ứng trong mảng mới
+    }
 
-        count[a[i]] = count[a[i]] + 1
+    i = j = 0;    // i : chỉ số trong mảng count, j : chỉ số của phần tử đang xét trong mảng ban đầu
 
-    end for
-
-    for i = 1 to max do:
-
-        count[i] = count[i] + count[i-1]
-
-    end for
-
-    for i = n-1 to 0 do:
-
-        b[count[a[i]]] = a[i]
-
-        count[a[i]] = count[a[i]] - 1
-
-    end for
-
+    while (i < max + 1) {   
+        if (count[i] > 0) { // Nếu count[i] > 0 tức là có phần tử có giá trị bằng i trong mảng ban đầu
+            a[j++] = i;     // Đưa phần tử đó vào mảng mới ở vị trí j, tăng j để xét phần tử tiếp theo
+            count[i]--;     // Giảm số lần xuất hiện của phần tử đó để duyệt tiếp phần tử tiếp theo
+        }
+        else {            // Nếu không có phần tử nào có giá trị bằng i thì xét giá trị tiếp theo
+            i++;
+        }
+    }
 
 ```
 
@@ -860,11 +832,22 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 <h4 class = "complexity-algs">3. Độ phức tạp</h4>
 
 ```
-    Không gian: O(n) vì sử dụng mảng mới để lưu các phần tử. 
-
-    Thời gian: O(n) như nhau trên mọi trường hợp, không có trường hợp xấu nhất lẫn tốt nhất
+    Là một thuật toán tuyến tính, với k là phần tử lớn nhất trong mảng thì: 
+    Không gian: O(n + k) 
+    Thời gian: O(n + k) 
+      
 ```
 
+<h4 class = "complexity-algs">4. Ưu, nhược điểm: </h4>
+
+```
+    Ưu điểm:
+        + Hiệu quả nếu phạm vi dữ liệu đầu vào không lớn hơn đáng kể so với kích thước của mảng đầu vào.
+        + Có thể mở rộng để sắp xếp các phần tử có giá trị âm.
+    Nhược điểm: 
+        + Xét trường hợp k = n*n => worst case
+        + Không phải là thuật toán tại chỗ (in-place alogrithm) vì cần mảng mới để lưu số lần xuất hiện của các phần tử.
+```
 
 ---
 
@@ -872,13 +855,14 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 <!-- 1. Ý tưởng thuật toán: -->
 <h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
+
 ```
     Tư tưởng chính của thuật toán là dựa trên sự phân lớp phần tử (Subclasses Arrangement). FlashSort bao gồm ba khối logic: 
         Phân loại các phần tử (Elements Classification); 
         Phân bố các phần tử vào đúng các phân lớp (Elements Permutation); 
         Sắp xếp các phần tử trong từng phân lớp theo đúng thứ tự (Elements Ordering).
     1. Tìm phần tử lớn nhất và nhỏ nhất trong mảng
-    2. Tính giá trị m theo công thức : m = (n * alpha) / (max - min ), alpha thường là 0.45
+    2. Tính giá trị m theo công thức : m = (n * alpha) , alpha thường là 0.45
     3. Tạo mảng mới có kích thước bằng m, khởi tạo các phần tử bằng 0
     4. Lặp qua mảng gốc, tính chỉ số của phần tử tại vị trí i trong mảng mới theo công thức: index = (m - 1) * (a[i] - min) / (max - min)
     5. Tăng giá trị của phần tử tại vị trí index trong mảng mới lên 1
@@ -886,75 +870,62 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
     7. Hoán đổi a[max] với a[0]
     8. Lặp  và hoán đổi để đưa các phần tử về đúng phân lớp
     9. Sắp xếp các phần tử trong từng phân lớp theo đúng thứ tự bằng thuật toán Insertion Sort
-
 ```
 
 <!-- 2. Psuedocode: -->
 <h4 class ="pseudocode-algs">2. Pseudocode: </h4>
 
 ```cpp
-
     min = phần tử nhỏ nhất trong mảng 
+    max = chỉ số phần tử lớn nhất trong mảng
+    m = (n * alpha)
+    Class = mảng mới có kích thước bằng m, khởi tạo các phần tử bằng 0
+    c1 = (m - 1) / (a[max] - min)
 
-    max = phần tử lớn nhất trong mảng
+	i = 0, khi i < n thì {
+		k = c1 * (a[i] - min)
+		++Class[k];  // đếm số phần tử trong mảng gốc thuộc phân lớp thứ k
+	}
 
-    m = (n * alpha) / (max - min )
+	for (int i = 1; i < m; i++) { // tính vị trí bắt đầu của các phân lớp
+		Class[i] += Class[i - 1];
+    }
 
-    count = mảng mới có kích thước bằng m, khởi tạo các phần tử bằng 0
+	swap(a[max], a[0]);
+    nmove = j = 0; k = m - 1; // nmove là số phần tử đã được sắp xếp, j là chỉ số phần tử đang xét, k là chỉ số phân lớp đang xét
 
-    for i = 0 to n-1 do:
-
-        index = (m - 1) * (a[i] - min) / (max - min)
-
-        count[index] = count[index] + 1
-
-    end for
-
-    for i = 1 to m-1 do:
-
-        count[i] = count[i] + count[i-1]
-
-    end for
-
-    swap(a[0], a[max])
-
-    for i = 0 to m-1 do:
-
-        while i < count[i] do:
-
-            index = (m - 1) * (a[i] - min) / (max - min)
-
-            swap(a[i], a[count[index]])
-
-            count[index] = count[index] + 1
-
-        end while
-
-    end for
-
-    for i = 0 to m-1 do:
-
-        insertionSort(a[count[i-1]], count[i] - count[i-1])
-
-    end for
-
+    // hoán đổi các phần tử về đúng phân lớp: hoán vị tối đa n - 1 lần
+	while ( nmove < n - 1)
+	{
+		khi ( j > Class[k] - 1) { 
+        	tăng j lên 1 để xét phần tử tiếp theo
+		    tính lại chỉ số phân lớp của phần tử a[j]
+		}
+		if ( k < 0) break;
+		khi (j != Class[k])
+		{
+		    tính lại chỉ số phân lớp
+			tìm vị trí đích của phần tử a[j] : pos
+			swap(a[j], a[pos]);
+            ++nmove;     // tăng số phần tử đã được sắp xếp
+		}
+	}
+    sắp xếp các phần tử trong từng phân lớp theo đúng thứ tự bằng thuật toán Insertion Sort
 ```
 
 <!-- 3. Độ phức tạp:  -->
 <h4 class = "complexity-algs">3. Độ phức tạp</h4>
 
 ```
-    Không gian: O(1) vì thực hiện tại chỗ. 
-    Thời gian: có độ phức tạp trung bình là O(n) .
-
+    Không gian: O(m) với m là số phân lớp
+    Thời gian:  
+            + Tốt nhất: O(n) 
+            + Trung bình là O(n + m) 
+            + Trường hợp xấu nhất là O(n^2)
     Nhìn lại toàn bộ các giai đoạn của thuật toán, ta thấy như sau:
     - Giai đoạn phân lớp đòi hỏi độ phức tạp O(n) và O(m)
     - Giai đoạn Hoán vị đòi hỏi độ phức tạp O(n) ( vì mỗi phần tử chỉ phải đổi chỗ đúng một lần, và n lần cho n phần tử)
-    - Giai đoạn Insertion_Sort đỏi hỏi độ phức tạp O(n2/m) ( mỗi 1 phân lớp đòi hỏi độ phức tạp O((n/m)2) và m phân lớp đòi hỏi O(m*(n/m)2) )
-
-    Gọi m là số lớp, trường hợp tốt nhất mỗi lớp gần như có cùng kích thước độ phức tạp là m*O(1). 
-    Trường hợp xấu nhất tất cả các phần tử đều nằm trong chỉ 1 vài nhóm độ phức tạp là O(n2).  
-    Vậy nên theo khảo sát thì số phân lớp tối ưu nhất là m = 0.45n với n là số lượng phần tử của mảng. 
+    - Giai đoạn Insertion_Sort đỏi hỏi độ phức tạp O(n2/m) ( mỗi 1 phân lớp đòi hỏi độ phức tạp O((n/m)2) và m phân lớp đòi hỏi O(m*(n/m)2) ) 
 
 ```
 
@@ -1010,9 +981,29 @@ Dưới đây là 4 bảng thống kê thời gian chạy và số lần so sán
 <img src = "./img/barChart_rand.png"  />
 
 <p>
+
+    ```cpp
+        // Hàm phát sinh mảng dữ liệu ngẫu nhiên
+        void GenerateRandomData(int a[], int n)
+        {
+	        srand((unsigned int)time(NULL));
+
+	        for (int i = 0; i < n; i++)
+	        {
+		        a[i] = rand()%n; 
+	        }
+        }
+
+    ```
+
     - Về thời gian chạy: (sắp xếp theo hướng thời gian chạy tăng dần)
-    + Counting < Flash < Quick <
-    
+    + Counting < Flash < Quick < Heap ~ Shell ~ Merge < Radix < Insertion < Selection < Shaker < Bubble
+    + Độ phức tạp của thuật toán Counting Sort là O(n+k) với k là khoảng giá trị của dữ liệu đầu vào.
+    + Đối với trường hợp dữ liệu ngẫu nhiên này, hàm được thiết kế để sinh số ngẫu nhiên phạm vi từ 0 đến n -1, do đó k = n - 1. Vậy nên độ phức tạp của thuật toán Counting Sort là O(n) tốt nhất trong các thuật toán sắp xếp.
+    + Các thuật toán Selection Sort, Insertion Sort, Shaker Sort, Bubble Sort có sự thời gian chạy thay đổi rõ rệt khi số lượng dữ liệu tăng lên. Điều này là do các thuật toán này có độ phức tạp O(n^2) nên khi số lượng dữ liệu tăng lên, thời gian chạy cũng tăng lên theo.
+    + Các thuật toán Shell Sort, Merge Sort, Radix Sort có sự thời gian chạy thay đổi không nhiều khi số lượng dữ liệu tăng lên. Điều này là do các thuật toán này có độ phức tạp O(nlogn) nên khi số lượng dữ liệu tăng lên, thời gian chạy cũng tăng lên theo.
+
+
 
 </p>
 
@@ -1162,6 +1153,13 @@ Dưới đây là 4 bảng thống kê thời gian chạy và số lần so sán
 <a   href="https://www.geeksforgeeks.org/cocktail-sort/">11. shaker sort</a>
 <p>https://www.geeksforgeeks.org/cocktail-sort/</p>
 </li>
+<li>
+<a   href="https://www.iostream.vn/giai-thuat-lap-trinh/distribution-sort-radix-sort-vqu1H1">12. radix sort</a>
+<p>https://www.iostream.vn/giai-thuat-lap-trinh/distribution-sort-radix-sort-vqu1H1</p>
+</li>
+<li>
+<a   href="https://codelearn.io/sharing/dau-moi-la-thuat-toan-sap-xep-tot-nhat">13. Complexity </a>
+<p>https://codelearn.io/sharing/dau-moi-la-thuat-toan-sap-xep-tot-nhat</p>
 
 </div>
 
