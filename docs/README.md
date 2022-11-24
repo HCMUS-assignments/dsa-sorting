@@ -419,19 +419,16 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 ```
     Không gian: O(1) 
-    Thời gian: 
-            + Trung bình, thuật toán có độ phức tạp là O(n^2)
-            + Trường hợp tốt nhất là với đầu vào đã được sắp xếp đúng thứ tự : O(n)
-            + Trường hợp xấu là dãy bị đảo ngược thứ tự hoàn toàn : O(n^2)
+    Thời gian: Với thuật toán trên thì độ phức tạp luôn là O(n^2)
 ```
 
 <!-- 4. Biến thể và cải tiến: -->
 <h4 class ="upgrade-algs">4. Biến thể và cải tiến</h4>
 
 ``` 
-    Trong mỗi vòng lặp của biến j ở trên, kiểm tra xem nếu không có phép hoán vị nào được thực hiện tức mảng đã đúng vị trí ta sẽ dừng thuật toán ngay lập tức. Trong trường hợp tốt nhất mảng đã được sắp xếp độ phức tạp về thời gian là O(n)
-
-    Biến thể là Shaker Sort.
+    - Cải tiến:
+        Trong mỗi vòng lặp của biến j ở trên, kiểm tra xem nếu không có phép hoán vị nào được thực hiện tức mảng đã đúng vị trí ta sẽ dừng thuật toán ngay lập tức. Khi đó, trong trường hợp tốt nhất mảng đã được sắp xếp độ phức tạp về thời gian là O(n)
+    - Biến thể là Shaker Sort.
 ```
 
 <!-- --- -->
@@ -936,8 +933,11 @@ Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử
 
 <h3 id= "bang-so-lieu-thong-ke" class ="miniHeading">1. Bảng số liệu thống kê</h3>
 
-Thuật toán được thực hiện trên phần mềm Visual Studio Code - CPU: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40 GHz RAM: 8 GB
-Dưới đây là 4 bảng thống kê thời gian chạy và số lần so sánh của thuật toán với các trường hợp khác nhau về kiểu dữ liệu (rand, sorted nsorted, rev) và kích thước dữ liệu (10 000, 30 000, 50 000, 100 000, 300 000, 500 000).
+- Cấu hình máy thử nghiệm:
++ CPU: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40 GHz 
++ RAM: 8 GB
++ Compiler: Visual Studio Code
+- Dưới đây là 4 bảng thống kê thời gian chạy và số lần so sánh của thuật toán với các trường hợp khác nhau về kiểu dữ liệu (rand, sorted nsorted, rev) và kích thước dữ liệu (10 000, 30 000, 50 000, 100 000, 300 000, 500 000).
 
 <div align="center">
 
@@ -997,12 +997,23 @@ Dưới đây là 4 bảng thống kê thời gian chạy và số lần so sán
     ```
 
     - Về thời gian chạy: (sắp xếp theo hướng thời gian chạy tăng dần)
-    + Counting < Flash < Quick < Heap ~ Shell ~ Merge < Radix < Insertion < Selection < Shaker < Bubble
+    + Counting < Flash < Quick < Heap ~ Shell ~ Merge ~ Radix < Insertion < Selection < Shaker < Bubble
+
+    + Theo kết quả thực nghiệm, với lượng dữ liệu lên đến 500 000:
+          + Counting Sort có thời gian chạy trong vòng 9ms
+          + Trong khi đó, Bubble Sort có thời gian chạy 1.03E+6 tức ~ 1.03 triệu ms ~ 1030s ~ 17 phút
+
     + Độ phức tạp của thuật toán Counting Sort là O(n+k) với k là khoảng giá trị của dữ liệu đầu vào.
     + Đối với trường hợp dữ liệu ngẫu nhiên này, hàm được thiết kế để sinh số ngẫu nhiên phạm vi từ 0 đến n -1, do đó k = n - 1. Vậy nên độ phức tạp của thuật toán Counting Sort là O(n) tốt nhất trong các thuật toán sắp xếp.
-    + Các thuật toán Selection Sort, Insertion Sort, Shaker Sort, Bubble Sort có sự thời gian chạy thay đổi rõ rệt khi số lượng dữ liệu tăng lên. Điều này là do các thuật toán này có độ phức tạp O(n^2) nên khi số lượng dữ liệu tăng lên, thời gian chạy cũng tăng lên theo.
-    + Các thuật toán Shell Sort, Merge Sort, Radix Sort có sự thời gian chạy thay đổi không nhiều khi số lượng dữ liệu tăng lên. Điều này là do các thuật toán này có độ phức tạp O(nlogn) nên khi số lượng dữ liệu tăng lên, thời gian chạy cũng tăng lên theo.
+    + Các thuật toán Heap Sort, Shell Sort, Merge Sort, Radix Sort có sự thời gian chạy thay đổi không nhiều khi số lượng dữ liệu tăng lên. Điều này là do các thuật toán này có độ phức tạp O(nlogn) nên khi số lượng dữ liệu tăng lên, thời gian chạy tăng lên nhưng không nhiều.
+    + Các thuật toán Selection Sort, Insertion Sort, Shaker Sort, Bubble Sort có sự thời gian chạy thay đổi rõ rệt khi số lượng dữ liệu tăng lên. Điều này là do các thuật toán này có độ phức tạp O(n^2) nên khi số lượng dữ liệu tăng lên, thời gian chạy cũng tăng lên theo cấp số nhân.
 
+    - Về số lần so sánh: (sắp xếp theo hướng số lần so sánh tăng dần)
+    + Merge < Counting < Flash < Radix < Quick < Heap < Shell < Insertion < Shaker < Selection ~ Bubble
+
+    + Thuật toán có phép so sánh nhiều nhất là Selection và Bubble, tiếp đến là Shaker và Insertion.
+    các thuật toán này có số lần so sánh tăng lên rất nhiều số lượng dữ liệu tăng lên 500 000.
+    + Thuật toán có phép so sánh ít nhất là Merge và Counting, tiếp đến là Flash, Radix, Quick, Heap, Shell. Chúng có lượng phép so sánh tăng lên không nhiều khi số lượng dữ liệu tăng lên 500 000.
 
 
 </p>
@@ -1014,6 +1025,26 @@ Dưới đây là 4 bảng thống kê thời gian chạy và số lần so sán
 <img src = "./img/lineChart_nearlySorted.png"  />
 <img src = "./img/barChart_nearlySorted.png"  />
 
+<p>
+    - Về thời gian chạy: (sắp xếp theo hướng thời gian chạy tăng dần)
+    + Counting ~ Shaker ~ Insertion < Quick ~ Flash < Shell < Merge ~ Heap < Radix < Bubble ~ Selection
+
+    + Theo kết quả thực nghiệm, với lượng dữ liệu lên đến 500 000:
+          + Counting Sort có thời gian chạy trong vòng 6ms
+          + Trong khi đó, Selection Sort có thời gian chạy 436095ms tức ~ 436s ~ 7 phút
+    + Hai thuật toán Bubble và Selection có tốc độ tăng thời gian chạy rõ rệt khi lượng dữ liệu tăng từ 100 000 lên 500 000.
+    + Shaker và Insertion trong trường hợp này đạt độ phức tạp thời gian tốt nhất là O(n) vì dữ liệu đã gần như sắp xếp.
+    + Các thuật toán còn lại có thời gian chạy tăng không đáng kể khi lượng dữ liệu thay đổi từ 10 000 -> 500 000
+
+    - Về số phép so sánh : (sắp xếp theo hướng số lần so sánh tăng dần)
+    + Merge < Shaker < Insertion < Counting < Flash < Quick < Radix < Shell < Heap < Bubble ~ Selection
+
+    + Bubble và Selection có số lần so sánh tăng rõ rệt khi lượng dữ liệu tăng từ 50 000 lên 300 000
+    + Các thuật toán còn lại có số lần so sánh tăng không đáng kể khi lượng dữ liệu thay đổi từ 10 000 -> 500 000
+
+
+</p>
+
 <div class = "page" />
 
 <h3 class="heading_chart">Trường hợp dữ liệu đã sắp xếp</h3>
@@ -1021,12 +1052,49 @@ Dưới đây là 4 bảng thống kê thời gian chạy và số lần so sán
 <img src = "./img/lineChart_sorted.png" >
 <img src = "./img/barChart_sorted.png" >
 
+<p>
+    - Về thời gian chạy: (sắp xếp theo hướng thời gian chạy tăng dần)
+    + Shaker ~ Insertion < Counting ~ Quick < Flash < Shell < Merge ~ Heap < Radix < Bubble ~ Selection
+
+    + Theo kết quả thực nghiệm, với lượng dữ liệu lên đến 500 000:
+          + Shaker Sort có thời gian chạy trong vòng 2ms
+          + Trong khi đó, Selection Sort có thời gian chạy 434372ms tức ~ 434s ~ 7 phút
+
+    + Hai thuật toán Bubble và Selection có tốc độ tăng thời gian chạy lớn khi lượng dữ liệu tăng từ 100 000 lên 500 000.
+    + Shaker và Insertion trong trường hợp này đạt độ phức tạp thời gian tốt nhất là O(n) vì dữ liệu đã được sắp xếp.
+    + Các thuật toán còn lại có thời gian chạy tăng không đáng kể khi lượng dữ liệu thay đổi.
+
+    - Về số phép so sánh : (sắp xếp theo hướng số lần so sánh tăng dần)
+    + Shaker < Insertion ~ Merge < Counting < Flash < Quick < Radix < Shell < Heap < Bubble ~ Selection
+
+    + Bubble và Selection có số lần so sánh nhiều nhất và tăng rõ rệt khi lượng dữ liệu tăng từ 50 000 lên 300 000
+    + Các thuật toán còn lại có số lần so sánh tăng không đáng kể khi lượng dữ liệu thay đổi .
+
+</p>
+
 <div class = "page" />
 
 <h3 class="heading_chart">Trường hợp dữ liệu đã đảo ngược</h3>
 
 <img src = "./img/lineChart_reversed.png" />
 <img src = "./img/barChart_rev.png" />
+
+<p>
+    - Về thời gian chạy: (sắp xếp theo hướng thời gian chạy tăng dần)
+    + Counting < Quick ~ Flash < Shell < Heap < Merge < Radix < Selection < Insertion < Shaker ~ Bubble
+
+    + Theo kết quả thực nghiệm, với lượng dữ liệu lên đến 500 000:
+          + Counting Sort có thời gian chạy trong vòng 11ms
+          + Trong khi đó, Bubble Sort có thời gian chạy 865325ms tức ~ 865s ~ 14 phút
+
+    + Thuật toán Bubble có thời gian chạy chậm nhất trong các thuật toán, tiếp đến là Shaker, Insertion, Selection.
+    + Các thuật toán còn lại có thời gian chạy tăng không đáng kể khi lượng dữ liệu thay đổi.
+
+    - Về số phép so sánh : (sắp xếp theo hướng số lần so sánh tăng dần)
+    + Merge < Counting < Flash < Quick < Radix < Shell < Heap < Insertion ~ Shaker ~ Selection ~ Bubble
+
+    + Insertion, Shaker, Selection và Bubble trong trường hợp này có số lần so sánh ngang nhau, nhiều nhất và tăng mạnh khi dữ liệu thay đổi từ 50 000 lên 300 000.
+</p>
 
 </div>
 
@@ -1050,6 +1118,27 @@ Dưới đây là 4 bảng thống kê thời gian chạy và số lần so sán
 
 <h3 id="nhan-xet-chung" class="miniHeading">3. Nhận xét chung </h3> 
 
+<p>
+*** Về thời gian chạy :
+    - Với kích thước dữ liệu nhỏ (10 000 -> 50 000) nhìn chung tốc dộ chênh lệch của các thuật toán không đáng kể, không rõ để phân biệt qua đồ thị.
+    - Trong 4 trường hợp, nhìn chung các thuật toán Counting, Flash và Quick Sort có thời gian chạy tốt nhất.
+    - Bubble và Selection có tốc độ khá chậm trong đa số trường hợp do độ phức tạp luôn là O(n^2).
+    - Các thuật toán Shell, Heap, Merge, Quick có tốc độ ổn định xuyên suốt các trường hợp.
+    - Trong trường hợp dữ liệu gần như được sắp xếp và trường hợp dữ liệu đã được sắp xếp thì Shaker và Insertion Sort có thời gian chạy tốt hơn rất nhiều so với các thuật toán khác. (trường hợp này đạt độ phức tạp O(n))
+    
+    - Phân loại theo độ phức tạp thời gian trung bình: 
+    + O(n^2) : Bubble, Selection, Insertion, Shaker
+    + O(nlogn) : Shell, Heap, Merge, Quick
+    + O(n) : Counting, Flash, Radix
+
+*** Về số lần so sánh :
+    - Nhìn chung, trong 4 trường hợp thì Merge, Counting và Flash có số lần so sánh ít nhất.
+    - Bubble và Selection có số lần so sánh nhiều nhất trong cả 4 trường hợp.
+    - Trong trường hợp dữ liệu gần như được sắp xếp và trường hợp dữ liệu đã được sắp xếp thì Shaker và Insertion Sort có số lần so sánh đạt thấp nhất so với các thuật toán khác.
+    - Merge sort có số lần so sánh ổn định và thấp nhất trong đa số trường hợp, bời vì nó dựa trên mô hình phân chia đệ quy, mỗi lần phân chia đều có số lần so sánh là 1. Trong quá trình merge thì số lần so sánh tăng dần theo số lượng phần tử của mảng con.
+
+</p>
+
 <div class = "page" />
 
 <!-- Tổ chức đồ án và ghi chú -->
@@ -1059,32 +1148,42 @@ Dưới đây là 4 bảng thống kê thời gian chạy và số lần so sán
 <h3 id = "to-chuc-do-an" class = "miniHeading" > 1. Tổ chức đồ án </h3>
 
 ```
-    ├───source
-    │   │___releases
-    │   │   │___a.exe
-    │   │___main.cpp
-    │   │___library.h
-    │   │___def_command.cpp
-    │   │___def_algorithms.cpp
-    │   │___def_supFuncs.cpp
-    │   │___dataGenerator.cpp
-    |___report.pdf
+                                              ├───source
+                                              |   |
+                                              │   │___releases   
+                                              |   |___createData 
+                                              │   │   
+                                              │   │___main.cpp   
+                                              │   │___library.h   
+ 21120499_21120504_21120505_21120521.zip ---> │   │___def_command.cpp
+                                              │   │___def_algorithms.cpp
+                                              │   │___def_supFuncs.cpp
+                                              │   │___dataGenerator.cpp
+                                              |
+                                              |___docs
+                                                  |___report.pdf
+                                                  |___checklist.xlsx
+
 ```
 
 1. `source` là thư mục chứa mã nguồn của đồ án.
-+ `releases` là thư mục chứa các file thực thi của đồ án.
-+ `main.cpp` là file chứa hàm `main()`, validate các tham số đầu vào và gọi các hàm thực thi tương ứng
-+ `library.h` là file header chứa các khai báo hàm và các thư viện cần thiết, được chia làm 4 phần: 
-              + I. khai báo các hàm thuật toán
-              + II. khai báo các hàm command 
-              + III. khai báo các hàm tạo dữ liệu
-              + IV. khai báo các hàm hỗ trợ khác
-+ `def_command.cpp` là file định nghĩa các hàm command, thực hiện các yêu cầu và xuất kết quả ra file
-+ `def_algorithms.cpp` là file định nghĩa các hàm đo thời gian chạy và số lần so sánh của các thuật toán
-+ `def_supFuncs.cpp` là file định nghĩa các hàm hỗ trợ khác 
-+ `dataGenerator.cpp` là file định nghĩa các hàm tạo dữ liệu
+    + `releases` là thư mục chứa file thực thi của chương trình `a.exe`.
+    + `createData` là thư mục chứa file hỗ trợ tạo dữ liệu trong quá trình thống kê dữ liệu `createData.cpp`, và các file dữ liệu được tạo ra. 
 
-2. `report.pdf` là file báo cáo đồ án.
+    + `main.cpp` là file chứa hàm `main()`, validate các tham số đầu vào và gọi các hàm thực thi tương ứng với các command.
+    + `library.h` là file header chứa các khai báo hàm và các thư viện cần thiết, được chia làm 4 phần: 
+              + I. khai báo các hàm thuật toán sắp xếp tính time và comparisons
+              + II. khai báo các hàm xử lý các lệnh command
+              + III. khai báo các hàm tạo dữ liệu
+              + IV. khai báo các hàm hỗ trợ khác (như đọc file, ghi file, đếm số lượng chữ số của số nguyên, ...)
+    + `def_command.cpp` là file định nghĩa các hàm command, thực hiện các yêu cầu và xuất kết quả ra file, in ra màn hình console.
+    + `def_algorithms.cpp` là file định nghĩa các hàm đo thời gian chạy và số lần so sánh của các thuật toán
+    + `def_supFuncs.cpp` là file định nghĩa các hàm hỗ trợ khác 
+    + `dataGenerator.cpp` là file định nghĩa các hàm tạo dữ liệu
+
+2. `docs` là thư mục chứa các tài liệu liên quan đến đồ án.
+    + `report.pdf` là file báo cáo đồ án.
+    + `checklist.xlsx` là file checklist phân chia nhiệm vụ của các thành viên nhóm.
 
 
 <h3 id = "ghi-chu" class = "miniHeading" > 2. Ghi chú </h3>
@@ -1093,9 +1192,11 @@ Dưới đây là 4 bảng thống kê thời gian chạy và số lần so sán
 + `iostream` : thư viện chuẩn c++ dùng để nhập xuất dữ liệu
 + `fstream` : thư viện chuẩn c++ dùng để đọc ghi file
 + `ctime` : thư viện chuẩn c++ dùng để đo thời gian chạy thông qua hàm `clock()`
-+ `cstdlib` : thư viện chuẩn c++ dùng để sử dụng hàm `rand()`
-+ `string.h` : thư viện chuẩn c dùng để xử lý chuỗi
++ `cstdlib` : thư viện chuẩn c++ dùng để sử dụng hàm `rand()` và `srand()` để tạo số ngẫu nhiên
++ `string.h` : thư viện chuẩn c dùng để xử lý chuỗi ký tự
 + `cmath` : thư viện chuẩn c++ dùng để sử dụng hàm `log()`, `pow()`
+
+- Cấu trúc dữ liệu sử dụng : hàng đợi `Queue` hỗ trợ xây dựng thuật toán Radix sort, và mảng kiểu `int` để lưu trữ dữ liệu đầu vào thông qua cấp phát động.
 
 
 <div class = "page" />
