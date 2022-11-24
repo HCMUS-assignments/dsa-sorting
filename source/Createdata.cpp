@@ -1,4 +1,7 @@
 #include "library.h"
+#include<vector>
+#include<thread>
+using namespace std;
 
 void takeCountingAndTime(int* arr, int n, int type, unsigned long long& comp, double& time){
     int* arrComp = new int[n];
@@ -77,39 +80,49 @@ void takeCountingAndTime(int* arr, int n, int type, unsigned long long& comp, do
     delete[] arrTime;
 }
 
+vector<int> dataOrders = {0, 1, 2, 3};
+vector<int> dataSizes = {10000, 30000, 50000, 100000, 300000, 500000};
+vector<int> algorithms = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+vector<string> fileNames = {"RandomData.csv", "SortedData.csv", "ReverseData.csv", "NearlySortedData.csv"};
+
+void makeFile(int order){
+    cout << fileNames[order] << endl;
+    fstream fin(fileNames[order], ios::out);
+    vector<vector<double>> tableTime(11);
+    vector<vector<unsigned long long>> tableComp(11);
+    for(int size: dataSizes){
+        int* arr = new int[size];
+        GenerateData(arr, size, order);
+        for(int algorithm: algorithms){
+            unsigned long long comp;
+            double time;
+            takeCountingAndTime(arr, size, algorithm, comp, time);
+            tableTime[algorithm].push_back(time);                tableComp[algorithm].push_back(comp);
+        }
+        delete[] arr;
+    }
+    for(int i = 0; i < tableTime.size(); i++){
+        for(int j = 0; j < tableTime[0].size(); j++){
+            fin << tableTime[i][j] << ",";
+            fin << tableComp[i][j] << ",";
+        }
+        fin << endl;
+    }
+    fin.close();
+}
+
 int main(int argc, char const *argv[])
 {
-    // Data Order S1
-    //vector<int> dataOrders = {0, 1, 2, 3};
-    vector<int> dataOrders = {1};
-    vector<int> dataSizes = {10000, 30000, 50000, 100000, 300000, 500000};
-    //vector<int> algorithms = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    vector<int> algorithms = {3};
-    vector<string> fileNames = {"RandomData.csv", "SortedData.csv", "ReverseData.csv", "NearlySortedData.csv"};
+   
+    vector<thread> vecThread;
+    
 
     for(int order: dataOrders){
-        cout << fileNames[order] << endl;
-        fstream fin(fileNames[order], ios::out);
-        vector<vector<double>> table(11);
-        for(int size: dataSizes){
-            int* arr = new int[size];
-            GenerateData(arr, size, order);
-            for(int algorithm: algorithms){
-                unsigned long long comp;
-                double time;
-                takeCountingAndTime(arr, size, algorithm, comp, time);
-                table[algorithm].push_back(time);
-                table[algorithm].push_back((double)comp);
-            }
-            delete[] arr;
-        }
-        for(vector<double> row: table){
-            for(double val: row){
-                fin << val << ",";
-            }
-            fin << endl;
-        }
-        fin.close();
+         thread teampThread(makeFile, order);
+         vecThread.push_back(move(teampThread));
     }
+
+    for (int i = 0; i < dataOrders.size(); i++)
+            vecThread[i].join();
     return 0;
 }
