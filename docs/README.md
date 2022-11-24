@@ -367,10 +367,8 @@ ___
 <h4 id = "four-shaker-sort" class ="alg-heading-title" > 4️⃣ Shaker Sort</h4>
 1. Ý tưởng thuật toán:
 ```
-    1. Thọn khoảng xét từ đầu đến cuối mảng
-    2. Thực hiện duyệt khoảng xét bằng 2 lượt, so sánh 2 phần tử liền kề và thực hiện đổi chỗ trực tiếp 2 phần tử:
-    - Lượt đi: đẩy phần tử lớn nhất về cuối
-    - Lượt về: đẩy phần tử nhỏ nhất về đầu
+    1. Chọn khoảng xét từ đầu đến cuối mảng
+    2. Thực hiện duyệt khoảng xét bằng 2 lượt, so sánh 2 phần tử liền kề và hoán vị:(Lượt đi: đẩy phần tử lớn nhất về cuối; Lượt về: đẩy phần tử nhỏ nhất về đầu)
     3. Đồng thời, mỗi lượt đi ghi nhận lại vị trí hoán vị cuối cùng, để thu hẹp 2 phía khoảng xét ở mỗi lượt.
     4. Lặp lại bước 2 và 3 đến khi 2 đầu khoảng xét giao nhau.
 
@@ -384,12 +382,12 @@ ___
     while left < right // l->r: khoảng sắp xếp
 	    for i = left to right 
 		    if a[i] >a[i+1] 
-			    swap 2 phần tử để đẩy phần tử lớn nhất trong khoảng xét về cuối
+			    swap 2 phần tử để đẩy phần tử lớn nhất về cuối khoảng
 			    cập nhật vị trí k = i
 	    right = k // thu hẹp khoảng xét bên phải
 	    for i = right to left 
 		    if a[i] <a[i-1]
-			    swap 2 phần tử để đẩy phần tử nhỏ nhất trong khoảng xét về đầu
+			    swap 2 phần tử để đẩy phần tử nhỏ nhất về đầu khoảng
 			    cập nhật vị trí k = i
 		left = k // thu hẹp khoảng xét bên trái
 ```
