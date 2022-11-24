@@ -367,18 +367,21 @@ ___
 <h4 id = "four-shaker-sort" class ="alg-heading-title" > 4️⃣ Shaker Sort</h4>
 1. Ý tưởng thuật toán:
 ```
-    1. So sánh 2 phần tử liền kề, nếu phần tử đứng trước lớn hơn phần tử đứng sau thì hoán đổi chỗ 2 phần tử này.
-    2. Lặp lại cho đến khi không còn phần tử nào cần hoán đổi chỗ.
-    3. Lặp lại bước 1 và 2 nhưng lần này so sánh từ phải sang trái.
+    1. Thọn khoảng xét từ đầu đến cuối mảng
+    2. Thực hiện duyệt khoảng xét bằng 2 lượt, so sánh 2 phần tử liền kề và thực hiện đổi chỗ trực tiếp 2 phần tử:
+    - Lượt đi: đẩy phần tử lớn nhất về cuối
+    - Lượt về: đẩy phần tử nhỏ nhất về đầu
+    3. Đồng thời, mỗi lượt đi ghi nhận lại vị trí hoán vị cuối cùng, để thu hẹp 2 phía khoảng xét ở mỗi lượt.
+    4. Lặp lại bước 2 và 3 đến khi 2 đầu khoảng xét giao nhau.
 
 ```
 
 2. Psuedocode:
 ```Cpp
-    left = 0 
-    right= n - 1	 
-    k = 0 // vị trí hoán vị cuối cùng:
-    while left < right // l->r là khoảng cần sắp xếp
+    left = đầu mảng
+    right= cuối mảng 
+    k = 0 // vị trí hoán vị cuối
+    while left < right // l->r: khoảng sắp xếp
 	    for i = left to right 
 		    if a[i] >a[i+1] 
 			    swap 2 phần tử để đẩy phần tử lớn nhất trong khoảng xét về cuối
@@ -534,11 +537,13 @@ ___
 
 2. Psuedocode:
 ```cpp
-    buildMaxHeap(a, n)
+    // tạo max-heap từ heapify 1 nửa phẩn tử mảng
+    for i = n/2 - 1 to 1 
+        heapify(a, i, 0)
     for i = n - 1 to 1
         swap a[0] and a[i]
         heapify(a, i, 0)
-
+    // viết hàm để heapify
     heapify(a, n, i)
     largest = i
     l = 2 * i + 1

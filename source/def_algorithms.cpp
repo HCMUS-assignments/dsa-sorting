@@ -239,7 +239,7 @@ double heapSortTime (int a[], int n) {
     for (int i = n / 2 - 1; i >= 0; i--) {
         heapify(a, n, i);
     }
-    for (int i = n - 1; i >= 0; i--) {
+    for (int i = n - 1; i > 0; i--) {
         swap(a[0], a[i]);
         heapify(a, i, 0);
     }
@@ -271,7 +271,7 @@ unsigned long long heapSortComp (int a[], int n) {
     for (int i = n / 2 - 1;++comp && i >= 0; i--) {
         heapifyComp(a, n, i,comp);
     }
-    for (int i = n - 1;++comp && i >= 0; i--) {
+    for (int i = n - 1;++comp && i > 0; i--) {
         swap(a[0], a[i]);
         heapifyComp(a, i, 0,comp);
     }
