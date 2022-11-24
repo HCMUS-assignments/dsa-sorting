@@ -67,12 +67,64 @@
 ___
 
 <!-- Giới thiệu -->
-<h2 id = "gioi-thieu" style = "color: #3B82F6; text-align:center">Giới thiệu</h2>
+<h2 id = "gioi-thieu"  class = "muc-luc-heading">II. Giới thiệu</h2>
+
+<h3>1. Các chủ đề bài báo cáo</h3>
+<p>Trong bài báo cáo này, chúng em sẽ trình bày về 11 thuật toán sắp xếp được nêu ra trong lab03. Cụ thể, chúng em sẽ trình bày về các thuật toán sắp xếp sau:</p>
+<div style="display: flex; justify-content: space-around">
+<ul class="intro-list">
+<li>Insertion Sort (Sắp xếp chèn) </li>
+<li>Selection Sort (Sắp xếp chọn) </li>
+<li>Bubble Sort (Sắp xếp nổi bọt) </li>
+<li>Quick Sort (Sắp xếp nhanh) </li>
+<li>Heap Sort (Sắp xếp vun đống) </li>
+<li>Merge Sort (Sắp xếp trộn) </li>
+</ul>
+
+<ul class = "intro-list">
+<li>Shell Sort </li>
+<li>Shaker Sort </li>
+<li>Counting Sort </li>
+<li>Radix Sort </li>
+<li>Flash Sort </li>
+</ul>
+</div>
+
+<style>
+.intro-list li {
+    /* list-style: none; */
+    padding: 4px;
+    margin: 4px;
+    background-color: #f5f5f5;
+    border: 1px solid #e5e5e5;
 
 
-<div style = "height: 900px"></div>
+    </style>
 
-<!-- ___ -->
+
+
+<h3>2. Mục tiêu bài báo cáo</h3>
+<p> Bài báo cáo này có mục tiêu nhằm giúp người đọc hiểu rõ hơn về các thuật toán sắp xếp, cách thức hoạt động của chúng, các ưu, nhược điểm của chúng. Đồng thời, bài báo cáo cũng giúp người đọc hiểu rõ hơn về cách thức thực hiện các thuật toán sắp xếp, cách thức thực hiện các thí nghiệm để đánh giá hiệu suất của chúng và cái nhìn tổng quan hơn về độ phức tạp và hiệu suất của các thuật toán qua việc so sánh chúng với nhau thông qua các biểu đồ cụ thể.</p>
+
+Phần 1 – Trình bày các thuật toán sắp xếp: ý tưởng, mã giả, độ phức tạp và những biến thể - cải tiến (nếu có)
+Phần 2 – Kết quả thực nghiệm: thống kê các số liệu thu được thông qua việc thực thi chương trình với các dữ liệu đầu vào khác nhau, so sánh với nhau và đưa ra nhận xét.
+Phần 3 – Tổ chức mã nguồn: trình bày tổng quan cách thức tổ chức các file chương trình và những thư viện, cấu trúc dữ liệu được sử dụng. 
+Phần 4 – Tài liệu tham khảo: Các tài liệu tham khảo được sử dụng trong quá trình tìm hiểu.
+
+
+<h3 >2. Sơ lược về chương trình:</h3>
+
+<div align="center">
+    <img src = "./img/intro.png" />
+</div>
+
+
+<div style = "height: 70px"></div>
+
+<style>
+    
+
+</style>
 
 <div class = "page" ></div>
 
@@ -81,7 +133,7 @@ ___
 ***
 
 <!-- Trình bày thuật toán -->
-<h2 id="trinh-bay-thuat-toan" class ="muc-luc-heading" style = "color: #3B82F6; text-align:center; ">Trình bày thuật toán</h2>
+<h2 id="trinh-bay-thuat-toan" class ="muc-luc-heading" >III. Trình bày thuật toán</h2>
 <!-- Các thuật toán sắp xếp -->
 
 <div style = "height: 100px" ></div>
@@ -155,12 +207,15 @@ ___
     }
 
     .page {
-        border: 1px  double #059669;
+        border-top: 1px  dashed #059669;
+        border-bottom: 1px  dashed #059669;
+        /* border-top: 1px  dashed red;
+        border-bottom: 1px  dashed red; */
     }
 
      hr {
-        border-top: 1px double #059669;
-        border-bottom: 1px double #059669;
+        border-top: 1px solid #059669;
+        border-bottom: 1px solid #059669;
     }
 
     .type-alg{
@@ -242,7 +297,8 @@ ___
 <h4 id ="one-selection-sort" class = "alg-heading-title"> 1️⃣ Selection Sort</h4>
 
 
-1. Ý tưởng thuật toán:
+<!-- 1. Ý tưởng thuật toán: -->
+<h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
 ```
     Mỗi bước sẽ di chuyển một phần tử nhỏ nhất sang bên trái, từ đó mảng sẽ dần được chia làm 2 phần: 
 
@@ -251,7 +307,9 @@ ___
     Bên phải là mảng chưa được sắp xếp. 
 ```
 
-2. Psuedocode:
+<!-- 2. Psuedocode: -->
+<h4 class ="pseudocode-algs">2. Pseudocode: </h4>
+
 ```cpp
     For i = 0 to n – 2 
 
@@ -260,7 +318,9 @@ ___
         swap (a(i), a(min_index))
 ```
 
-3. Độ phức tạp: 
+<!-- 3. Độ phức tạp:  -->
+<h4 class = "complexity-algs">3. Độ phức tạp</h4>
+
 ```
 
     Không gian: O(1) 
@@ -268,7 +328,9 @@ ___
     Thời gian: O(n^2)
 ```
 
-4. Biến thể và cải tiến:
+<!-- 4. Biến thể và cải tiến: -->
+<h4 class ="upgrade-algs">4. Biến thể và cải tiến</h4>
+
 ``` 
 
     Heap sort sử dụng cùng ý tưởng tìm các giá trị lớn nhất nhỏ nhất, nhỏ nhất nhưng dùng đến cấu trúc heap nên độ phức tạp giảm còn O(nlogn). 
@@ -284,7 +346,8 @@ ___
 <h4  id = "two-insertion-sort" class = "alg-heading-title"> 2️⃣ Insertion Sort</h4>
 
 
-1. Ý tưởng thuật toán:
+<!-- 1. Ý tưởng thuật toán: -->
+<h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
 ```
     1. Chèn phần tử thứ hai vào vị trí thích hợp trong mảng con đã được sắp xếp.
     2. Chèn phần tử thứ ba vào vị trí thích hợp trong mảng con đã được sắp xếp.
@@ -292,7 +355,9 @@ ___
 
 ```
 
-2. Psuedocode:
+<!-- 2. Psuedocode: -->
+<h4 class ="pseudocode-algs">2. Pseudocode: </h4>
+
 ```cpp
      for i = 1 to n - 1
         x = a[i]
@@ -302,7 +367,9 @@ ___
 
 ```
 
-3. Độ phức tạp: 
+<!-- 3. Độ phức tạp:  -->
+<h4 class = "complexity-algs">3. Độ phức tạp</h4>
+
 ```
     
         Không gian: O(1)
@@ -314,7 +381,9 @@ ___
 
 ```
 
-4. Biến thể và cải tiến:
+<!-- 4. Biến thể và cải tiến: -->
+<h4 class ="upgrade-algs">4. Biến thể và cải tiến</h4>
+
 ``` 
     Shell sort sử dụng cùng ý tưởng tìm các giá trị lớn nhất nhỏ nhất.
     Áp dụng trong flash sort.
@@ -328,14 +397,17 @@ ___
 
 <h4 id = "three-bubble-sort" class ="alg-heading-title" > 3️⃣ Bubble Sort</h4>
 #### :three: Bubble Sort
-1. Ý tưởng thuật toán:
+<!-- 1. Ý tưởng thuật toán: -->
+<h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
 ```
     1. So sánh 2 phần tử liền kề, nếu phần tử đứng trước lớn hơn phần tử đứng sau thì hoán đổi chỗ 2 phần tử này.
     2. Lặp lại cho đến khi không còn phần tử nào cần hoán đổi chỗ.
 
 ```
 
-2. Psuedocode:
+<!-- 2. Psuedocode: -->
+<h4 class ="pseudocode-algs">2. Pseudocode: </h4>
+
 ```cpp
         for i = 0 to n - 2
             for j = n - 1 downTo i + 1
@@ -344,7 +416,9 @@ ___
 
 ```
 
-3. Độ phức tạp: 
+<!-- 3. Độ phức tạp:  -->
+<h4 class = "complexity-algs">3. Độ phức tạp</h4>
+
 ```
     Không gian: O(1) 
 
@@ -352,7 +426,9 @@ ___
 
 ```
 
-4. Biến thể và cải tiến:
+<!-- 4. Biến thể và cải tiến: -->
+<h4 class ="upgrade-algs">4. Biến thể và cải tiến</h4>
+
 ``` 
     Trong mỗi vòng lặp của biến j ở trên, kiểm tra xem nếu không có phép hoán vị nào được thực hiện tức mảng đã đúng vị trí ta sẽ dừng thuật toán ngay lập tức. Trong trường hợp tốt nhất mảng đã được sắp xếp độ phức tạp về thời gian là O(n)
 
@@ -365,7 +441,8 @@ ___
 ---
 <!-- #### :four: Shaker Sort -->
 <h4 id = "four-shaker-sort" class ="alg-heading-title" > 4️⃣ Shaker Sort</h4>
-1. Ý tưởng thuật toán:
+<!-- 1. Ý tưởng thuật toán: -->
+<h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
 ```
     1. Chọn khoảng xét từ đầu đến cuối mảng
     2. Thực hiện duyệt khoảng xét bằng 2 lượt, so sánh 2 phần tử liền kề và hoán vị:(Lượt đi: đẩy phần tử lớn nhất về cuối; Lượt về: đẩy phần tử nhỏ nhất về đầu)
@@ -374,7 +451,9 @@ ___
 
 ```
 
-2. Psuedocode:
+<!-- 2. Psuedocode: -->
+<h4 class ="pseudocode-algs">2. Pseudocode: </h4>
+
 ```Cpp
     left = đầu mảng
     right= cuối mảng 
@@ -392,7 +471,9 @@ ___
 		left = k // thu hẹp khoảng xét bên trái
 ```
 
-3. Độ phức tạp: 
+<!-- 3. Độ phức tạp:  -->
+<h4 class = "complexity-algs">3. Độ phức tạp</h4>
+
 ```
     Không gian: O(1)
 
@@ -408,7 +489,8 @@ ___
 
 <h4 id = "five-shell-sort" class = "alg-heading-title"> 5️⃣ Shell Sort</h4>
 
-1. Ý tưởng thuật toán:
+<!-- 1. Ý tưởng thuật toán: -->
+<h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
 ```
     Shell sort là một biến thể cải tiến hơn của insertion sort.  
     Thuật toán sử dụng insertion sort lên các phần tử cách xa nhau sau đó thu hẹp dần khoảng cách này. 
@@ -417,7 +499,9 @@ ___
 
 ```
 
-2. Psuedocode:
+<!-- 2. Psuedocode: -->
+<h4 class ="pseudocode-algs">2. Pseudocode: </h4>
+
 ```cpp
     h = n / 2 
 
@@ -437,7 +521,9 @@ ___
 
 ```
 
-3. Độ phức tạp: 
+<!-- 3. Độ phức tạp:  -->
+<h4 class = "complexity-algs">3. Độ phức tạp</h4>
+
 ```
     Không gian: sắp xếp tại chỗ nên là O(1) 
 
@@ -452,7 +538,9 @@ ___
 
 ```
 
-4. Biến thể và cải tiến:
+<!-- 4. Biến thể và cải tiến: -->
+<h4 class ="upgrade-algs">4. Biến thể và cải tiến</h4>
+
 ``` 
     Dobosiewicz sort 
 
@@ -470,7 +558,8 @@ ___
 
 <h4 id = "six-quick-sort" class ="alg-heading-title"> 6️⃣ Quick Sort</h4>
 
-1. Ý tưởng thuật toán:
+<!-- 1. Ý tưởng thuật toán: -->
+<h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
 ```
     1. Chọn một phần tử làm pivot.
     2. Đưa các phần tử nhỏ hơn pivot về bên trái pivot, các phần tử lớn hơn pivot về bên phải pivot.
@@ -478,7 +567,9 @@ ___
 
 ```
 
-2. Psuedocode:
+<!-- 2. Psuedocode: -->
+<h4 class ="pseudocode-algs">2. Pseudocode: </h4>
+
 ```cpp
   quickSort(a, l, r)
     if l < r
@@ -498,7 +589,9 @@ ___
 
 ```
 
-3. Độ phức tạp: 
+<!-- 3. Độ phức tạp:  -->
+<h4 class = "complexity-algs">3. Độ phức tạp</h4>
+
 ```
     Không gian: O(logn)
 
@@ -506,7 +599,9 @@ ___
 
 ```
 
-4. Biến thể và cải tiến:
+<!-- 4. Biến thể và cải tiến: -->
+<h4 class ="upgrade-algs">4. Biến thể và cải tiến</h4>
+
 ``` 
     Quick sort 3-way: sử dụng 3 pivot để chia mảng thành 3 phần.
 
@@ -524,7 +619,8 @@ ___
 <h4 id = "seven-heap-sort" class ="alg-heading-title"> 7️⃣ Heap Sort</h4>
 
 
-1. Ý tưởng thuật toán:
+<!-- 1. Ý tưởng thuật toán: -->
+<h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
 ```
     1. Tạo max - heap từ mảng.
     2. Lấy phần tử lớn nhất tại vị trí 0 và đưa về cuối mảng, giảm kích thước của mảng đi 1.
@@ -533,7 +629,9 @@ ___
 
 ```
 
-2. Psuedocode:
+<!-- 2. Psuedocode: -->
+<h4 class ="pseudocode-algs">2. Pseudocode: </h4>
+
 ```cpp
     // tạo max-heap từ heapify 1 nửa phẩn tử mảng
     for i = n/2 - 1 to 1 
@@ -555,7 +653,9 @@ ___
         heapify(a, n, largest)
 ```
 
-3. Độ phức tạp: 
+<!-- 3. Độ phức tạp:  -->
+<h4 class = "complexity-algs">3. Độ phức tạp</h4>
+
 ```
     Không gian: O(1)
 
@@ -570,7 +670,8 @@ ___
 
 <h4 id = "eight-merge-sort" class ="alg-heading-title"> 8️⃣ Merge Sort</h4>
 
-1. Ý tưởng thuật toán:
+<!-- 1. Ý tưởng thuật toán: -->
+<h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
 ```
     Sử dụng thuật toán chia để trị xử lý 2 nữa mảng rồi trộn chúng lại với nhau. Cụ thể: 
 
@@ -580,7 +681,9 @@ ___
 
 ```
 
-2. Psuedocode:
+<!-- 2. Psuedocode: -->
+<h4 class ="pseudocode-algs">2. Pseudocode: </h4>
+
 ```cpp
     Hàm trộn 2 mảng có thứ tự left và right vào mảng chính: 
 
@@ -612,7 +715,9 @@ ___
 
 ```
 
-3. Độ phức tạp: 
+<!-- 3. Độ phức tạp:  -->
+<h4 class = "complexity-algs">3. Độ phức tạp</h4>
+
 ```
     Không gian:O(n) sử dụng để lưu trữ 2 mảng con. 
 
@@ -620,7 +725,9 @@ ___
 
 ```
 
-4. Biến thể và cải tiến:
+<!-- 4. Biến thể và cải tiến: -->
+<h4 class ="upgrade-algs">4. Biến thể và cải tiến</h4>
+
 ``` 
     Các biến thể của merge sort chủ yếu tập trung vào việc giảm độ phức tạp về không gian và giảm số lần copy phần tử 
 
@@ -636,7 +743,8 @@ ___
 
 <h4 id = "nine-radix-sort" class ="alg-heading-title"> 9️⃣ Radix Sort</h4>
 
-1. Ý tưởng thuật toán:
+<!-- 1. Ý tưởng thuật toán: -->
+<h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
 ```
     Khác với các thuật toán trước, Radix sort là một thuật toán tiếp cận theo một hướng hoàn toàn khác. 
     Nếu như trong các thuật toán khác, cơ sở để sắp xếp luôn là việc so sánh giá trị của 2 phần tử 
@@ -653,7 +761,9 @@ ___
 
 ```
 
-2. Psuedocode:
+<!-- 2. Psuedocode: -->
+<h4 class ="pseudocode-algs">2. Pseudocode: </h4>
+
 ```cpp
     max = số chữ số của phần tử lớn nhất 
 
@@ -689,7 +799,9 @@ ___
 
 ```
 
-3. Độ phức tạp: 
+<!-- 3. Độ phức tạp:  -->
+<h4 class = "complexity-algs">3. Độ phức tạp</h4>
+
 ```
     Không gian: O(n) vì sử dụng hàng đợi để lưu các phần tử. 
 
@@ -701,7 +813,8 @@ ___
 
 <h4 id = "ten-counting-sort" class ="alg-heading-title"> 🔟  Couting Sort</h4>
 
-1. Ý tưởng thuật toán:
+<!-- 1. Ý tưởng thuật toán: -->
+<h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
 ```
     1. Tìm phần tử lớn nhất trong mảng
     2. Tạo mảng mới có kích thước bằng phần tử lớn nhất + 1, khởi tạo các phần tử bằng 0
@@ -712,7 +825,9 @@ ___
     7. Giảm số lần xuất hiện của các phần tử trong mảng mới
 ```
 
-2. Psuedocode:
+<!-- 2. Psuedocode: -->
+<h4 class ="pseudocode-algs">2. Pseudocode: </h4>
+
 ```cpp
     max = phần tử lớn nhất trong mảng
 
@@ -741,7 +856,9 @@ ___
 
 ```
 
-3. Độ phức tạp: 
+<!-- 3. Độ phức tạp:  -->
+<h4 class = "complexity-algs">3. Độ phức tạp</h4>
+
 ```
     Không gian: O(n) vì sử dụng mảng mới để lưu các phần tử. 
 
@@ -753,7 +870,8 @@ ___
 
 <h4 id = "eleven-flash-sort" class ="alg-heading-title"> 1️⃣1️⃣  Flash Sort</h4>
 
-1. Ý tưởng thuật toán:
+<!-- 1. Ý tưởng thuật toán: -->
+<h4 class ="idea-algs">1. Ý tưởng thuật toán </h4>
 ```
     Tư tưởng chính của thuật toán là dựa trên sự phân lớp phần tử (Subclasses Arrangement). FlashSort bao gồm ba khối logic: 
         Phân loại các phần tử (Elements Classification); 
@@ -771,7 +889,9 @@ ___
 
 ```
 
-2. Psuedocode:
+<!-- 2. Psuedocode: -->
+<h4 class ="pseudocode-algs">2. Pseudocode: </h4>
+
 ```cpp
 
     min = phần tử nhỏ nhất trong mảng 
@@ -820,7 +940,9 @@ ___
 
 ```
 
-3. Độ phức tạp: 
+<!-- 3. Độ phức tạp:  -->
+<h4 class = "complexity-algs">3. Độ phức tạp</h4>
+
 ```
     Không gian: O(1) vì thực hiện tại chỗ. 
     Thời gian: có độ phức tạp trung bình là O(n) .
@@ -839,9 +961,12 @@ ___
 <div class = "page" />
 
 <!-- Kết quả thực nghiệm -->
-<h2 id = "ket-qua-thuc-nghiem" class ="muc-luc-heading" >Kết quả thực nghiệm</h2>
+<h2 id = "ket-qua-thuc-nghiem" class ="muc-luc-heading" >IV. Kết quả thực nghiệm</h2>
 
-<h3 id= "bang-so-lieu-thong-ke" class ="miniHeading">Bảng số liệu thống kê</h3>
+<h3 id= "bang-so-lieu-thong-ke" class ="miniHeading">1. Bảng số liệu thống kê</h3>
+
+Thuật toán được thực hiện trên phần mềm Visual Studio Code - CPU: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40 GHz RAM: 8 GB
+Dưới đây là 4 bảng thống kê thời gian chạy và số lần so sánh của thuật toán với các trường hợp khác nhau về kiểu dữ liệu (rand, sorted nsorted, rev) và kích thước dữ liệu (10 000, 30 000, 50 000, 100 000, 300 000, 500 000).
 
 <div align="center">
 
@@ -871,56 +996,76 @@ ___
 <!-- Bảng running time và comparisons của radomized data -->
 #### 
 
-<h3 id = "do-thi-minh-hoa" class="miniHeading" > Đồ thị minh họa </h3>
+<h3 id = "do-thi-minh-hoa" class="miniHeading" >2. 〽️ Đồ thị minh họa 📊 </h3>
+- Các biểu đồ sau đây sẽ giúp ta dễ dàng thống kê và hình dung để có cái nhìn chung về sự thay đổi của thời gian chạy và số lần so sánh của thuật toán với các trường hợp khác nhau về kiểu dữ liệu (rand, sorted nsorted, rev) và kích thước dữ liệu (10 000, 30 000, 50 000, 100 000, 300 000, 500 000).
 
-<h3 id="line-graph" class = "heading-graph">  〽️ Đồ thị đường 〽️ </h3>
+<!-- <h3 id="line-graph" class = "heading-graph">  〽️ Đồ thị đường 〽️ </h3> -->
 
 
 
 <div align = "center">
+<h3 class="heading_chart">Trường hợp dữ liệu ngẫu nhiên</h3>
 
 <img src = "./img/lineChart_randomized.png"  />
+<img src = "./img/barChart_rand.png"  />
+
+<p>
+    - Về thời gian chạy: (sắp xếp theo hướng thời gian chạy tăng dần)
+    + Counting < Flash < Quick <
+    
+
+</p>
+
 <div class = "page" />
+
+<h3 class="heading_chart">Trường hợp dữ liệu gần như đã sắp xếp</h3>
 
 <img src = "./img/lineChart_nearlySorted.png"  />
+<img src = "./img/barChart_nearlySorted.png"  />
+
 <div class = "page" />
 
+<h3 class="heading_chart">Trường hợp dữ liệu đã sắp xếp</h3>
 
 <img src = "./img/lineChart_sorted.png" >
+<img src = "./img/barChart_sorted.png" >
+
 <div class = "page" />
 
+<h3 class="heading_chart">Trường hợp dữ liệu đã đảo ngược</h3>
+
 <img src = "./img/lineChart_reversed.png" />
+<img src = "./img/barChart_rev.png" />
 
 </div>
 
 <div class = "page" />
 
 
-<h3 id="do-thi-cot" class ="heading-graph"> 📊 Đồ thị cột 📊 </h3>
+<!-- <h3 id="do-thi-cot" class ="heading-graph"> 📊 Đồ thị cột 📊 </h3> -->
 
-<div align = "center">
+<!-- <div align = "center">
 
-<img src = "./img/barChart_randomized.png"  />
+<img src = "./img/barChart_rand.png"  />
 
 <img src = "./img/barChart_nearlySorted.png"  />
 
 <img src = "./img/barChart_sorted.png" >
 
-<img src = "./img/barChart_reversed.png" />
+<img src = "./img/barChart_rev.png" />
 
-</div>
+</div> -->
 
-<div class = "page" />
 
-<h3 id="nhan-xet-chung" class="miniHeading"> Nhận xét chung </h3> 
+<h3 id="nhan-xet-chung" class="miniHeading">3. Nhận xét chung </h3> 
 
 <div class = "page" />
 
 <!-- Tổ chức đồ án và ghi chú -->
 
-<h2 id = "to-chuc-do-an-va-ghi-chu" class ="muc-luc-heading" >Tổ chức đồ án và ghi chú</h2>
+<h2 id = "to-chuc-do-an-va-ghi-chu" class ="muc-luc-heading" >V. Tổ chức đồ án và ghi chú</h2>
 
-<h3 id = "to-chuc-do-an" class = "miniHeading" > Tổ chức đồ án </h3>
+<h3 id = "to-chuc-do-an" class = "miniHeading" > 1. Tổ chức đồ án </h3>
 
 ```
     ├───source
@@ -951,12 +1096,12 @@ ___
 2. `report.pdf` là file báo cáo đồ án.
 
 
-<h3 id = "ghi-chu" class = "miniHeading" > Ghi chú </h3>
+<h3 id = "ghi-chu" class = "miniHeading" > 2. Ghi chú </h3>
 
 - Thư viện sử dụng : `iostream`, `fstream`, `ctime`, `cstdlib`, `string.h`, `cmath`
 + `iostream` : thư viện chuẩn c++ dùng để nhập xuất dữ liệu
 + `fstream` : thư viện chuẩn c++ dùng để đọc ghi file
-+ `ctime` : thư viện chuẩn c++ dùng để đo thời gian chạy
++ `ctime` : thư viện chuẩn c++ dùng để đo thời gian chạy thông qua hàm `clock()`
 + `cstdlib` : thư viện chuẩn c++ dùng để sử dụng hàm `rand()`
 + `string.h` : thư viện chuẩn c dùng để xử lý chuỗi
 + `cmath` : thư viện chuẩn c++ dùng để sử dụng hàm `log()`, `pow()`
@@ -966,7 +1111,7 @@ ___
 
 
 <!-- Tài liệu tham khảo -->
-<h2 id="tai-lieu-tham-khao" class = "muc-luc-heading" >📑 Tài liệu tham khảo 📚</h2>
+<h2 id="tai-lieu-tham-khao" class = "muc-luc-heading" >📑 VI. Tài liệu tham khảo 📚</h2>
 
 <div class = "reference-cols">
 <li>
@@ -1020,42 +1165,51 @@ ___
 
 </div>
 
+</br>
+</br>
+
 <!-- style for classes -->
 <style> 
+
+    .idea-algs, .pseudocode-algs, .complexity-algs, .upgrade-algs {
+
+    }
    
     .muc-luc-heading {
         text-align: center;
-        font-size: 1.5rem;
-        font-weight: 600;
+        font-size: 26px;
+        font-weight: normal;
         margin: 20px 0;
+        color: #3B82F6;
+        padding:50px 100px;
+
+        /* polygon */
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+        background-color: #ccc;
+        border: 1px dashed red;
     }
     .miniHeading {
         text-align: center;
-        font-size: 1.2rem;
+        font-size: 24px;
         font-weight: 600;
         margin: 20px 0;
+        color: #256589
     }
     .heading-graph {
         text-align: center;
-        font-size: 1.2rem;
+        font-size: 22px;
         font-weight: 600;
         margin: 20px 0;
+        color: #265868;
     }
 
     .alg-heading-title {
         text-align: center;
-        font-size: 1.2rem;
+        font-size: 24px;
         font-weight: 600;
         margin: 20px 0;
+        color: #569887;
     }
-  
-
-</style>
-
-
-<!-- css for pages -->
-
-<style>
    
 
     .reference-cols {

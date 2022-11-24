@@ -53,9 +53,6 @@ void doCommand2 (char *alg, char *inputSize, char *inputOrder, char *output) {
     // generate data
     GenerateData(a, n, type);
 
-    // writing file
-    writingFile("output.txt", a, n);
-
     // declare the variables
     double time = -1;
     unsigned long long comp = 0;
@@ -82,6 +79,9 @@ void doCommand2 (char *alg, char *inputSize, char *inputOrder, char *output) {
     } else {
         cout << endl << endl;
     }
+
+    // writing file
+    writingFile("output.txt", a, n);
 
     // free the memory
     delete[] a;
