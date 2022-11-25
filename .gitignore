@@ -32,5 +32,5 @@
 *.app
 
 # readme files
-# /docs/*.md
-# /docs/*.html
+/docs/*.md
+/docs/*.html
